@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>查看理赔单-理赔通</title>
+    <!--include "./weixin/partial/angularcss.html"-->
+    <!--resinclude "weixin.list-css"-->
+</head>
+
+<body ng-app="myApp" ng-controller="listController" >
+    <header class="tit">
+        <span class="pull-right iconfont icon-funnel" ng-click="showModal('timeActive')"></span>
+        <span class="pull-left iconfont icon-arrowleft" ng-click="wxUrlBack()"></span>
+        我的理赔单
+    </header>
+    <section class="content">
+        <!-- <div class="btn-group">
+            <span ng-click="clickGroup(0,$event)" class="{{group.active0}}">本周</span><span ng-click="clickGroup(1)" class="{{group.active1}}">本月</span><span ng-click="clickGroup(2)" class="{{group.active2}}">本季度</span>
+        </div> -->
+        <ul class="list-box" id="listUl">
+            <li ng-repeat="v in paymentList" ng-click="getDetail(v)" ng-show="{{paymentList.length != 0}}" ng-cloak>
+                <div class="list-tit">
+                    <i></i>
+                    <b ng-bind="v.insurenceCompanyName"></b>  
+                    <span ng-bind="v.paymentDate | date:'yyyy-MM-dd'" style="color:#8d8d8d"></span>
+                    <span class="pull-right status status{{v.status}}" ng-bind="v.status | status"></span>
+                </div>
+                <dl>
+                    <dt><span ng-bind="v.userName"></span>&nbsp;&nbsp;<span ng-bind="v.paymentNum"></span>张单据</dt>
+                    <dd><span>理赔单：</span><span ng-bind="v.mainPaymentId"></span></dd>
+                    <dd><span>理赔金额：</span><span class="orger"></span>
+                    </dd>
+                </dl>
+            </li>
+            <li style="padding:50px;text-align:center;color:#aaa;font-size:20px;box-shadow:none;background:#ebebeb" ng-show="{{paymentList.length == 0}}" ng-cloak>
+                <i class="iconfont icon-docclip"><span></span></i>
+                <br/><br/>您还没有上传理赔单
+                <a ng-click="wxLocation('upload')" class="button">立即上传</a>
+            </li>
+        </ul>
+    </section>
+    <section id="time" class="modal cur {{style.timeActive}}">
+        <div class="actionMenu {{style.timeActive}}">
+            <ul>
+                <li class="actionMenu_title"> 选择时间</li>
+                <li class="actionMenu_cell" ng-click="getList(0)">本周</li>
+                <li class="actionMenu_cell" ng-click="getList(1)"> 本月</li>
+                <li class="actionMenu_cell" ng-click="getList(2)"> 本季度</li>
+                <li class="actionMenu_cell" ng-click="getList(3)"> 全部</li>
+            </ul>
+            <div class="actionMenu_btn" ng-click="hideModal('timeActive')">取消</div>
+        </div>
+    </section>
+    <section id="menu" class="modal cur {{style.menuActive}}">
+        <div class="actionMenu {{style.menuActive}}">
+            <ul>
+                <li class="actionMenu_title"> 理赔单详情</li>
+                <li class="actionMenu_cell" ng-click="showModal('basicInfoActive')"> 理赔单基本信息</li>
+                <li class="actionMenu_cell" ng-click="showModal('medicalActive',hasPayment)"> 医疗账单资料</li>
+                <li class="actionMenu_cell" ng-show="{{prescription!=undefined}}" {{showModal}} ng-click="showModal('prescriptionActive')"> {{hospitalName}}处方</li>
+                <li class="actionMenu_cell" ng-show="{{receipt!=undefined}}" ng-click="showModal('receiptActive')"> {{hospitalName}}收据</li>
+            </ul>
+            <div class="actionMenu_btn" ng-click="hideModal('menuActive')">取消</div>
+        </div>
+    </section>
+    <!--include "./weixin/widget/my.weixin.detail.html"-->
+    <my-dialog></my-dialog>
+    <!-- <my-loading></my-loading> -->
+</body>
+
+<!--resinclude "weixin.list-js"-->
+
+</html>

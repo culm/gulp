@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>和金在线-超级用户管理员</title>
+		<!--resinclude "admin.index-css"-->
+	</head> 
+	<body>
+		<!--include "./common/header.html"-->
+		<div id="main">
+			<!--include "./admin/partial/menu.html"-->
+			<div class="right-body">
+				<div class="breadcrumbs" id="breadcrumbs">
+					<ul class="breadcrumb">
+						<li>
+							<a href="index.html"><i class="glyphicon glyphicon-home"></i> 主页</a>
+						</li>
+						<li class="active">用户管理</li>
+					</ul>
+				</div>
+				<div class="container-fluid" style="margin-top:30px">
+					<div class="col-md-9">
+						<!-- <div class="col-md-3">
+							<div class="input-group">
+								<label class="input-group-addon">选择角色：</label>
+								<select id="roleSelect" class="form-control">
+									<option value="">全部</option>
+								</select>
+							</div>
+						</div> -->
+						<!-- <div class="col-md-4">
+							<label>选择用户组：</label>
+							<div class="btn-group userselect" role="group"  data-toggle="buttons">
+							  	<button type="button" typeClass="" class="btn btn-default btn-primary" data-value="0">全部</button>
+							  	<button type="button" typeClass="ordinary" class="btn btn-default" data-value="1">普通用户</button>
+							  	<button type="button" typeClass="superuser" class="btn btn-default" data-value="2">专家</button>
+							  	<button type="button" typeClass="admin" class="btn btn-default" data-value="3">管理员</button>
+							</div>
+						</div> -->
+						<div class="col-md-3">
+							<div class="input-group">
+								<label class="input-group-addon">用户名：</label><input type="text" value="" id="searchVal" class="form-control" placeholder="用户名搜索">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<button id="search" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> 查询</button>&nbsp;&nbsp;&nbsp;
+							<button id="addExpert" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> 添加用户</button>
+						</div> 
+					</div> 
+				</div>  
+				<div class="container-fluid">
+					<div id="user-container"></div>
+					<div id="pagination-container"></div>
+					<h3 class="text-center hide" id="pagination-container-tips">没有此用户</h3>
+				</div>
+			</div>
+		</div>
+		<!--resinclude "admin.index-jshtml"-->
+		<!--resinclude "admin.index-js"-->
+	</body>
+</html>

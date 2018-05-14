@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!--resinclude "taibao.upload2-css"-->
+    <script type="text/javascript">
+    var script = document.createElement('script');
+    var uaName = navigator.userAgent.match(/Android/i) ? 'android' : 'ios';
+    script.src = 'js/taibao/' + uaName + '/cordova.js'
+    document.querySelector('head').appendChild(script);
+    window.cordovaOk = true
+    </script>
+</head>
+
+<body class="body">
+    <!-- 第一部分 -->
+    <div class="section-one">
+        <div class="status-bar iosMarg20">
+            <div class="go-back">
+                <a class="JSgo_back" href="javascript:;"><i class="iconfont">&#xe634;</i></a>
+            </div>
+            <div class="status-name">自助理赔</div>
+            <div class="liucheng"><img src="css/taibao/images2/step2.png" alt=""></div>
+        </div>
+        <div class="fixed-top">
+            <div class="reminder">
+                <span>温馨提示：</span><br>
+                <span>1、上传材料需要使用您的流量，建议在WiFi环境下操作！</span><br>
+                <span>2、为了保证图片质量提高理赔成功率，建议选择“拍照”方式上传材料！</span>
+            </div>
+            <ul class="onlist">
+                <li>
+                    <div class="cameraBox">
+                        <span class="message_tip" id="message_tip2">0</span>
+                        <span class="icon_camera icon_fapiao" data-index="2"></span>
+                    </div>
+                    费用发票 <span class="sec_must must_2">(必传)</span>
+                </li>
+                <li>
+                    <div class="cameraBox">
+                        <span class="message_tip" id="message_tip1">0</span>
+                        <span class="icon_camera icon_bingli" data-index="1"></span>
+                    </div>
+                    门急诊／住院病历／诊断证明 <span class="sec_must must_1">(必传)</span>
+                </li>
+                <li>
+                    <div class="cameraBox">
+                        <span class="message_tip" id="message_tip3">0</span>
+                        <span class="icon_camera icon_qingdan" data-index="3"></span>
+                    </div>
+                    费用清单 <span class="sec_must must_3">(必传)</span>
+                </li>
+                <li>
+                    <div class="cameraBox">
+                        <span class="message_tip" id="message_tip0">0</span>
+                        <span class="icon_camera icon_shenfenzheng" data-index="0"></span>
+                    </div>
+                    被保险人身份证件 <span class="sec_must must_0">(必传)</span>
+                </li>                
+                <li>
+                    <div class="cameraBox">
+                        <span class="message_tip" id="message_tip4">0</span>
+                        <span class="icon_camera icon_shenfenzheng" data-index="4"></span>
+                    </div>
+                    法定监护人身份证件及关系证明 <span class="sec_must must_4">(必传)</span>
+                </li>
+            </ul>
+            <div style="clear: both;"></div>
+            <div class="container">
+                <a href="javascript:;" id="preview_photo" class="btn btn-primary btn-block btn-lg" type="submit">照片预览</a>
+            </div>
+        </div>
+        <!-- 选择拍照还是从相册选择 -->
+        <div class="upload_menu">
+            <div class="upload_menu_item">拍照</div>
+            <div class="upload_menu_item">从相册选择</div>
+            <div class="upload_menu_item">取消</div>
+        </div>
+        <div class="upload_menu_box"></div>
+    </div>
+    <!-- 第二部分 -->
+    <div class="section-two" style="display:none;">
+        <div class="status-bar iosMarg20">
+            <div class="go-back toSes1"><a href="javascript:;"><i class="iconfont">&#xe634;</i></a></div>
+            <div class="status-name">照片预览</div>
+            <div class="liucheng"><img src="css/taibao/images2/step2.png" alt=""></div>
+        </div>
+        <div class="fixed-top">
+            <section class="heading"><a>费用发票(<span class="num_photo" id="num_photo_2">0</span>)</a></section>
+            <section class="bg-white">
+                <div class="thumb-list clearfix thumbList" id="thumbList_2" _index="2">
+                </div>
+            </section>
+
+            <section class="heading"><a>门急诊／住院病历(<span class="num_photo" id="num_photo_1">0</span>)</a></section>
+            <section class="bg-white">
+                <div class="thumb-list clearfix thumbList" id="thumbList_1" _index="1">
+                </div>
+            </section>
+
+            <section class="heading"><a>费用清单(<span class="num_photo" id="num_photo_3">0</span>)</a></section>
+            <section class="bg-white">
+                <div class="thumb-list clearfix thumbList" id="thumbList_3" _index="3">
+                </div>
+            </section>
+
+            <section class="heading"><a>被保险人身份证件(<span class="num_photo" id="num_photo_0">0</span>)</a></section>
+            <section class="bg-white">
+                <div class="thumb-list clearfix thumbList" id="thumbList_0" _index="0">
+                </div>
+            </section>
+
+            <section class="heading"><a>法定监护人身份证件及关系证明(<span class="num_photo" id="num_photo_4">0</span>)</a></section>
+            <section class="bg-white">
+                <div class="thumb-list clearfix thumbList" id="thumbList_4" _index="4">
+                </div>
+            </section>
+            
+            <div class="bottom-fixed">
+                <a href="javascript:;" id="submit_sub" class="btn btn-primary btn-block btn-lg" type="submit">下一步</a>
+            </div>
+        </div>
+    </div>
+    <!-- 图片上传进度条 -->
+    <div class="upload_img">
+        <div class="upload_img_width"></div>
+        <span class="J_num_img num_img"></span>
+    </div>
+    <div class="popup-container">
+        <div class="popup">
+            <div class="popup-head">
+                <h3 class="popup-title ng-binding">提示</h3>
+            </div>
+            <div class="popup-body"><span>自助理赔还没结束，您是否要退出自助理赔</span></div>
+            <div class="popup-buttons">
+                <button class="button ng-binding button-default">取消</button>
+                <button class="button ng-binding button-positive">确定</button>
+            </div>
+        </div>
+    </div>
+</body>
+<!--resinclude "taibao.upload2-js"-->
+
+</html>

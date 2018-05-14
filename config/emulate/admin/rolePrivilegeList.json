@@ -1,0 +1,111 @@
+{
+"rtnCode":"2000",
+"rtnMsg":"",
+"rolePrivilegeList":
+[{
+	"roleId":1,
+	"roleCode":"",
+	"roleName":"角色名1",
+	"privileges":[
+	{
+		"id":10001,
+		"privilegeCode":"123",	
+		"privilegeName":"权限名01"
+	},
+	{
+		"id":10002,
+		"privilegeCode":"1234",	
+		"privilegeName":"权限名02"
+	},
+	{
+		"id":10003,
+		"privilegeCode":"",	
+		"privilegeName":"权限名03"
+	}]
+},
+{
+	"roleId":12,
+	"roleCode":"",
+	"roleName":"角色名2",
+	"privileges":[
+	{
+		"id":10001,
+		"privilegeCode":"123",	
+		"privilegeName":"权限名01"
+	},
+	{
+		"id":10002,
+		"privilegeCode":"1234",	
+		"privilegeName":"权限名02"
+	}]
+},
+{
+	"roleId":123,
+	"roleCode":"",
+	"roleName":"角色名3",
+	"privileges":[
+	{
+		"id":10001,
+		"privilegeCode":"123",	
+		"privilegeName":"权限名01"
+	}]
+},
+{
+	"roleId":1232,
+	"roleCode":"",
+	"roleName":"角色名4",
+	"privileges":[
+	{
+		"id":10001,
+		"privilegeCode":"123",	
+		"privilegeName":"权限名01"
+	}]
+},
+{
+	"roleId":12323,
+	"roleCode":"",
+	"roleName":"角色名5",
+	"privileges":[
+	{
+		"id":10001,
+		"privilegeCode":"123",	
+		"privilegeName":"权限名01"
+	}]
+},
+{
+	"roleId":123233,
+	"roleCode":"",
+	"roleName":"角色名0",
+	"privileges":[
+	{
+		"id":10001,
+		"privilegeCode":"123",	
+		"privilegeName":"权限名01"
+	}]
+},
+{
+	"roleId":1232332,
+	"roleCode":"",
+	"roleName":"角色名6",
+	"privileges":[
+	{
+		"id":10001,
+		"privilegeCode":"123",	
+		"privilegeName":"权限名01"
+	}]
+},
+{
+	"roleId":12323321,
+	"roleCode":"",
+	"roleName":"角色名7",
+	"privileges":[
+	{
+		"id":10001,
+		"privilegeCode":"123",	
+		"privilegeName":"权限名01"
+	}]
+}],
+"total":11,
+"pageNum":1
+}
+

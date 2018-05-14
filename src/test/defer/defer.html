@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>和金在线-模板管理</title>
+		
+
+	</head> 
+	<body>
+    1
+		<script type="text/javascript" src="../../js/jquery-1.11.3.min.js" ></script>
+        <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js" ></script>
+        <script type="text/javascript" src="../../js/my.js" ></script>
+        <script type="text/javascript" src="../../js/my.base.js" ></script>
+        <script type="text/javascript" src="../../js/script/ajax.js" ></script>
+        <script type="text/javascript" src="../../js/script/date.js" ></script>
+        <script type="text/javascript" src="../../js/script/string.js" ></script>
+        <script type="text/javascript" src="../../js/script/string.cardno.js" ></script>
+        <script type="text/javascript" src="../../js/widget/defer/my.defer.js" ></script>
+
+        <script type="text/javascript">
+            function test(){
+                var d = my.defer();
+                setTimeout(function(){
+                    d.resolve(1,2);
+                }, 1000);
+                return d.promise;
+            }
+            $(function () {
+                // test().success(function(p1, p2){
+                //     console.log('p1:' + p1);
+                //     console.log('p2:' + p2);
+                // });
+                test().then(function(p1, p2){
+                    console.log('success');
+                }, function(){
+                    console.log('error');
+                }, function(){
+                    console.log('process');
+                })
+
+            });
+        </script>
+
+	</body>
+</html>

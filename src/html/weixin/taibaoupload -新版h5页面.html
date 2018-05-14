@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>上传理赔单-理赔通</title>
+    <!--include "./weixin/partial/angularcss.html"-->
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <!--resinclude "weixin.taibaoupload-css"-->
+    <style>
+        /*.upload-add {height:40px; overflow: hidden;}*/
+        i {font-style: normal;}
+        .upload-add .btn-up{width:24%; height:40px; font-size:16px; line-height:40px; text-align: center; color: #fff; background-color: #ddd; float: left; cursor: pointer;}
+        .upload-add .btn-up i {font-style: normal;}
+        .upload-add .btn-up.active {background-color: #03bbd3;}
+        .upload-add .sj {border-bottom-left-radius:3px; border-top-left-radius:3px; margin-left:2%;}
+        .upload-add .cf {border-bottom-right-radius:3px; border-top-right-radius:3px;}
+        .mask_tb {display: none; width:100%; height:100%; position: absolute; left: 0; top: 0; bottom: 0; right: 0; background:rgba('0,0,0,0'); -z-index: 100;}
+        .login_tb { display: none; width:400px; height:200px; position: absolute;left: 50%; margin-left:-200px; top:50%; margin-top:-100px; z-index:110; border:1px solid #dadada; border-radius: 4px; text-align: center; background:#fff;}
+        .login_tb input {width:80%; height:34px; line-height:34px; padding:6px 12px; margin-top:20px; border:1px solid #dadada; border-radius: 4px;}
+        .login_tb button {width:60px; height:36px; line-height: 36px; text-align: center; margin-top:15px; background: #03bbd3; border:1px solid #03bbd3; border-radius: 4px; color:#fff; font-size:16px; cursor: pointer;}
+        .reMark {cursor:pointer;}
+
+    .upload-add {background: #fff; border-top:1px solid #ddd; padding-bottom:35px;}
+    .items {height:50px; line-height: 50px; padding-left:15px; border-bottom:1px solid #ddd;}
+    .items p {float:right; padding-right:15px;}
+    .items p span {padding:0 2px; color:#0d7cce;}
+    .photo-preview {width:84%; height:50px; line-height:50px; margin-top:35px; margin-left:8%; border-radius:3px; background:#0d7cce; text-align: center; font-size:15px; color: #fff;}
+    .upload-page {background: #fff;}
+    </style>
+</head>
+<body ng-app="myApp" ng-controller="uploadController">
+    <!-- 上传图片页面 -->
+    <div class="">
+        <header class="tit firstpage">
+            <!-- <section class="logo"> -->
+            <span class="title-cent">上传材料</span>
+            <section class="">
+                <a href="javascript:location.href = location.href + '?&tt=' + new Date().getTime()">刷新页面</a>
+            </section>
+        </header>
+        <div class="material">您本次报销需要的材料有：</div>       
+        <div class="login_tb">
+            <input placeholder="用户名" id="userName" />
+            <input placeholder="密码" id="passWord" />
+            <div><button id="login">登录</button></div>
+        </div>
+        <div class="mask_tb"></div>
+        <section class="content firstpage">
+            <div>
+                <div class="weui_cell">
+                    <div class="weui_cell_hd">
+                        <label class="hospital-label">选择医院:</label>
+                    </div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <input id="hospitalname" placeholder="医院名字" class="weui_input" type="text" />
+                    </div>
+                </div>
+            </div>
+            <div  class="upload-add">
+                <div class="items">1、收据
+                    <p class="" temType='200'><i ng-click="chooseImage(200)">已拍<span class="">0</span>张 iconfont图片</i></p>
+                </div>
+                <div class="items">2、处方
+                    <p class="" temType='100'><i ng-click="chooseImage(100)">已拍<span class="">0</span>张 iconfont图片</i></p>
+                </div>
+                <div class="items">3、住院
+                    <p class="" temType='300'><i ng-click="chooseImage(300)">已拍<span class="">0</span>张 iconfont图片</i></p>
+                </div>
+                <div class="items">4、药房
+                    <p class="" temType='400'><i ng-click="chooseImage(400)">已拍<span class="">0</span>张 iconfont图片</i></p>
+                </div>
+                <div class="items">5、身份证件（正面和反面）
+                    <p class="" temType='400'><i ng-click="chooseImage(400)">已拍<span class="">0</span>张 iconfont图片</i></p>
+                </div>
+                <div class="items">6、银行卡
+                    <p class="" temType='400'><i ng-click="chooseImage(400)">已拍<span class="">0</span>张 iconfont图片</i></p>
+                </div>
+                <div class="photo-preview">照片预览</div>
+               <!--  <span class="btn-up"><i class="iconfont icon-plusbold" id="fileupload-container" ng-click="chooseImage()"></i></span> -->
+            </div>
+        </section>
+    </div>
+    <!-- 提交页面 -->
+    <div class="upload-page">
+        <header class="tit firstpage">
+            <!-- <section class="logo"> -->
+            <span class="title-cent">照片预览</span>
+        </header>
+        <!--收据-->
+        <div>
+            <p>1、收据</p>
+            <ul class="upload-box">
+                <li ng-repeat="local in shoujuImages" ng-cloak>
+                  <div class="upload-img">
+                    <span class="close iconfont icon-close" ng-click="removeImg(local,200)"></span>
+                    <img my src="{{local}}">
+                  </div>
+                </li>
+            </ul>
+        </div>
+        <!--处方-->
+        <div>
+            <p>2、处方</p>
+            <ul class="upload-box">
+                <li ng-repeat="local in chufangImages" ng-cloak>
+                  <div class="upload-img">
+                    <span class="close iconfont icon-close" ng-click="removeImg(local,100)"></span>
+                    <img my src="{{local}}">
+                  </div>
+                </li>
+            </ul>
+        </div>
+        <!--住院收据--> 
+        <div>
+            <p>3、住院收据</p>
+            <ul class="upload-box">
+                <li ng-repeat="local in hospitalImages" ng-cloak>
+                  <div class="upload-img">
+                    <span class="close iconfont icon-close" ng-click="removeImg(local,300)"></span>
+                    <img my src="{{local}}">
+                  </div>
+                </li>
+            </ul>
+        </div>
+        <!--明细清单-->
+        <div>
+            <p>4、明细清单</p>
+            <ul class="upload-box">
+                <li ng-repeat="local in yaofangImages" ng-cloak>
+                  <div class="upload-img">
+                    <span class="close iconfont icon-close" ng-click="removeImg(local,400)"></span>
+                    <img my src="{{local}}">
+                  </div>
+                </li>
+            </ul>
+        </div>
+        <!--身份证件-->
+        <div>
+            <p>5、身份证件（正面和反面）</p>
+            <!-- <ul class="upload-box">
+                <li ng-repeat="local in yaofangImages" ng-cloak>
+                  <div class="upload-img">
+                    <span class="close iconfont icon-close" ng-click="removeImg(local,400)"></span>
+                    <img my src="{{local}}">
+                  </div>
+                </li>
+            </ul> -->
+        </div>
+        <!--银行卡-->
+        <div>
+            <p>6、银行卡</p>
+            <!-- <ul class="upload-box">
+                <li ng-repeat="local in yaofangImages" ng-cloak>
+                  <div class="upload-img">
+                    <span class="close iconfont icon-close" ng-click="removeImg(local,400)"></span>
+                    <img my src="{{local}}">
+                  </div>
+                </li>
+            </ul> -->
+        </div>
+        <span id="upload-submit" class="btn" ng-click="uploadImage()">提交申请</span>
+    </div>
+    <footer class="firstpage">
+      <!--  <span id="upload-add"><i class="iconfont icon-plusbold" id="fileupload-container" ng-click="chooseImage()"></i></span> -->
+        <!-- <a class="active" ><i class="iconfont icon-uploado"></i>上传单据</a>
+        <a ng-click="wxLocation('user')"><i class="iconfont icon-usero"></i>我的</a> -->
+    </footer>
+    <my-dialog></my-dialog>
+    <!-- <my-loading></my-loading> -->
+</body>
+<!--resinclude "weixin.taibaoupload-js"-->
+</html>

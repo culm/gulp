@@ -1,0 +1,29 @@
+{
+	"rtnCode":"2000",
+	"rtnMsg": "success",
+	"paymentStatusList":[{
+		"personId": 23232,
+		"mainPaymentId": "1001",
+		"id": 10001,
+		"status": 0,
+		"userName": "严冰",
+		"insuranceNo":"201511251520000",
+		"insurenceCompanyName": "太保安联",
+		"picPath":"css/weixin/images/boc.png",
+		"paymentDate": 1448957732894,
+		"paymentNum": 6,
+		"total": "263.85"
+	},{
+		"personId": 23232,
+		"mainPaymentId": "1001",		
+		"id": 10001,
+		"status": 0,
+		"userName": "严冰",
+		"insuranceNo":"201511251520000",
+		"insurenceCompanyName": "太保安联",
+		"picPath":"css/weixin/images/boc.png",
+		"paymentDate": 1448957732894,
+		"paymentNum": 6,
+		"total": "263.85"
+	}]
+}

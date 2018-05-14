@@ -1,0 +1,58 @@
+/*.iloadingcontainer{
+	z-index: 9001; 
+	position: absolute;
+	background: #ffffff;
+	border-radius: 5px;
+	display:none
+}
+.iloadingcontainer .iloadingcontainercontent{
+	width:300px;margin:30px auto;text-align: center;
+}
+.iloadingcontainer-loading{
+	z-index: 9001; 
+	position: absolute;
+	background: #ffffff;
+	border-radius: 5px;
+	display:none
+}
+.iloadingcontainer-loading .iloadingcontainercontent{
+	background: url(images/loading.gif) no-repeat center center;
+	width:300px;margin:30px auto;text-align: center;
+}
+*/
+
+.iloading-container{
+	z-index: 9001; 
+	position: absolute;
+	background: #ffffff;
+	border-radius: 5px;
+	display:none
+}
+.iloading-container .iloading-wrap{
+	/*width:300px;*/
+	padding:15px;
+	text-align: left;
+	float:left;
+}
+.iloading-container .iloading-wrap .iloading-icon{
+	display: block;
+	width:40px;
+	height:40px;
+	float:left;
+	margin-left:10px;
+}
+.iloading-container .iloading-wrap .iloading-content{
+	display: block;
+	height:36px;
+	line-height:36px;
+	text-align: left;
+	margin-right:30px;
+	padding-left:20px;
+	float:left;
+	/*width:200px;*/
+	font-family: "微软雅黑";
+	font-size: 16px;
+}
+.iloading-icon-loading{
+	background: url(images/loading.gif) no-repeat center center;
+}

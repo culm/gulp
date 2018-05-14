@@ -1,0 +1,85 @@
+.fileupload-container .btn-pic-add{
+	display: inline-block;
+	border: 2px dashed #b7b7b7;
+    position: relative;
+    width: 114px;
+    height: 114px;}
+.fileupload-container .btn-pic-add label:before {
+    display: block;
+    content: "";
+    position: relative;
+    top: 52px;
+    left: 40px;
+    border: 1px solid #b7b7b7;
+    width: 30px;
+    z-index: 2;
+}
+.fileupload-container .btn-pic-add label:after {
+    display: block;
+    content: "";
+    position: relative;
+    left: 40px;
+    top: 50px;
+    border: 1px solid #b7b7b7;
+    width: 30px;
+    transform: rotate(90deg);
+    z-index: 2;
+}
+.fileupload-container .btn-pic-item{
+    display: inline-block;
+    width: 114px;
+    height: 114px;
+    margin-right: 20px;
+    position: relative;
+    /*border: 2px dashed #b7b7b7;*/
+    position: relative;
+}
+.fileupload-container .btn-pic-item img{
+    width: 100px;
+    height: 100px;
+    position:  absolute;
+    margin-top: 14px;
+    margin-left: 7px;
+}
+.fileupload-container .btn-pic-item .progress{
+    height: 10px;
+    width: 114px;
+    left: 0;
+    bottom: 0;
+    margin-bottom: auto;
+    background: transparent;
+    border-radius: 0;
+    cursor: default;
+}
+.fileupload-container .uploadfile-label{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    display: block;
+    background-size: 100% 100% ;
+}
+.fileupload-container .btn-pic-item>div{
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    cursor: pointer;
+    font-size: 14px;
+}
+.fileupload-container>div:hover, .fileupload-container>div:active{
+    background-color: #f2f2f2;
+}
+.fileupload-container .disabled{cursor: not-allowed;}
+
+/*可编辑表格中的文件上传控件*/
+.table-fileupload label.uploadfile-label{text-align: left;padding-left: 10px;}
+.table-fileupload.fileupload-container .btn-pic-add label:before,
+.table-fileupload.fileupload-container .btn-pic-add label:after{
+    display: none;
+}
+.table-fileupload.fileupload-container .btn-pic-add{
+    border:none;
+    width: 96%;
+    height: 30px;
+    padding: 3px 2%;
+}

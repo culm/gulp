@@ -1,0 +1,17 @@
+{
+	"rtnCode":"2000",
+	"rtnMsg": "rtnCode不是2000时的提示",
+	"list":[{
+		"id": 10001,
+		"name":"中国银行",
+		"cardNo": "6225885811225543",
+		"bankPic":"css/weixin/images/boc.png",
+		"owner": "张三"
+	},{
+		"id": 10002,
+		"name":"北京银行",
+		"cardNo": "6222886811113321",
+		"bankPic":"css/weixin/images/userlist1.png",
+		"owner": "李四"
+	}]
+}

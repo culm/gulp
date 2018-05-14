@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!--resinclude "taibao.upload-css"-->
+</head>
+
+<body class="body">
+    <!-- 第一部分 -->
+    <div class="section-one">
+        <div class="status-bar iosMarg20">
+            <div class="go-back"><a class="JSgo_back" href="javascript:;"><i class="iconfont">&#xe634;</i></a></div>
+            <div class="status-name">我要报销</div>
+        </div>
+        <div class="fixed-top">
+            <div class="headers">报销信息 <span class="review" id="preview_photo">照片预览</span></div>
+            <ul class="onlist">
+                <div class="message_sub">门诊病历和发票是必传，一次最多只能上传20张图片</div>
+                <li>
+                    <div class="cameraBox">
+                        <span class="message_tip" id="message_tip0">0</span>
+                        <span class="icon_camera icon_bingli" data-index="0"></span>
+                    </div>
+                    
+                </li>
+                <li class="noright">
+                    <div class="cameraBox">
+                        <span class="message_tip" id="message_tip1">0</span>
+                        <span class="icon_camera icon_xiaojie" data-index="1"></span>
+                    </div>
+                </li>
+                <li>
+                    <div class="cameraBox">
+                        <span class="message_tip" id="message_tip2">0</span>
+                        <span class="icon_camera icon_chufang" data-index="2"></span>
+                    </div>
+                    
+                </li>
+                <li class="noright">
+                    <div class="cameraBox">
+                        <span class="message_tip" id="message_tip3">0</span>
+                        <span class="icon_camera icon_fapiao" data-index="3"></span>
+                    </div>
+                </li>
+                <li>
+                    <div class="cameraBox">
+                        <span class="message_tip" id="message_tip4">0</span>
+                        <span class="icon_camera icon_mingxi" data-index="4"></span>
+                    </div>
+                </li>
+                <li class="noright">
+                    <div class="cameraBox">
+                        <span class="message_tip" id="message_tip5">0</span>
+                        <span class="icon_camera icon_shenfenzheng" data-index="5"></span>
+                    </div>
+                </li>
+                <li class="nobot">
+                    <div class="cameraBox">
+                        <span class="message_tip" id="message_tip6">0</span>
+                        <span class="icon_camera icon_yinhangka" data-index="6"></span>
+                    </div>
+                </li>
+            </ul>
+            <!-- <div style="clear: both;"></div>
+            <div class="container">
+                <a href="javascript:;" id="preview_photo" class="btn btn-primary btn-block btn-lg" type="submit">照片预览</a>
+            </div> -->
+        </div>
+    </div>
+    <!-- 第二部分 -->
+    <div class="section-two" style="display:none;">
+        <div class="status-bar iosMarg20">
+            <div class="go-back toSes1"><a href="javascript:;"><i class="iconfont">&#xe634;</i></a></div>
+            <div class="status-name">照片预览</div>
+        </div>
+        <div class="fixed-top">
+            <section class="heading">门诊病历(<span class="num_photo" id="num_photo_0">0</span>)</section>
+            <section class="bg-white">
+                <div class="thumb-list clearfix thumbList" id="thumbList_0" _index="0">
+                </div>
+            </section>
+            <section class="heading">出院小结(<span class="num_photo" id="num_photo_1">0</span>)</section>
+            <section class="bg-white">
+                <div class="thumb-list clearfix thumbList" id="thumbList_1" _index="1">
+                </div>
+            </section>
+            <section class="heading">处方(<span class="num_photo" id="num_photo_2">0</span>)</section>
+            <section class="bg-white">
+                <div class="thumb-list clearfix thumbList" id="thumbList_2" _index="2">
+                </div>
+            </section>
+            <section class="heading">发票(<span class="num_photo" id="num_photo_3">0</span>)</section>
+            <section class="bg-white">
+                <div class="thumb-list clearfix thumbList" id="thumbList_3" _index="3">
+                </div>
+            </section>
+            <section class="heading">医院费用清单(<span class="num_photo" id="num_photo_4">0</span>)</section>
+            <section class="bg-white">
+                <div class="thumb-list clearfix thumbList" id="thumbList_4" _index="4">
+                </div>
+            </section>
+            <section class="heading">身份证(正面反面<span class="num_photo" id="num_photo_5">0</span>)</section>
+            <section class="bg-white">
+                <div class="thumb-list clearfix thumbList" id="thumbList_5" _index="5">
+                </div>
+            </section>
+            <section class="heading">银行卡(<span class="num_photo" id="num_photo_6">0</span>)</section>
+            <section class="bg-white" style="margin-bottom: 50px;">
+                <div class="thumb-list clearfix thumbList" id="thumbList_6" _index="6">
+                </div>
+            </section>
+            <div class="bottom-fixed">
+                <a href="javascript:;" id="submit_sub" class="btn btn-primary btn-block btn-lg" type="submit">提交申请</a>
+            </div>
+        </div>
+    </div>
+    <!-- 图片上传进度条 -->
+    <div class="upload_img">
+        <div class="upload_img_width"></div>
+        <span class="J_num_img num_img"></span>
+    </div>
+</body>
+<!--resinclude "taibao.upload-js"-->
+
+</html>

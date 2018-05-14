@@ -1,0 +1,46 @@
+.bank_top {height:100%;}
+.bank_top div,.bank_top span{display: inline-block; height:44px; line-height:44px; font-size:18px; width:33.3%; float: left;}
+.bank_top div a{color: #fff; font-size:18px;}
+.bank_top .backOff { text-align: left;}
+.bank_top span { text-align: center; color: #fff;}
+.bank_top .add { text-align: right;}
+.icon_back:before{content:"\e60d";}
+.icon_add:before{content:"\e617";}
+
+/*银行卡列表*/
+.card_list {padding:15px;}
+.card_list .card_title {width:100%; height:50px; font-size:15px; padding:0 15px; color:#fff; background: #03bbd3; border-top-left-radius:8px; border-top-right-radius:8px; }
+.card_list .card_body {width:100%; height:98px; padding:20px 15px; background: #fff; border-bottom-left-radius:8px; border-bottom-right-radius:8px;}
+.card_list .card_body .blak {color:rgba(0,0,0,0.87);}
+.card_title img {width:30px; height:30px; margin-top:10px; vertical-align:middle; float: left; margin-right:10px;}
+.card_title span,.card_title .remove {display: inline-block; font-size:15px; float: left;height:50px; line-height: 50px;}
+.card_title .remove {float: right; color:#fff;}
+.card_body p {padding-left:5px; height:25px; line-height:25px;font-size:15px;}
+.card_body .card_number { color:#03bbd3; font-size:20px;}
+.card_body .message { color: rgba(0,0,0,0.87);}
+
+/*没有银行卡的时候的样式*/
+.card_no {margin-top:106px; background: url('images/card_no.png') no-repeat top center; background-size:90px 90px; text-align:center; padding-top:100px;}
+.card_no p {height: 24px; line-height: 24px; font-size:15px; margin:0; color: rgba(0,0,0,0.48);}
+.weui_mask_transition.weui_fade_toggle{
+	display: block;
+}
+/*新增银行卡页面*/
+.card_add {}
+.card_add .saveOrCancel {}
+.saveOrCancel a{ display: inline-block; font-size:15px; width:50%; height: 43px; line-height: 43px; float:left; text-align: center; color: #fff;}
+.saveOrCancel .save {background: #fe9703;}
+.saveOrCancel .save input {background:none; border:0; font-size:15px; color:#fff;}
+.saveOrCancel .cancel {background: #f47b03;}
+.card_messageDetail {background:#fff; padding-bottom:28px;}
+.card_messageDetail .ca_title {height:50px; line-height:50px; font-size:15px; border-bottom:1px solid #000; border-bottom-color:rgba(0,0,0,0.12); margin:0 14px;}
+.card_messageDetail .list_mess {margin:0 15px; border-bottom:1px solid; border-bottom-color:rgba(0,0,0,0.12);}
+.card_messageDetail .list_mess input {border:0; margin-bottom:0;}
+.card_messageDetail .list_mess p {height:28px; line-height: 28px; color:rgba(0,0,0,0.48); margin-bottom: 0;}
+.card_add .error {color:#f00;}
+
+/*新增时获取的银行列表*/
+.bank_list {height:28px; background: #fff; position: relative; z-index: 999; display:none;}
+.bank_list p {background: #fff; cursor:pointer;}
+
+.card_messageDetail .hascolor {border-bottom:3px solid; border-bottom-color: #f47b03;}

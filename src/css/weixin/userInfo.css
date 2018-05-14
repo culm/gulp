@@ -1,0 +1,48 @@
+body {background: #fff;}
+.userinfo_top {height:100%;}
+.userinfo_top div,.userinfo_top span{display: inline-block; height:44px; line-height:44px; width:33.3%; font-size:18px; float: left;}
+.userinfo_top div a{color: #fff; font-size:18px;}
+.userinfo_top .backOff { text-align: left;}
+.userinfo_top span { text-align: center; color: #fff;}
+.userinfo_top .add { text-align: right;}
+.icon_back:before{content:"\e60d";}
+
+.table-view-cell.cur{
+	padding:8px 13px;
+	color:rgba(0,0,0,0.87);
+	font-size: 15px;
+	border-bottom:1px solid #000;
+	border-bottom-color:rgba(0,0,0,0.12);
+}
+.table-view-cell.cur:after{
+	content: '';
+}
+.table-view-cell span.left{
+	float: left;
+    display: inline-block;
+    width: 30%;
+}
+.table-view-cell span.right{
+	float:right;color:rgba(0,0,0,0.48);    
+	display: inline-block;
+    width: 70%;
+    text-align: right;
+}
+
+.person-menu{
+	width: 75%;
+	height: 50px;
+	line-height: 35px;
+	font-size: 18px;
+}
+.person-black{
+	width: 25%;
+	height: 50px;
+	font-size: 15px;
+	color:#555;
+}
+.person-black .icon{
+	top: 7px;
+}
+
+

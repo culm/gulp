@@ -1,0 +1,104 @@
+<script type="text/html" id="tabDetail_template_verify">
+    <div class="detail verify{{casePaymentDto.id||paymentBasic.id}} detail-show">
+        <div class="detail-box">
+            <div class="detail-body">
+                <div class="detail-title row">
+                    <div class="col-md-3 ">
+                        <div>
+                            <!-- 保险公司：{{tenantId}} &nbsp;&nbsp;&nbsp; 理赔人：{{currtenPerson}} -->
+                            保险公司:{{tenantId||casePaymentDto.tenantId}} &nbsp;&nbsp; 理赔人:{{casePaymentDto.currtenPerson||currtenPerson}}
+                        </div>
+                        <div>
+                            票据号:{{casePaymentDto.paymentNo||paymentBasic.paymentNo}}
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-primary autoCorrect">自动矫正</button>
+                        <button type="button" class="btn btn-primary redress">手动矫正</button>
+                        <button type="button" class="btn btn-primary add-frame">添加切框</button>
+                        <button type="button" class="btn btn-primary affirm-cut">确定切割</button>
+                    </div>
+                    <!-- <div class="col-md-1">
+                        <input class="form-control" id="yearVal" type="text" value="" placeholder="填写模板年份">
+                    </div> -->
+                    <div class="col-md-1">
+                        <div class="btn-group reject">
+                            <button type="button" class="btn btn-primary dropdown-toggle reasonBox" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">选择拒单原因 <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:;" class="reason">选择拒单原因</a></li>
+                                <li><a href="javascript:;" class="reason">图像不清晰</a></li>
+                                <li><a href="javascript:;" class="reason">图像破损、缺角</a></li>
+                                <li><a href="javascript:;" class="reason">图像被遮盖</a></li>
+                                <li><a href="javascript:;" class="reason">图像非单张上传</a></li>
+                                <li><a href="javascript:;" class="reason">非理赔单据</a></li>
+                                <li><a href="javascript:;" class="reason">单据类型不符</a></li>
+                                <li><a href="javascript:;" class="reason">收据号案件内重复</a></li>
+                                <li><a href="javascript:;" class="reason">收据号历史案件内重复</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="javascript:;" class="reason">其他原因</a></li>
+                            </ul>
+                            <input type="hidden" id="reason">
+                            <input type="hidden" id="index">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="input-group otherReason hide">
+                            <label class="input-group-addon">据单原因：</label>
+                            <input class="form-control" id="otherReason" type="text" value="" placeholder="填写拒单原因">
+                        </div>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+                <div class="row detail-edit">
+                    <div class="col-md-9">
+                        <div class="imgRepeatBox">
+                            <button class="glyphicon glyphicon-repeat" title="点击旋转图片"></button>
+                            <a class="point left-top" draggable="true"><span class="point-num">1</span><span class="glyphicon glyphicon-fullscreen"></span></a>
+                            <a class="point right-top" draggable="true"><span class="point-num">2</span><span class="glyphicon glyphicon-fullscreen"></span></a>
+                            <a class="point left-bot" draggable="true"><span class="point-num">3</span><span class="glyphicon glyphicon-fullscreen"></span></a>
+                            <a class="point right-bot" draggable="true"><span class="point-num">4</span><span class="glyphicon glyphicon-fullscreen"></span></a>
+                            <img src="{{imgPath}}{{casePaymentDto.picName||paymentBasic.picName}}&paymentNo={{casePaymentDto.paymentNo||paymentBasic.paymentNo}}" class="img-responsive imgRepeat" />
+                            <!-- <img src="http://101.201.53.76:8480/ukang-admin-web/upload/download?fileName=CHD165000007240201605091003122290015_correct.jpg&paymentNo=20160829111741642101233" class="img-responsive imgRepeat" /> -->
+                            <!-- <button class="glyphicon glyphicon-repeat" title="点击旋转图片"></button> -->
+                            <input type="hidden" id="imageWidth" value="{{casePaymentDto.imageWidth||paymentBasic.imageWidth}}">
+                            <input type="hidden" id="imageHeight" value="{{casePaymentDto.imageHeight||paymentBasic.imageHeight}}">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        0-申请书 1-门诊收据 2-住院收据 3-住院清单 4-门诊处方 5-门诊病历 6-出院小结 7-住院结算单 8- 门诊结算单 9-其他 10-增值税发票 11-北京门特 12-身份证信息 13-银行转账信息 14-门诊清单
+                        <div class="input-group">
+                            <label class="input-group-addon">单据类型：</label>
+                            <input type="text" value="" class="form-control" id="receiptType" placeholder="请输入类型">
+                        </div>
+                        <div class="input-group No hide">
+                            <label class="input-group-addon">发票号：</label>
+                            <input type="text" value="" class="form-control" id="No" placeholder="输入发票号">
+                            <!-- 平安历史,带出发票号 -->
+                            <select id="past" class="form-control hide"></select>
+                        </div>
+                        <!-- 新增平安库的医院 -->
+                        <div class="input-group hospitalPingan hide">
+                            <label class="input-group-addon">平安库医院：</label>
+                            <input type="text" value="" class="form-control" id="hospitalPingan" placeholder="输入医院名字" autocomplete="off">
+                        </div>
+                        <div class="input-group hospitalname hide">
+                            <label class="input-group-addon">选择医院：</label>
+                            <input type="text" value="" class="form-control" id="hospitalName" placeholder="输入医院名字" autocomplete="off">
+                        </div>
+                        <div class="input-group subPicType hide">
+                            210-有医保收据 211-城镇居民有医保收据  220-无医保收据
+                        </div>
+                        <div class="input-group subPicType hide">
+                            <label class="input-group-addon">单据子类型：</label>
+                            <input type="text" value="" class="form-control" id="subPicType" placeholder="请输入子类型">
+                        </div>
+                        <div class="input-group subPicType hide" id="order-refuse">
+                            <label class="input-group-addon">退回原因：</label>
+                            <span class="refuse-message"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

@@ -1,0 +1,22 @@
+.left-menu > .nav > li > a.family-active {
+  	text-decoration: none;
+  	background-color: #555;
+  	color: #f57c00;
+  	border-right: 5px solid #f57c00;
+}
+@media (min-width: 768px){
+	.modal-sm {
+	    width: 360px;
+	}
+}
+.widget-title a{
+	color: #fff;
+}
+.widget-title a:hover,
+.widget-title a:focus{
+	color: #fff;
+}
+.b-table .btn{    
+	width: 40%;
+    padding: 3px 5%;
+}

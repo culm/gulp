@@ -1,0 +1,60 @@
+
+#top{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	/*border-top: 1px solid #f57c00;*/
+	border-bottom: 1px solid #f57c00;
+}
+.con-box{
+	height: 100%;
+	text-align: center;
+	color: #fff;
+}
+.con-box > h2{
+	text-align: center; 
+	margin: 0 auto 30px;
+	font-size: 40px;
+	font-weight: bold;
+}
+.tabLine{
+	width: 100%;
+	height: 100px;
+}
+
+#masthead{
+	background: #ffe0b2 url(../../img/mr_basicbg.png) no-repeat;
+	background-size: 100%;
+	border-bottom:1px solid #f57c00;
+}
+#masthead .help{
+	margin-top: 10px;
+}
+#masthead .help a{
+	color:#727272
+}
+#masthead .fileuplaod{
+	margin-top: 100px;
+}
+
+#aboutme{
+	color:#f57c00;
+}
+
+#myservice{
+	background-color: #f5f5f5;
+	color:#212121;
+}
+
+#footer{
+	background: url('../../img/about-bg.jpg') no-repeat center center;
+	background-size: 100%;
+	color: #f57c00;
+	/*/text-shadow: 0px 0px 3px #333;*/
+}
+#footer p{
+	/*color: #fff;*/
+	margin: auto;
+	font-size: 16px;
+}

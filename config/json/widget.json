@@ -1,0 +1,77 @@
+{
+	"jquery.autoCenter":{
+		"js":["js/widget/jquery.autoCenter.js"],
+		"css":[],
+		"html":[],
+		"dependent":["common"]
+	},
+	"my.widget.imgslider":{
+		"js":["js/widget/script/my.widget.imgslider.js"],
+		"css": ["css/widget/imgslider.css"],
+		"html":[],
+		"dependent":["common"]
+	},
+	"my.widget.loading":{
+		"js":["js/widget/script/my.widget.loading.js"],
+		"css": ["css/widget/my.widget.loading.css"],
+		"html":[],
+		"dependent":["common"]
+	},
+	"my.widget.dialog":{
+		"js":["js/widget/ui/my.widget.dialog.js"],
+		"css": ["css/widget/ui/my.widget.dialog.css"],
+		"html":[],
+		"dependent":["common"]
+	},
+	"my.widget.table":{
+		"js":["js/widget/ui/my.widget.table.js"],
+		"css":["css/widget/ui/my.widget.table.css"],
+		"html":[],
+		"dependent":["common"]
+	},
+	"my.widget.pagination":{
+		"js":["js/widget/ui/my.widget.pagination.js"],
+		"css":["css/widget/ui/my.widget.pagination.css"],
+		"html":[],
+		"dependent":["common"]
+	},
+	"my.widget.dropdownMenu":{
+		"js":["js/widget/ui/my.widget.dropdownMenu.js"],
+		"dependent":["common"]
+	},
+	"my.widget.AutoComplete":{
+		"js":["js/widget/script/my.widget.AutoComplete.js"],
+		"css":["css/widget/my.widget.autoComplete.css"],
+		"html":[],
+		"dependent":["common"]
+	},
+	"my.widget.fileupload":{
+		"js":["js/widget/script/my.widget.fileupload.js"],
+		"css":["css/widget/script/my.widget.fileupload.css"],
+		"html":[],
+		"dependent":["common"]
+	},
+	"bootstrap-datetimepicker":{
+		"js":[
+			"bootstrap/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js",
+			"bootstrap/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"],
+		"css":["bootstrap/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"],
+		"html":[],
+		"dependent":["common"]
+	},
+	"my.widget.tooltip":{
+		"js":["js/widget/script/my.widget.tooltip.js"],
+		"dependent":["common"]
+	},
+	"my.mapping":{
+		"js":[
+			"js/mapping/my.mapping.js",
+			"js/mapping/my.mapping.data.js"
+		],
+		"dependent":["common"]
+	},
+	"template": {
+		"js": ["js/widget/template.js"],
+		"dependent":["common"]
+	}
+}

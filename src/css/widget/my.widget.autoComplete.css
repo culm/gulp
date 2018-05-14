@@ -1,0 +1,177 @@
+div.AutoCompleteContainer
+{
+background: #FFFFFF;
+border: 1px solid #21c0c0;
+height: auto;
+width: 250px;
+font-family:"宋体"; 
+display:none;
+position: absolute;
+z-index:2000;
+overflow:hidden;
+filter: progid:DXImageTransform.Microsoft.Shadow(color='#333333', Direction=135, Strength=5);/*for ie6,7,8*/ 
+-moz-box-shadow:1px 1px 3px #333333;/*firefox*/ 
+-webkit-box-shadow:1px 1px 3px #333333;/*webkit*/ 
+box-shadow:1px 1px 3px #333333;/*opera或ie9*/ 
+ }
+ div.AutoCompleteContainer a{
+ text-decoration:none;
+ }
+ div.AutoCompleteContainer .AutoCompleteTitle{
+ background-color: #1694A2;
+ border: medium none;
+ line-height: 20px;
+ font-size:12px; 
+ font-family: Simyou;
+ width:100%;
+ display: block;
+ height:auto;
+ }
+div.AutoCompleteContainer .AutoCompleteTitle .title{ 
+color: #FFFFFF;
+display: block;
+line-height: 20px;
+padding: 2px 9px 2px 9px;
+word-wrap: break-word;
+font-weight:normal;  
+height:auto;
+}
+
+div.AutoCompleteContainer .AutoCompleteContent{ 
+/*width:250px; */
+width:100%;
+height:auto;
+float:left; padding-bottom:5px;
+}
+div.AutoCompleteContainer .AutoCompleteContent ul 
+{
+display:block; 
+/*width:247px;*/
+float:left; 
+padding-left:0px; 
+margin-top:8px; margin-bottom:0px;
+list-style: none ;
+}
+div.AutoCompleteContainer .AutoCompleteContent ul.search{
+	/*width:228px;*/
+	width:100%;
+	margin-top:auto;
+}
+*html .AutoCompleteContent ul
+{ 
+margin-left:0px;
+}
+*+html .AutoCompleteContent ul
+{ 
+margin-left:0px;
+}
+div.AutoCompleteContainer .AutoCompleteContent ul li.selected{
+border:#cccccc solid 1px; 
+border-bottom: 0px;
+font-weight:bold;
+text-align: center;
+width: auto;
+min-width:38px;
+}
+	
+div.AutoCompleteContainer .AutoCompleteContent ul li
+{ 
+border-bottom: 1px solid #CCCCCC;
+color: #225378;
+cursor: pointer;
+float: left;
+font-size: 12px;
+height: auto;
+line-height: 25px;
+text-align: center;
+width: 40px;
+}
+div.AutoCompleteContainer .AutoCompleteContent ul.search li{
+width: 100%;
+border-bottom: 1px dotted #dddddd;
+}
+div.AutoCompleteContainer .AutoCompleteContent ul.search li.fenye{
+	/*height:27px;*/
+	border-bottom:none;
+	/*margin-top:4px;*/
+}
+div.AutoCompleteContainer .AutoCompleteContent .content
+{
+width:250px; 
+margin:0px; 
+padding:0px; 
+list-style-type:none;
+}
+
+div.AutoCompleteContainer .AutoCompleteContent .content .item
+{ 
+display:block;
+cursor: pointer;
+float: left; 
+font-size: 12px;
+height: 25px;
+line-height: 25px;
+text-align: center;
+width: 60px; 
+border-bottom:0px; 
+margin-top:5px;
+}
+div.AutoCompleteContainer .AutoCompleteContent .content .item a
+{ 
+display:block; 
+width:60px; 
+height:25px;
+color:#000000; 
+text-decoration:none;
+}
+div.AutoCompleteContainer .AutoCompleteContent ul.search li a.onhover,
+div.AutoCompleteContainer .AutoCompleteContent .content .item a.onhover,
+div.AutoCompleteContainer .AutoCompleteContent .content .item a:hover,
+div.AutoCompleteContainer .AutoCompleteContent ul.search li a:hover{
+background-color:#c1e1fd;
+/*color: #FF0000;*/
+}
+/*下个弹出窗口样式*/
+div.AutoCompleteContainer .AutoCompleteContent ul.search li a b{
+line-height: 16px;
+}
+div.AutoCompleteContainer .AutoCompleteContent ul.search li a p{
+	line-height: 15px;
+	margin:0 0 5px;
+	padding:0;
+	color:#666;
+}
+div.AutoCompleteContainer .AutoCompleteContent ul.search li a{
+/*width:225px; */
+width:100%;
+float:left;
+color: #225378;
+cursor: pointer;
+display: block;
+height: auto;
+line-height: 25px;
+text-align: left;
+text-decoration: none; 
+font-size:12px; 
+margin-top:1px;
+padding-left: 9px;
+}
+div.AutoCompleteContainer .AutoCompleteContent ul.search li span.selected{
+background-color:#9dd4f2;
+font-weight:bold;
+}
+
+div.AutoCompleteContainer .AutoCompleteContent ul.search li a.selected, div.AutoCompleteContainer .AutoCompleteContent .content li.item a.selected
+{
+background-color: #c1e1fd;
+/*color: #FF0000;*/
+}
+.defaultColor{
+	color:#999999;
+}
+.address_list_span{ display:block; float:left; margin-left:3px; font-size:12px;}
+.address_list_span_1{ display:block; float:right; margin-right:5px; font-family:Arial, Helvetica, sans-serif;font-size:12px;
+}
+div.AutoCompleteContainer .search{background-color: #ffffff; border-top:none;height:auto;}
+div.AutoCompleteContainer .AutoCompleteContent .search .navipage{ display:block; width:14px; height:14px; line-height:14px;  border: 1px solid #21c0c0; text-align:center; margin-left:2px; margin-right:1px; font-size:12px; float:left; margin-top:5px;}
+div.AutoCompleteContainer .AutoCompleteContent .navigate{ display:block; float:left; width:230px; height:28px; margin-top:7 px;  line-height:28px; border-bottom: 1px dotted #2c7ecf; text-align:center;border: 0px none;font-size:12px;}

@@ -1,0 +1,71 @@
+        /*.shade {display:none; z-index:10; width:100%; height:100%; background: rgba(0,0,0,0.5); position: fixed; left: 0; top:0; bottom:0; right:0;}
+.largeImg {width:80%; height:auto; margin-left:10%; vertical-align: middle; position: relative; z-index: 15;}*/
+
+.preview-container {
+    width: 100%;
+    height: 100%;
+    /*padding: 10px 80px 10px 10px;*/
+    overflow: hidden;
+    top: 54px;
+}
+
+@media all and (orientation: landscape) {
+    .preview-container {}
+    .tool-container {
+        top: 14px;
+        position: absolute;
+        left: auto;
+        right: 10px;
+        height: 100%;
+        width: 40px !important;
+    }
+    /*
+  图片上传进度条
+   */
+    .upload_img {
+        display: none;
+        width: 60%;
+        height: 20px;
+        background: #ddd;
+        border-radius: 5px;
+        position: fixed;
+        left: 20%;
+        top: 46%;
+    }
+    .upload_img .upload_img_width {
+        width: 0;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: #0e86c1;
+        border-radius: 5px;
+    }
+    .num_img {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .sec_must {
+        display: none;
+    }
+    .list-style .app-list-control>span i {
+        display: inline-block;
+        min-width: 16px;
+        text-align: right;
+    }
+    .body .tool-bar .item .icon-box {
+        display: inline-block;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        line-height: 44px;
+        text-align: center;
+        color: #fff;
+        opacity: 0.8;
+        font-size: 12px !important;
+        background: rgba(0, 0, 0, .5);
+        border: 1px solid rgba(255, 255, 255, .6);
+    }
+
+    

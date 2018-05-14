@@ -1,0 +1,29 @@
+{
+	"my.weixin.widget.loading": {
+		"js": [
+			"js/weixin/widget/my.weixin.loading.js"
+		],
+		"jshtml":[
+			"weixin/widget/my.weixin.loading.html"
+		]
+	},
+	"my.weixin.widget.dialog":{
+		"js":[
+			"js/weixin/widget/my.weixin.dialog.js"
+		],
+		"jshtml":[
+			"weixin/widget/my.weixin.dialog.html"
+		],
+		"css":[
+			"css/weixin/widget/my.weixin.dialog.css"
+		]
+	},
+	"my.weixin.widget.detail":{
+		"js":[
+			"js/weixin/widget/my.weixin.detail.js"
+		],
+		"jshtml":[
+			"weixin/widget/my.weixin.detail.html"
+		]
+	}
+}

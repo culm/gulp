@@ -1,0 +1,52 @@
+{
+    "rtnCode": "2000",
+    "rtnMsg": "success",
+    "userBasicInfo": {
+        "company": "和金在线",
+        "insuranceNo": "4.3",
+        "job": "4",
+        "name": "沈慧茹",
+        "gender": "1",
+        "bornDate": "2015-07-30",
+        "cardNo": "121221",
+        "cardType": "4",
+        "validDate": "2015-11-12",
+        "jobNo": "1113",
+        "mobile": "15000000000",
+        "telephone": "06568",
+        "age": "27",
+        "memberId": null,
+        "insuranceCompany": "平安保险",
+        "insuranceCompanyId": 1,
+        "insuranceCode": "0001"
+    },
+    "invocieInfo": [{
+        "visitDate": "2015-01-08 00:00:00.0",
+        "invoiceNum": 1,
+        "invoiceAmount": 71.32,
+        "diseaseCause": "湿疹"
+    }],
+    "familyPerson": {
+        "company": null,
+        "insuranceNo": null,
+        "job": null,
+        "name": null,
+        "gender": null,
+        "bornDate": null,
+        "cardNo": null,
+        "cardType": null,
+        "validDate": null,
+        "jobNo": null,
+        "mobile": null,
+        "telephone": null,
+        "age": null,
+        "familyId": null,
+        "insuranceCompany": null,
+        "insuranceCompanyId": null,
+        "insuranceCode": null
+    },
+    "invoiceNumTotal": 1,
+    "invoiceAmountTotal": 71.32,
+    "status": 1,
+    "familyStatus": "1"
+}

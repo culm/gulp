@@ -1,0 +1,122 @@
+#loginmodel .modal-header {
+    border-bottom: none;
+}
+
+.control-label {
+    text-align: right;
+}
+
+.modal-footer {
+    padding-top: 20px;
+}
+
+.input-group-addon {
+    padding: 0 3px;
+}
+
+
+/*密码强度*/
+
+#pwdstrength {
+    color: #999;
+    line-height: 22px;
+    padding-right: 10px;
+    position: absolute;
+    top: 98px;
+    left: 120px;
+    font-size: 14px
+}
+
+#pwdstrength .pwdTit {
+    float: left
+}
+
+#pwdstrength b {
+    float: left;
+    width: 104px;
+    height: 13px;
+    overflow: hidden;
+    margin-top: 5px;
+    *margin-top: 3px;
+}
+
+.strengthA b {
+    background: url(../../img/ukang/pwdstrength.gif) no-repeat 0 0;
+}
+
+.strengthB b {
+    background: url(../../img/ukang/pwdstrength.gif) no-repeat 0 -13px;
+}
+
+.strengthC b {
+    background: url(../../img/ukang/pwdstrength.gif) no-repeat 0 -26px;
+}
+
+#loginmodel.reset-password .login,
+#loginmodel.reset-password .register,
+#loginmodel.reset-password #logintab,
+#loginmodel.reset-password #registertab,
+#loginmodel .restpassword,
+#loginmodel #resetpasswordtab {
+    display: none;
+}
+
+#loginmodel.reset-password .restpassword,
+#loginmodel.reset-password #resetpasswordtab {
+    display: block;
+}
+
+.login-item-first,
+.forgetpassword {
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+#logintab {
+    margin-top: -25px;
+}
+
+#loginmodel label.disabled {
+    font-weight: normal;
+    font-size: 14px;
+    color: #aaaaaa;
+}
+
+.login-item-last {
+    margin-bottom: 0;
+    margin-top: -15px;
+}
+
+.forgetpassword button {
+    padding-right: 0;
+}
+
+.login-item-first button {
+    background: url('../../img/ukang/mobile.png') no-repeat left center;
+    padding-left: 15px;
+    background-position-y: 9px;
+}
+
+.form-forgot {
+    display: none;
+}
+
+.form-forgot.cur {
+    display: block;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+#form-forgot3 .btns-success {
+    background-color: #2ecc71;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    border-radius: 150px;
+    font-size: 50px;
+    color: #fff;
+    display: block;
+    margin: 30px auto;
+}
+.hide_admin_register {display:none;}
+.nav .hide_admin_register {display:none;}

@@ -1,0 +1,145 @@
+    <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>和金在线-我的理赔单</title>
+    <!--resinclude "admin.order-css"-->
+</head>
+
+<body>
+    <!--include "./common/header.html"-->
+    <div id="main">
+        <!--include "./admin/partial/menu.html"-->
+        <div class="right-body">
+            <div class="breadcrumbs" id="breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="index.html"><i class="glyphicon glyphicon-home"></i> 主页</a>
+                    </li>
+                    <li class="active">我的理赔单</li>
+                </ul>
+            </div>
+            <div class="container-fluid" style="margin-top:30px">
+                <div class="col-md-12">
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <label class="input-group-addon">保险公司：</label>
+                            <select id="SN" class="form-control">
+                                <option value="">请选择</option>
+                                <option value="10001">太保</option>
+                                <option value="10002">金饭碗</option>
+                                <option value="10003">新安怡</option>
+                                <option value="10004">太保移动</option>
+                                <option value="10005">fesco</option>
+                                <option value="10009">fesco外包</option>
+                                <option value="10006">万家</option>
+                                <option value="10007">平安生产</option>
+                                <option value="10008">平安历史</option>
+                                <option value="99999">理赔宝</option>
+                            </select>
+                            <input type="hidden" value="" id="tenantId" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <label class="input-group-addon">客户姓名：</label>
+                            <input type="text" value="" id="name" class="form-control" placeholder="客户姓名">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <label class="input-group-addon">理赔批次号：</label>
+                            <input type="text" value="" id="paymentNo" class="form-control" placeholder="理赔批次号">
+                        </div>
+                    </div>
+                  <!--   <div class="col-md-3">
+                      <div class="input-group">
+                          <label class="input-group-addon">赔案号</label>
+                          <input type="text" value="" id="caseNo" class="form-control" placeholder="赔案号">
+                      </div>
+                  </div>
+                  <br>
+                  <br> -->
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <label class="input-group-addon">状态：</label>
+                            <select id="status" class="form-control">
+                                <option value="">全部</option>
+                                <option value="-10000">无效案件</option>
+                                <option value="10100">上传中</option>
+                                <option value="10200">待确认</option>
+                                <option value="10300">确认中</option>
+                                <option value="15100">待校正</option>
+                                <option value="15200">矫正中</option>
+                                <option value="20100">待处理</option>
+                                <option value="20200">处理中</option>
+                                <option value="20800">处理完成</option>
+                                <option value="25100">待OCR</option>
+                                <option value="25200">OCR中</option>
+                                <option value="30100">待录入</option>
+                                <option value="30200">录入中</option>
+                                <option value="35100">待审核</option>
+                                <option value="35200">审核中</option>
+                                <option value="80100">待发送</option>
+                                <option value="80200">发送中</option>
+                                <option value="88000">发送完成</option>
+                                <option value="89000">发送失败</option>
+                                <option value="90100">未知</option>
+                                <option value="90200">综合险处理</option>
+                                <option value="90300">理赔处理中</option>
+                                <option value="90400">已结案</option>
+                                <option value="90500">拒赔</option>
+                                <option value="90600">作废</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <label class="input-group-addon">开始日期：</label>
+                            <input type="text" id="startTime" class="form-control" placeholder="开始日期" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <label class="input-group-addon">结束日期：</label>
+                            <input type="text" id="endTime" class="form-control" placeholder="结束日期" />
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <input type="button" id="search" class="btn btn-primary" value="查询" />
+                    </div>
+                    <div class="col-md-1">
+                        <input type="button" id="exportExcel" class="btn btn-primary" value="导出报表" />
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div id="order-container"></div>
+                <div id="pagination-container"></div>
+                <h3 class="text-center hide" id="pagination-container-tips">您目前没有理赔单</h3>
+            </div>
+        </div>
+    </div>
+    <!--resinclude "admin.order-jshtml"-->
+    <!--resinclude "admin.order-js"-->
+    <div id="familyModel" class="modal in" data-backdrop="false" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document" style="margin-top: 201.667px;">
+            <div class="modal-content">
+                <div class="modal-header" style="border-bottom: 1px solid #e5e5e5;">
+                    查看图片检查姓名是否正确
+                </div>
+                <div class="modal-body" id="familyName">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-danger" id="submitFamilyName">确认提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

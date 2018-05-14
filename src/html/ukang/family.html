@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>和金在线-理赔单详情</title>
+		<!--resinclude "ukang.family-css"-->
+	</head>
+	<body>
+		<!--include "./common/header.html"-->
+		<div id="main">
+			<!--include "./ukang/partial/menu.html"-->
+			<div class="right-body">
+				<div class="breadcrumbs" id="breadcrumbs">
+					<ul class="breadcrumb">
+						<li>
+							<a href="index.html"><i class="glyphicon glyphicon-home"></i> 主页</a>
+						</li>
+						<li class="active">家属信息</li>
+					</ul>
+				</div>
+				<div class="col-md-12">
+			    	<div class="border-color-blue" style="margin-top:15px;">
+				    	<div class="row header-color-blue" style="margin:0;padding: 2px 10px;">
+					    	<div class="widget-title">
+					    		<div style="width:50%;float:left">
+					    			<h4><i class="glyphicon glyphicon-list"></i> 家属资料:</h4>
+					    		</div>
+					    		<div style="text-align:right;width:50%;float:left">
+					    			<a id="personinfo-plus" href="javascript:;" class="btn btn-link"><span class="glyphicon glyphicon-plus"></span> 添加</a>
+					    		</div>
+					    	</div>
+				    	</div>
+				    	
+						<div class="widget-body" id="familyTable">
+
+						</div>
+					</div>
+					<div id="pagination-container"></div>
+				</div>
+
+			</div>
+		</div>
+		<!--resinclude "ukang.family-jshtml"-->
+		<!--resinclude "ukang.family-js"-->
+	</body>
+</html>

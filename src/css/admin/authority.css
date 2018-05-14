@@ -1,0 +1,18 @@
+.left-menu > .nav > li > a.authority-active {
+    text-decoration: none;
+    background-color: #555;
+    color: #f57c00;
+    border-right: 5px solid #f57c00;
+}
+.search{padding-top: 20px;padding-bottom: 20px;border-bottom: 1px solid #eeeeee;}
+#search{min-width: 100px;}
+#authority-container{padding-top: 20px;}
+.order-pagination .pagination>li>a{padding-left: 20px; padding-right: 20px}
+#authority-container tbody tr{cursor: pointer;}
+.b-table tbody td>div{padding-left: 20px;}
+.b-table tbody td>div{padding-left: 20px;}
+.b-table.table>thead>tr>th{
+	font-size: 16px;
+	font-weight: bold;
+	border-bottom-width: 2px;
+}

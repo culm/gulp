@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>FESCO-上传副本</title>
+    <!--resinclude "fesco.index-css"-->
+    <style>
+    .sel input::-webkit-input-placeholder {
+        color: #df2525;
+    }
+    
+    .sel input {
+        border: 1px solid #ebebeb;
+        background: #e1e1e1;
+    }
+    </style>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+
+<body bgcolor="#f4f4f4">
+    <section class="modal active imgList">
+        <script type="text/html" id="imgList">
+            <header>
+                <a href="{{url}}"><img src="@@imagePath@@/back.jpg"></a>
+                <!-- <div class="hejinonlogo"></div> -->上传副本</header>
+            <div style="color:#323232;font-size:14px;padding：20px 0;padding-right:5px;position:relative;">
+                <span>请您仔细核对并上传 {{hospitalName}} <span style="color:red;">全部</span>票据副本（不仅限于红色星号）<span style="color:red;">票据单张拍照上传</span></span>
+            </div>
+
+            <div class="overflow_h top10 bordupdown ">
+                <ul class="menu fl_left">
+                    <input type="hidden" name="imgSortName" id="imgSortName" value="收据副本"> 
+                    {{each list[isType] as obj index}}
+                    <li id="li{{obj.type}}" name="imgSort" class="imgSort {{if index==0}}active{{/if}} {{each lastinteruptsample as imglist a}}{{if imglist.imgType == obj.type}}{{if imglist.imgInfoList.length>0}}hui{{/if}}{{/if}}{{/each}}" data-index="{{index}}">
+                        {{if obj.required}}
+                        <font class="fontRed">*</font>{{/if}}{{obj.name}}<span class="tag">{{index+1}}</span></li>
+                    {{/each}}
+                </ul>
+                {{each list[isType] as obj index}}
+                <section class="tjdd_ct wi74 fl_right uppanl {{if index==0}}active{{/if}}" id="receipt{{obj.type}}">
+                    <div class="mode_tjdd padbt20">
+                        <input type="hidden" class="imgSortId" value="{{obj.type}}">
+                        <input type="button" class="bt_blue margin30up wi100 btnUp" value="上传副本" id="{{obj.type}}" data-index="{{index}}">
+                        <input type="button" class="bt_blue margin30up wi100 fl_right btnShowImg" value="查看样例" id="{{obj.type}}">
+                        <div>
+                            {{each lastinteruptsample as imglist a}} {{if imglist.imgType == obj.type}} {{each imglist.imgInfoList as v i}}
+                            <div class="overflow_h wi100">
+                                {{if v.valid=='false'}}
+                                <a href="javascript:;" class="delet fl_right" id="{{obj.type}}_{{i}}"></a>
+                                {{/if}}
+                            </div>
+                            <div class="sel">
+                                <img src="{{v.src}}" style="width:100%;" {{if v.serverId}}id="{{v.serverId}}" {{/if}} data-id="{{obj.type}}_{{i}}" imgName="{{v.imgName}}">
+                            </div>
+                            {{/each}} {{/if}} {{/each}}
+                        </div>
+                    </div>
+                </section>
+                {{/each}}
+                <!--按钮开始-->
+                <div class=" overflow_h wi80 center padtop15">
+                    <input type="button" class="bt_orange_big1 fl_left btnBlock1" value="上一步">
+                    {{if isResume=='True'}}
+                    <input type="button" class="bt_orange_big fl_right btnDone" value="完成申请">
+                    {{else}}
+                    <input type="button" class="bt_orange_big fl_left btnDone" value="完成申请">
+                    <input type="button" class="bt_orange_big3 fl_right btnNext" value="继续申请">
+                    {{/if}}
+                </div>
+                <!--按钮结束-->
+                <div class="hejinonline"></div>
+            </div>
+        </script>
+    </section>
+    <ul class="foot">
+        <li class="point">
+            <div class="message" onclick="javascript:if(confirm('确认注销登录吗？')){location.href = '@@fescoUri@@/login.html?exit=x';}"><img src="@@imagePath@@/foot5.png"></div>
+            <div class="foot_txt">用户名</div>
+        </li>
+        <li>
+            <a href="@@fescoUri@@/heloIndex/html/IndexHealth.html">
+                <div class="message"><img src="@@imagePath@@/foot1.png"></div>
+                <div class="foot_txt">HELO健康</div>
+            </a>
+        </li>
+        <li>
+            <a href="@@fescoUri@@/heloIndex/html/Indexhr.html">
+                <div class="message"><img src="@@imagePath@@/foot6.png"></div>
+                <div class="foot_txt">HELO服务</div>
+            </a>
+        </li>
+        <li>
+            <a href="@@fescoUri@@/heloIndex/html/IndexWelfare.html">
+                <div class="message"><img src="@@imagePath@@/foot2.png"></div>
+                <div class="foot_txt">HELO福利</div>
+            </a>
+        </li>
+        <li>
+            <a href="tel:010-67772233">
+                <div class="message"><img src="@@imagePath@@/foot3.png"></div>
+                <div class="foot_txt">客服电话</div>    
+            </a>
+        </li>
+    </ul>
+    <!--resinclude "fesco.index-js"-->
+</body>
+
+</html>

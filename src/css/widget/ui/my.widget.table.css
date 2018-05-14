@@ -1,0 +1,180 @@
+.table-container {
+    position: relative;
+}
+
+.table-container table {
+    table-layout: fixed;
+    margin-bottom: 0;
+}
+
+.b-table .no-table-field-editor {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    white-space: nowrap;
+}
+
+.b-table .glyphicon-minus,
+.b-table .glyphicon-plus {
+    margin-right: 6px;
+    cursor: pointer;
+}
+
+.table-panel .form-control {
+    padding: 4px;
+}
+
+.table-panel {
+    position: absolute;
+    left: 0;
+    display: none;
+    margin-bottom: 0;
+    background-color: #ffffff;
+}
+
+.b-table tbody tr {
+    height: 35px;
+}
+
+.table-panel .form-control {
+    border-radius: 0;
+    height: 36px;
+}
+
+.table-panel.table>tbody>tr>td.editor {
+    padding: 0;
+    position: relative;
+}
+
+.table-panel .dropdown-toggle {
+    padding-bottom: 8px;
+    padding-left: 4px;
+    padding-top: 6px;
+}
+
+.table-panel .dropdown-menu {
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+.b-table.table>thead>tr {
+    background-color: #eeece8;
+}
+
+.b-table.table>thead>tr>th {
+    padding: 10px 5px;
+    border-bottom-width: 1px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.table-panel .dropdown-menu {
+    margin-top: 0
+}
+
+.b-table.table>tbody>tr>td,
+.table-panel.table>tbody>tr>td {
+    font-size: 14px;
+    text-align: left
+}
+
+.b-table thead th {
+    text-align: center;
+}
+
+.table-panel .nav,
+.table-panel .nav li {
+    width: 100%;
+}
+
+.table-panel .navbar-nav {
+    float: none
+}
+
+.table-panel .dropdown-toggle {
+    position: relative;
+}
+
+.table-panel .dropdowntext {
+    display: inline-block;
+    max-width: 95%;
+}
+
+.table-panel .caret {
+    position: absolute;
+    top: 16px;
+}
+
+.table-panel .nav,
+.table-panel .nav li {
+    width: 100%;
+}
+
+.b-table.table>tbody>tr>td>div>input[type="button"],
+.b-table.table>tbody>tr>td>div>button {
+    /*line-height:1.20;*/
+}
+
+.b-table .table-field-editor {
+    display: none;
+}
+
+.b-table .table-editing .table-field-editor {
+    display: block;
+}
+
+.table-editing .no-table-field-editor {
+    display: none
+}
+
+.b-table .btn {
+    padding: 3px 6px;
+}
+
+.customeraction{
+    margin:0 10px;
+} 
+
+.b-table .navbar-nav>li>a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.table-editing .form-control {
+    border-radius: 0;
+    height: 38px;
+}
+
+.table-editing .form-control {
+    padding: 4px;
+}
+
+.b-table.table>tbody>tr>td.table-editing {
+    padding: 0;
+    position: relative;
+}
+
+.no-table-field-editor .img-button {
+    background-size: 100% 100%;
+    border: none;
+    width: 96%;
+    height: 30px;
+    padding: 3px 2%;
+    text-align: left;
+    padding-left: 10px;
+}
+.has-error .table-fileupload{
+    border-color: #a94442;
+    border-width: 1px;
+    border-style: solid;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+.b-table .img-button{display: inline;}
+.b-table .has-error .btn{padding: 2px 6px}
+
+.table-select-item.selected{
+    background-color:rgb(51, 122, 183); 
+    color:#fff;
+}

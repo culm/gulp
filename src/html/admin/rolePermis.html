@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>和金在线-角色权限分配</title>  
+		<!--resinclude "admin.rolePermis-css"-->
+	</head>
+	<body>
+		<!--include "./common/header.html"-->
+		<div id="main">
+			<!--include "./admin/partial/menu.html"-->
+			<div class="right-body">
+				<div class="breadcrumbs" id="breadcrumbs">
+					<ul class="breadcrumb">
+						<li>
+							<a href="index.html"><i class="glyphicon glyphicon-home"></i> 主页</a>
+						</li>
+						<li class="active">角色权限分配</li>
+					</ul>
+				</div>
+				<div class="container-fluid" style="margin-top:30px">
+                <div class="col-md-9">
+                    <button id="newRole" class="btn btn-primary"><span class="glyphicon glyphicon-ddd"></span>新建角色</button>
+                </div> 
+            </div>
+				<div class="container-fluid">
+					<div id="rolePermis-container"></div>
+					<h3 class="text-center hide" id="pagination-container-tips">权限列表空</h3>
+				</div>
+			</div>
+		</div>
+		<!--mode 权限-->
+		<div class="modal fade" style="z-index:1050;" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">分配权限</h4>
+		      </div>
+		      <div class="modal-body" id="data_modal_role">
+		        
+		      </div>
+		      <div id="pagination-container"></div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+		        <button type="button" class="btn btn-primary" id="save_role">确定</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<!--mode 权限 end-->
+		<!--resinclude "admin.rolePermis-jshtml"-->
+		<!--resinclude "admin.rolePermis-js"-->
+	</body>
+</html>

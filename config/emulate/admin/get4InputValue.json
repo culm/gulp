@@ -1,0 +1,38 @@
+{
+    "hintMsg": null,
+    "returnObj": {
+        "invoiceMapping": [],
+        "province": "北京市",
+        "tenantId": 10003,
+        "invoiceDetailMapping": [{
+            "item": "药品代码"
+        }, {
+            "item": "药品名称"
+        }, {
+            "spec": "规格"
+        }, {
+            "unit": "剂型"
+        }, {
+            "unit": "单位"
+        }, {
+            "unitPrice": "单价"
+        }, {
+            "num": "数量"
+        }, {
+            "moneyAmount": "金额"
+        }, {
+            "grade": "医保类型"
+        }, {
+            "grade": "自付比例"
+        }, {
+            "grade": "自付金额"
+        }],
+        "invoiceTemplateMapping": "{\"medicalType\":{label:\"医疗机构类型\",type:\"C\",lang:\"lpt+chiSim\",repo:\"medicalType\"},\"invoiceId\":{label:\"NO号\",type:\"N\",lang:\"lptN+eng\"},\"patientName\":{label:\"姓名\",type:\"C\",lang:\"lpt+chiSim\",repo:\"personName\"},\"gender\":{label:\"性别\",type:\"C\",lang:\"lpt+chiSim\",repo:\"sex\"},\"medicareType\":{label:\"医保类型\",type:\"C\",lang:\"lpt+chiSim\",repo:\"medicareType\"},\"cardId\":{label:\"社会保障号码\",type:\"EN\",lang:\"eng\"},\"clinicPay\":{label:\"门诊大额支付\",type:\"N\",lang:\"lptN+eng\"},\"retirementPay\":{label:\"退休补充支付\",type:\"N\",lang:\"lptN+eng\"},\"disabledPay\":{label:\"残军补助支付\",type:\"N\",lang:\"lptN+eng\"},\"unitAddPay\":{label:\"单位补充【原公疗】支付\",type:\"N\",lang:\"lptN+eng\"},\"fundPay\":{label:\"基金支付\",type:\"N\",lang:\"lptN+eng\"},\"medicareScopeMoney\":{label:\"本次医保范围内金额\",type:\"N\",lang:\"lptN+eng\"},\"selfPayOne\":{label:\"自付一\",type:\"N\",lang:\"lptN+eng\"},\"ownExpense\":{label:\"起付金额\",type:\"N\",lang:\"lptN+eng\"},\"cappedMoney\":{label:\"超封顶金额\",type:\"N\",lang:\"lptN+eng\"},\"selfPayTwo\":{label:\"自付二\",type:\"N\",lang:\"lptN+eng\"},\"selfPayFee\":{label:\"自费\",type:\"N\",lang:\"lptN+eng\"},\"totalUpperCase\":{label:\"合计大写\",type:\"N\",lang:\"lptN+eng\"},\"sum\":{label:\"合计小写\",type:\"N\",lang:\"lptN+eng\"},\"payPerson\":{label:\"个人支付金额\",type:\"N\",lang:\"lptN+eng\"},\"printDate\":{label:\"就诊日期\",type:\"N\",lang:\"lptN+eng\"},\"thirdPartyPay\":{label:\"第三方支付金额\",type:\"N\",lang:\"lptN+eng\"},\"thirdInInsurance\":{label:\"第三方医保范围内金额\",type:\"N\",lang:\"lptN+eng\"},\"thirdOutInsurance\":{label:\"第三方医保范围外金额\",type:\"N\",lang:\"lptN+eng\"},\"DrugDetails\":{label:\"费用明细\",key:\"items\",maxLines:10,itemsPerLine:2}}",
+        "updateTime": 1456804175000,
+        "id": 1,
+        "invoiceDetailTemplateMapping": "{\"item\":{label:\"名称\",type:\"C\",lang:\"lpt+chiSim\",repo:\"drugName\"},\"spec\":{label:\"规格\",type:\"C\",lang:\"lpt+chiSim\"},\"unit\":{label:\"单位\",type:\"C\",lang:\"lpt+chiSim\"},\"num\":{label:\"数量\",type:\"N\",lang:\"lptN+eng\"},\"unitPrice\":{label:\"单价\",type:\"N\",lang:\"lptN+eng\"},\"moneyAmount\":{label:\"金额\",type:\"N\",lang:\"lptN+eng\"},\"grade\":{label:\"等级\",type:\"C\",lang:\"lpt+chiSim\",repo:\"drugGrade\"}}",
+        "paymenttype": "400"
+    },
+    "rtnMsg": "successs",
+    "rtnCode": "2000"
+}

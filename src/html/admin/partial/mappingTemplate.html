@@ -1,0 +1,32 @@
+<script type="text/html" id="tabDetail_template_invoice">
+    <div class="inputEdit subPicType hide" id="order-refuse">
+        <span>退回原因：</span>
+        <span class="refuse-message"></span>
+    </div>
+    <input type="hidden" data-type="text" name="id" value="{{id}}" />
+    <input type="hidden" data-type="text" name="imageName" value="{{imageName}}" />
+    <div class="inputEdit isContinue hide">
+        <span>是否续打：</span>
+        <div class="btn-group groupButton" role="group">
+            <button type="button" class="btn btn-default cur">否</button>
+            <button type="button" class="btn btn-default reject">是</button>
+        </div>
+    </div>
+    <div class="inputEdit isMedicare hide">
+        <span>是否有医保：</span>
+        <div class="btn-group groupButton" role="group">
+            <button type="button" class="btn btn-default cur">否</button>
+            <button type="button" class="btn btn-default reject">是</button>
+        </div>
+    </div>
+    <div class="inputEdit isSelf hide">
+        <span>是否是本人申请：</span>
+        <div class="btn-group groupButton" role="group">
+            <button type="button" class="btn btn-default ">否</button>
+            <button type="button" class="btn btn-default reject cur">是</button>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="tabDetail_template_detail">
+    
+</script>

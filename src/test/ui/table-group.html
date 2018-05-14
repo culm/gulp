@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="../../js/jquery-1.11.3.js" ></script>
+		<script type="text/javascript" src="../../bootstrap/js/bootstrap.js" ></script>
+		<script type="text/javascript" src="../../js/my.js" ></script>
+		<script type="text/javascript" src="../../js/widget/my.widget.js" ></script>
+		<script type="text/javascript" src="../../js/widget/ui/my.widget.table.js" ></script>
+		<link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="../../css/widget/ui/my.widget.table.css">
+		<style type="text/css">
+			.address{width: 30%}
+			.title{
+				width: 30%;
+			}
+			.status{width:20%}
+			.myaction{width: 20%}
+		</style>
+	</head>
+	<body style="height:1000px">
+		<div id="boostrap-container" style="width:600px;margin:auto;position:relative;margin-top:20px;"></div>
+		<script type="text/javascript">
+			$(function(){
+				var table = window.table = my.widget.bTable({
+					container: '#boostrap-container',
+					tableClass: 'table-condensed table-hover table-bordered',
+					bindDropdown: true,
+					groupfield: 'status',
+					multi: true,
+					onGroupFormatter: function(value){
+						switch(value){
+							case 1: return '第一级别';
+							case 2: return '第二级别';
+							case 3: return '第三级别';
+						}
+						return '位置级别';
+					},
+					collumns:[{
+							title: '医疗机构名称',
+							field: 'name',
+							class: 'title'
+						},{
+							title: '地址',
+							field: 'address',
+							class: 'address',
+							editor: {
+								type: 'text',
+								pattern: '^[1-9][0-9]{0,2}$',
+							}
+						},{
+							title: '状态',
+							field: 'status',
+							class: 'status',
+							editor: {
+								type: 'dropdown',
+								options: {
+									valueField:'id',
+                            		textField:'text',
+									getDefaultData: function(){
+										return [
+										{text: 'yes1', id: 1},
+										{text: 'no2', id: 2},
+										{text: 'other3', id:3},
+										{text: 'yes4', id: 4},
+										{text: 'no5', id: 5},
+										{text: 'other6', id: 6},
+										{text: 'yes7', id: 7},
+										{text: 'no8', id: 8},
+										{text: 'other9', id: 9},
+										{text: 'yes10', id: 10},
+										{text: 'no11', id: 11},
+										{text: 'other12', id: 12}];
+									}
+								}
+							},
+							formatter: function(rowValue, value, index){
+								if(value == 1) return 'no';
+								return 'yes'
+							}
+						},{
+							title: '操作',
+							field: 'myaction',
+							class: 'myaction',
+							updateWhenEdit: true,
+							formatter: function(rowValue, value, index, isEditting){
+								return [{
+									text: isEditting ? '保存':'修改',
+									value: isEditting ? 2 : 3,
+									class: 'btn btn-link'
+								},{
+									text: isEditting ?'取消':'删除',
+									value: isEditting ? 0 : 1,
+									class: 'btn btn-danger'
+								}]
+							},
+							onClick: function(rowValue, rowIndex, target){
+								var value = target.data('value');
+								if(value == '2'){//
+									if(this.validateRow(rowIndex)){
+										this._endEditing(rowIndex);
+									}
+									return true;
+								}
+								if(value == '1') {
+									alert('delete')
+									return true;
+								}
+								if(value == '0'){
+									this._endEditing(rowIndex);
+									return true;
+								}
+								return false;
+							}
+						}],
+					// pageSize: 20,
+					// url: '',
+					onBeforeEdit: function(rowValue, index){
+
+					},
+					onClick: function(rowValue, index){
+						this.beginEditIng(index);
+					},
+					onDropdownClick: function(id, text, field){
+						if(field == 'status'){
+							this.data[this.editIndex].status = id;
+						}
+					}
+				});
+				var data = [
+					{'name': 'name1', 'address': 'addressdsafsafsafdsadfdsas1111111111111111111', 'status':1},
+					{'name': 'name2', 'address': 'address2', 'status':2},
+					{'name': 'name22', 'address': 'address22', 'status':2},
+					{'name': 'name11', 'address': 'address11', 'status':1}]
+				table.loadData(data);
+			});
+		</script>
+	</body>
+</html>

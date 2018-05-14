@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="../../../css/widget/idialog.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../../my.js"></script>
+    <script type="text/javascript" src="../my.widget.js"></script>
+    <script src="../jquery.autoCenter.js"></script>
+    <script src="my.widget.idialog.js"></script>
+</head>
+<body>
+    <h1>hello alijk.widget.iDialog</h1>
+    <input type="button" id="btnShow" value="打开窗口" />
+    <input type="button" id="btnShowNoMask" value="无遮罩层弹出窗口" />
+    <input type="button" id="btnHide" value="关闭窗口" />
+    <script type="text/javascript">
+        $(function () {
+            var dialog = new alijk.widget.iDialog({
+                title: "请输入您的消息",
+                content: '<textarea style="width:400px;height:200px;">请输入您的消息</textarea>'
+            })
+            dialog.show();
+            $('#btnShow').bind('click', function () {
+                dialog.show();
+            })
+            $('#btnHide').bind('click', function () {
+                noMaskDialog.close();
+            })
+            var noMaskDialog = null;
+            $('#btnShowNoMask').bind('click', function () {
+                if (!noMaskDialog) {
+                    noMaskDialog = new alijk.widget.iDialog({
+                        title: "标题栏",
+                        content: '<textarea style="width:400px;height:200px;">请输入您的消息</textarea>',
+                        lock: false,
+                        buttons: [
+                            {
+                                text: "取消", cls: 'iDialog-button-cancel', handler: function (e) {
+                                    return true;
+                                }
+                            }, {
+                                text: "确定", cls: 'iDialog-button-ok', handler: function (e) {
+                                    alert(this.dialogContentContainer.find('textarea').val());
+                                    return false;
+                                }
+                            }
+                        ]
+                    })
+                }
+
+                noMaskDialog.show();
+            })
+        });
+    </script>
+</body>
+</html>

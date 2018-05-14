@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html class="htmlHeigh">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>和金在线-医院管理</title>
+    <!--resinclude "admin.hospitalList-css"-->
+</head>
+<body>
+    <!--include "./common/header.html"-->
+    <div id="main">
+        <!--include "./admin/partial/menu.html"-->
+        <div class="right-body">
+            <div class="breadcrumbs" id="breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="index.html"><i class="glyphicon glyphicon-home"></i> 主页</a>
+                    </li>
+                    <li class="active">医院管理</li>
+                </ul>
+            </div>
+            <div class="container-fluid" style="margin-top:30px">
+                <div class="col-md-9">
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <label class="input-group-addon">医院名称：</label><input type="text" value="" id="hospitalName" class="form-control" placeholder="医院名称">
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <button id="searchBtn" class="btn btn-primary"><span class="glyphicon glyphicon-ddd"></span>搜索</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button id="newHospital" class="btn btn-primary"><span class="glyphicon glyphicon-ddd"></span>新增医院</button>
+                    </div>
+                </div>   
+            </div>
+            <div class="container-fluid">
+                <div id="hostpitalList">
+                    <div id="hosMappList" class="hos_mapp_list"> 
+                        <ol class="title_th" style="display:none;">
+                            <li>Mapping表id</li>
+                            <li>医院id</li>
+                            <li>医院code</li>
+                            <li>保险公司tenantId</li>
+                            <li>映射医院code</li>
+                            <li>映射医院名称</li>
+                            <li>操作</li>
+                        </ol>
+                        <div class="mapp-list-empty" style="display:none;">
+                            <div class="">此医院没有关联mapping</div>
+                            <button class="btn btn-primary buildHosMap">新建mapping</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="pagination-container"></div>
+                <h3 class="text-center hide" id="pagination-container-tips">模板列表空</h3>
+                
+            </div>
+        </div>
+    </div>
+    <!--resinclude "admin.hospitalList-jshtml"-->
+<!--resinclude "admin.hospitalList-js"-->
+</body>
+</html>

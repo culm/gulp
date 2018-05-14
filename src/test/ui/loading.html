@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="../../js/jquery-1.11.3.js" ></script>
+		<script type="text/javascript" src="../../bootstrap/js/bootstrap.js" ></script>
+		<script type="text/javascript" src="../../js/my.js" ></script>
+		<script type="text/javascript" src="../../js/widget/my.widget.js" ></script>
+		<script type="text/javascript" src="../../js/widget/jquery.autoCenter.js" ></script>
+		<script type="text/javascript" src="../../js/widget/script/my.widget.loading.js" ></script>
+		<link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="../../css/widget/my.widget.loading.css">
+		<style type="text/css">
+			.myloading-container{width: 80%;}
+			.myloading-container.iloading-container .iloading-wrap .iloading-content,
+			.myloading-container.iloading-container .iloading-wrap{width: 100%;padding-bottom: 0}
+			.myloading-container .myloading{display: none !important;}
+			.myloading-container.iloading-container{
+				position: fixed !important;
+				left: 10% !important;
+				top: 40% !important;
+			}
+		</style>
+	</head>
+	<body style="height:1000px">
+		<div id="boostrap-container" style="width:800px;margin:auto;position:relative;margin-top:20px;"></div>
+		<script type="text/javascript">
+			var html = '\
+				<div class="progress">\
+  					<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">60%</div>\
+				</div>';
+			my.widget.loading.show({
+				message: html, 
+				iconCls:'myloading', 
+				container: 'myloading-container iloading-container'
+			});
+		</script>
+	</body>
+</html>

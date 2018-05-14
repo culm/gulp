@@ -1,0 +1,481 @@
+{
+    "admin-common": {
+        "js": [
+            "js/admin/my.admin.js"
+        ],
+        "js.min": "my.admin.js",
+        "dependent": ["common"]
+    },
+    "admin.index": {
+        "js": [
+            "js/service/script/my.service.user.js",
+            "js/admin/script/my.admin.index.js",
+            "js/widget/ui/my.widget.dialogsCont.js"
+        ],
+        "css": [
+            "css/admin/upload.css",
+            "css/admin/index.css",
+            "css/widget/my.widget.dialogsCont.css"
+        ],
+        "html": [
+            "common/header.html",
+            "admin/partial/menu.html"
+        ],
+        "dependent": [
+            "jquery.autoCenter",
+            "my.widget.loading",
+            "my.widget.dialog",
+            "my.widget.table",
+            "my.widget.pagination",
+            "my.widget.tooltip",
+            "bootstrap-datetimepicker",
+            "admin-common"
+        ],
+        "relatefile": "admin/index.html"
+    },
+    "admin.authority": {
+        "js": [
+            "js/service/script/my.service.authority.js",
+            "js/admin/script/my.admin.authority.js"
+        ],
+        "css": [
+            "css/admin/upload.css",
+            "css/admin/authority.css"
+        ],
+        "html": [
+            "common/header.html",
+            "admin/partial/menu.html"
+        ],
+        "dependent": [
+            "jquery.autoCenter",
+            "my.widget.loading",
+            "my.widget.dialog",
+            "my.widget.table",
+            "my.widget.pagination",
+            "my.widget.tooltip",
+            "bootstrap-datetimepicker",
+            "admin-common"
+        ],
+        "relatefile": "admin/authority.html"
+    },
+    "admin.customReport": {
+        "js": [
+            "js/service/script/my.service.customReport.js",
+            "js/admin/script/my.admin.customReport.js"
+        ],
+        "css": [
+            "css/admin/customReport.css"
+        ],
+        "html": [
+            "common/header.html",
+            "admin/partial/menu.html"
+        ],
+        "dependent": [
+            "jquery.autoCenter",
+            "my.widget.loading",
+            "my.widget.dialog",
+            "my.widget.table",
+            "my.widget.tooltip",
+            "my.widget.pagination",
+            "bootstrap-datetimepicker",
+            "template",
+            "admin-common"
+        ],
+        "relatefile": "admin/customReport.html"
+    },
+    "admin.customReportList": {
+        "js": [
+            "js/service/script/my.service.customReport.js",
+            "js/admin/script/my.admin.customReportList.js"
+        ],
+        "css": [
+            "css/admin/customReport.css"
+        ],
+        "html": [
+            "common/header.html",
+            "admin/partial/menu.html"
+        ],
+        "dependent": [
+            "jquery.autoCenter",
+            "my.widget.loading",
+            "my.widget.dialog",
+            "my.widget.table",
+            "my.widget.tooltip",
+            "my.widget.pagination",
+            "bootstrap-datetimepicker",
+            "admin-common"
+        ],
+        "relatefile": "admin/customReportList.html"
+    },
+    "admin.rolePermis": {
+        "js": [
+            "js/service/script/my.service.rolePermis.js",
+            "js/admin/script/my.admin.rolePermis.js",
+            "js/widget/ui/my.widget.dialogsCont.js"
+        ],
+        "css": [
+            "css/admin/upload.css",
+            "css/admin/rolePermis.css",
+            "css/widget/my.widget.dialogsCont.css"
+        ],
+        "html": [
+            "common/header.html",
+            "admin/partial/menu.html"
+        ],
+        "dependent": [
+            "jquery.autoCenter",
+            "my.widget.loading",
+            "my.widget.dialog",
+            "my.widget.table",
+            "my.widget.tooltip",
+            "my.widget.pagination",
+            "bootstrap-datetimepicker",
+            "admin-common"
+        ],
+        "relatefile": "admin/rolePermis.html"
+    },
+    "admin.review": {
+        "js": [
+            "js/service/script/my.service.order.js",
+            "js/admin/script/my.admin.customerTemplate.js",
+            "js/admin/script/my.admin.review.js"
+        ],
+        "css": ["css/admin/review.css"],
+        "html": [],
+        "jshtml": [
+            "admin/partial/mappingTemplate.html"
+        ],
+        "dependent": [
+            "jquery.autoCenter",
+            "my.widget.loading",
+            "my.widget.dialog",
+            "my.widget.table",
+            "my.widget.AutoComplete",            
+            "my.widget.tooltip",
+            "my.widget.dropdownMenu",
+            "my.mapping",
+            "template",
+            "admin-common"
+        ],
+        "relatefile": "admin/review.html"
+    },
+    "admin.entry": {
+        "js": [
+            "js/service/script/my.service.order.js",
+            "js/admin/script/my.admin.review.js"
+        ],
+        "css": ["css/admin/review.css"],
+        "html": [],
+        "jshtml": [
+            "admin/partial/mappingTemplate.html"
+        ],
+        "dependent": [
+            "jquery.autoCenter",
+            "my.widget.loading",
+            "my.widget.dialog",
+            "my.widget.AutoComplete",            
+            "my.widget.tooltip",
+            "my.mapping",
+            "template",
+            "admin-common"
+        ],
+        "relatefile": "admin/entry.html"
+    },
+    "admin.verify": {
+        "js": [
+            "js/service/script/my.service.hospitalList.js",
+            "js/service/script/my.service.order.js",
+            "js/admin/script/my.admin.verify.js"
+        ],
+        "css": ["css/admin/verify.css"],
+        "html": [],
+        "jshtml": [
+            "admin/partial/default-verify.html"
+        ],
+        "dependent": [
+            "jquery.autoCenter",
+            "my.widget.loading",
+            "my.widget.dialog",
+            "my.widget.AutoComplete",
+            "template",
+            "admin-common"
+        ],
+        "relatefile": "admin/verify.html"
+    },
+    "admin.order": {
+        "js": [
+            "js/service/script/my.service.customReport.js",            
+            "js/service/script/my.service.order.js",
+            "js/admin/script/my.admin.order.js"
+        ],
+        "css": ["css/admin/order.css"],
+        "html": [
+            "common/header.html",
+            "admin/partial/menu.html"
+        ],
+        "dependent": [
+            "jquery.autoCenter",
+            "my.widget.loading",
+            "my.widget.dialog",
+            "my.widget.table",
+            "my.widget.pagination",
+            "my.widget.tooltip",
+            "bootstrap-datetimepicker",
+            "admin-common"
+        ],
+        "relatefile": "admin/order.html"
+    },
+    "admin.setting": {
+        "js": ["js/admin/script/my.admin.setting.js"],
+        "css": ["css/admin/setting.css"],
+        "html": [
+            "common/header.html",
+            "admin/partial/menu.html"
+        ],
+        "dependent": [
+            "jquery.autoCenter",
+            "my.widget.loading",
+            "my.widget.dialog",
+            "my.widget.table",
+            "my.widget.pagination",
+            "bootstrap-datetimepicker",
+            "my.widget.tooltip",
+            "my.widget.AutoComplete",
+            "my.widget.fileupload",
+            "admin-common"
+        ],
+        "relatefile": "admin/setting.html"
+    },
+    "admin.template": {
+        "js": [
+            "js/service/script/my.service.template.js",
+            "js/widget/script/my.widget.provinceCity.js",
+            "js/admin/script/my.admin.template.js"
+        ],
+        "css": [
+            "css/admin/template.css",
+            "css/admin/fonts/iconfont.css"
+        ],
+        "html": [
+            "common/header.html",
+            "admin/partial/menu.html"
+        ],
+        "jshtml": [
+            "admin/partial/template-attr-item.html"
+        ],
+        "dependent": [
+            "jquery.autoCenter",
+            "my.widget.loading",
+            "my.widget.dialog",
+            "my.widget.tooltip",
+            "my.widget.AutoComplete",
+            "my.widget.fileupload",
+            "template",
+            "admin-common"
+        ],
+        "relatefile": "admin/template.html"
+    },
+    "admin.templatelist": {
+        "js": [
+            "js/service/script/my.service.template.js",
+            "js/widget/script/my.widget.provinceCity.js",
+            "js/admin/script/my.admin.templatelist.js"
+        ],
+        "css": ["css/admin/templatelist.css"],
+        "html": [
+            "common/header.html",
+            "admin/partial/menu.html"
+        ],
+        "jshtml": [
+
+        ],
+        "dependent": [
+            "jquery.autoCenter",
+            "my.widget.loading",
+            "my.widget.dialog",
+            "my.widget.tooltip",
+            "my.widget.pagination",
+            "my.widget.AutoComplete",
+            "my.widget.table",
+            "template",
+            "admin-common"
+        ],
+        "relatefile": "admin/templatelist.html"
+    },
+    "admin.listMapping": {
+        "js": [
+            "js/service/script/my.service.listMapping.js",
+            "js/admin/script/my.admin.listMapping.js"
+        ],
+        "css": [
+            "css/admin/listMapping.css",
+            "css/admin/upload.css"
+        ],
+        "html": [
+            "common/header.html",
+            "admin/partial/menu.html"
+        ],
+        "jshtml": [
+
+        ],
+        "dependent": [
+            "jquery.autoCenter",
+            "my.widget.loading",
+            "my.widget.dialog",
+            "my.widget.tooltip",
+            "my.widget.pagination",
+            "my.widget.table",
+            "bootstrap-datetimepicker",
+            "admin-common"
+        ],
+        "relatefile": "admin/listMapping.html"
+    },
+    "admin.saveMapping": {
+        "js": [
+            "js/service/script/my.service.listMapping.js",
+            "js/admin/script/my.admin.saveMapping.js"
+        ],
+        "css": ["css/admin/listMapping.css"],
+        "html": [
+            "common/header.html",
+            "admin/partial/menu.html"
+        ],
+        "jshtml": [
+
+        ],
+        "dependent": [
+            "jquery.autoCenter",
+            "my.widget.loading",
+            "my.widget.dialog",
+            "my.widget.tooltip",
+            "my.widget.pagination",
+            "my.widget.table",
+            "bootstrap-datetimepicker",
+            "admin-common"
+        ],
+        "relatefile": "admin/saveMapping.html"
+    },
+    "admin.actionRecord": {
+        "js": [
+            "js/service/script/my.service.actionRecord.js",
+            "js/admin/script/my.admin.actionRecord.js"
+        ],
+        "css": [
+            "css/admin/actionRecord.css",
+            "css/admin/upload.css"
+        ],
+        "html": [
+            "common/header.html",
+            "admin/partial/menu.html"
+        ],
+        "jshtml": [
+
+        ],
+        "dependent": [
+            "jquery.autoCenter",
+            "my.widget.loading",
+            "my.widget.dialog",
+            "my.widget.tooltip",
+            "my.widget.pagination",
+            "my.widget.table",
+            "bootstrap-datetimepicker",
+            "admin-common"
+        ],
+        "relatefile": "admin/actionRecord.html"
+    },
+    "admin.hospitalList": {
+        "js": [
+            "js/service/script/my.service.hospitalList.js",
+            "js/widget/script/my.widget.provinceCity.js",
+            "js/admin/script/my.admin.hospitalList.js"
+        ],
+        "css": [
+            "css/admin/hospitalList.css",
+            "css/admin/upload.css"
+        ],
+        "html": [
+            "common/header.html",
+            "admin/partial/menu.html"
+        ],
+        "jshtml": [
+
+        ],
+        "dependent": [
+            "jquery.autoCenter",
+            "my.widget.loading",
+            "my.widget.dialog",
+            "my.widget.tooltip",
+            "my.widget.pagination",
+            "my.widget.AutoComplete",
+            "my.widget.table",
+            "bootstrap-datetimepicker",
+            "admin-common"
+        ],
+        "relatefile": "admin/hospitalList.html"
+    },
+    "admin.listEntry": {
+        "js": [
+            "js/service/script/my.service.order.js",
+            "js/admin/script/my.admin.review.js"
+        ],
+        "css": ["css/admin/review.css"],
+        "html": [],
+        "jshtml": [
+            "admin/partial/mapping.html"
+        ],
+        "dependent": [
+            "jquery.autoCenter",
+            "my.widget.loading",
+            "my.widget.dialog",
+            "my.widget.AutoComplete",            
+            "my.widget.tooltip",
+            "template",
+            "admin-common"
+        ],
+        "relatefile": "admin/listEntry.html"
+    },
+    "admin.listReview": {
+        "js": [
+            "js/service/script/my.service.order.js",
+            "js/admin/script/my.admin.review.js"
+        ],
+        "css": ["css/admin/review.css"],
+        "html": [],
+        "jshtml": [
+            "admin/partial/mapping.html"
+        ],
+        "dependent": [
+            "jquery.autoCenter",
+            "my.widget.loading",
+            "my.widget.dialog",
+            "my.widget.AutoComplete",            
+            "my.widget.tooltip",
+            "template",
+            "admin-common"
+        ],
+        "relatefile": "admin/listReview.html"
+    },
+    "admin.unusual": {
+        "js": [
+            "js/service/script/my.service.customReport.js",            
+            "js/service/script/my.service.order.js",
+            "js/admin/script/my.admin.unusual.js"
+        ],
+        "css": ["css/admin/unusual.css"],
+        "html": [
+            "common/header.html",
+            "admin/partial/menu.html"
+        ],
+        "dependent": [
+            "jquery.autoCenter",
+            "my.widget.loading",
+            "my.widget.dialog",
+            "my.widget.table",
+            "my.widget.pagination",
+            "my.widget.tooltip",
+            "bootstrap-datetimepicker",
+            "admin-common"
+        ],
+        "relatefile": "admin/unusual.html"
+    }
+}

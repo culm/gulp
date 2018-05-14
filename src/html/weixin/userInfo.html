@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>上传理赔单-理赔通</title>
+    <!--include "./weixin/partial/angularcss.html"-->
+    <!--resinclude "weixin.userInfo-css"-->
+</head>
+
+<body ng-app="myApp" ng-controller="userinfoController">
+    <header class="tit">
+        <section class="userinfo_top">
+            <div class="backOff">
+                <a class="iconfont icon_back" href="javascript:;" ng-click="wxUrlBack()"></a>
+            </div>
+            <span>个人信息</span>
+            <div class="add"></div>
+        </section>
+    </header>
+    <section class="content">
+        <ul class="table-view">
+            <li class="table-view-cell cur"><span class="left">姓名</span><span class="right" ng-bind="message.name"></span></li>
+            <li class="table-view-cell cur"><span class="left">身份证号</span><span class="right" ng-bind="message.idCard"></span></li>
+            <li class="table-view-cell cur"><span class="left">保单号</span><span class="right" ng-bind="message.Insurance"></span></li>
+            <li class="table-view-cell cur"><span class="left">联系电话</span><span class="right" ng-bind="message.phone"></span></li>
+            <li class="table-view-cell cur"><span class="left">工作单位</span><span class="right" ng-bind="message.company"></span></li>
+            <li class="table-view-cell cur"><span class="left">联系地址</span><span class="right" ng-bind="message.address"></span></li>
+        </ul>
+    </section>
+    <my-dialog></my-dialog>
+    <!-- <my-loading></my-loading> -->
+    
+</body>
+<!--resinclude "weixin.userInfo-js"-->
+
+</html>

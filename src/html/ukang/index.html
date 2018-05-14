@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>和金在线-上传处方收据</title>
+    <!--resinclude "ukang.index-css"-->
+</head>
+
+<body>
+    <!--include "./common/header.html"-->
+    <div id="main">
+        <!--include "./ukang/partial/menu.html"-->
+        <div class="right-body">
+            <div class="breadcrumbs" id="breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="index.html"><i class="glyphicon glyphicon-home"></i> 主页</a>
+                    </li>
+                    <li class="active">上传病历、处方单和收费单</li>
+                </ul>
+            </div>
+            <div class="container sectionitem">
+                <label for="inputEmail3" class="col-sm-2 control-label">选择医院</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="hospitalname" placeholder="输入医院名字">
+                </div>
+            </div>
+            <div class="container sectionitem">
+                <label class="col-sm-2 control-label">保险公司：</label>
+                <div class="col-sm-10">
+                    <select class="form-control tenantId">
+                        <option value="">请选择</option>
+                        <option value="10001">太保</option>
+                        <option value="10002">金饭碗</option>
+                        <option value="10003">新安怡</option>
+                        <option value="10005">fesco</option>
+                        <option value="10009">fesco外包</option>
+                        <option value="10006">万家</option>
+                        <option value="99999">和金在线</option>
+                    </select>
+                    <input type="hidden" value="" id="tenantId" class="form-control">
+                </div>
+            </div>
+            <div class="container sectionitem">
+                <div>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#type100" aria-controls="type100" role="tab" data-toggle="tab">处方</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#type200" aria-controls="type200" role="tab" data-toggle="tab">门诊收据</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#type300" aria-controls="type300" role="tab" data-toggle="tab">住院收据</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#type400" aria-controls="type400" role="tab" data-toggle="tab">明细清单</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#type500" aria-controls="type500" role="tab" data-toggle="tab">门诊病历</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#type600" aria-controls="type600" role="tab" data-toggle="tab">出院小结</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#type700" aria-controls="type700" role="tab" data-toggle="tab">增值税发票</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#type800" aria-controls="type800" role="tab" data-toggle="tab">北京门特</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#type900" aria-controls="type900" role="tab" data-toggle="tab">门诊结算单</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#type910" aria-controls="type910" role="tab" data-toggle="tab">住院结算单</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#type1000" aria-controls="type1000" role="tab" data-toggle="tab">身份证</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#type3000" aria-controls="type3000" role="tab" data-toggle="tab">理赔申请书</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" style="margin-top: 20px;">
+                        <div role="tabpanel" class="tab-pane active" id="type100">
+                            <label for="inputEmail3" class="col-sm-2 control-label">处方图片</label>
+                            <div class="col-sm-10">
+                                <div id="fileupload-container100"></div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="type200">
+                            <label class="col-sm-2 control-label">收据图片</label>
+                            <div class="col-sm-10">
+                                <div id="fileupload-container200"></div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="type300">
+                            <label class="col-sm-2 control-label">住院收据</label>
+                            <div class="col-sm-10">
+                                <div id="fileupload-container300"></div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="type400">
+                            <label class="col-sm-2 control-label">明细清单</label>
+                            <div class="col-sm-10">
+                                <div id="fileupload-container400"></div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="type500">
+                            <label for="inputEmail3" class="col-sm-2 control-label">门诊病历</label>
+                            <div class="col-sm-10">
+                                <div id="fileupload-container500"></div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="type600">
+                            <label class="col-sm-2 control-label">出院小结</label>
+                            <div class="col-sm-10">
+                                <div id="fileupload-container600"></div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="type700">
+                            <label class="col-sm-2 control-label">增值税发票</label>
+                            <div class="col-sm-10">
+                                <div id="fileupload-container700"></div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="type800">
+                            <label class="col-sm-2 control-label">北京门特</label>
+                            <div class="col-sm-10">
+                                <div id="fileupload-container800"></div>
+                            </div>
+                        </div> 
+                        <div role="tabpanel" class="tab-pane" id="type900">
+                            <label class="col-sm-2 control-label">门诊结算单</label>
+                            <div class="col-sm-10">
+                                <div id="fileupload-container900"></div>
+                            </div>
+                        </div> 
+                        <div role="tabpanel" class="tab-pane" id="type910">
+                            <label class="col-sm-2 control-label">住院结算单</label>
+                            <div class="col-sm-10">
+                                <div id="fileupload-container910"></div>
+                            </div>
+                        </div>  
+                        <div role="tabpanel" class="tab-pane" id="type1000">
+                            <label class="col-sm-2 control-label">身份证</label>
+                            <div class="col-sm-10">
+                                <div id="fileupload-container1000"></div>
+                            </div>
+                        </div> 
+                        <div role="tabpanel" class="tab-pane" id="type3000">
+                            <label class="col-sm-2 control-label">理赔申请书</label>
+                            <div class="col-sm-10">
+                                <div id="fileupload-container3000"></div>
+                            </div>
+                        </div>                       
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div style="width: 40%;margin: auto;">
+                    <button type="button" class="btn btn-block btn-lg btn-primary" id="submit">提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--resinclude "ukang.index-jshtml"-->
+    <!--resinclude "ukang.index-js"-->
+</body>
+
+</html>

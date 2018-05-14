@@ -1,0 +1,35 @@
+{
+  "name": "",
+  "version": "0.0.1",
+  "description": "my description",
+  "keywords": [
+    "my"
+  ],
+  "respository": {
+    "type": "git",
+    "url": "http://path/to/url"
+  },
+  "engines": {
+    "node": ">=4.2.3"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-concat": "latest",
+    "gulp-htmlmin": "^1.2.0",
+    "gulp-jsdoc": "^0.1.5",
+    "gulp-jsdoc3": "^0.2.1",
+    "gulp-jshint": "latest",
+    "gulp-livereload": "latest",
+    "gulp-minify-css": "latest",
+    "gulp-notify": "latest",
+    "gulp-rimraf": "latest",
+    "gulp-serve": "^1.0.0",
+    "gulp-swig": "latest",
+    "gulp-uglify": "latest",
+    "gulp-util": "^3.0.0",
+    "jsdox": "^0.4.9",
+    "through2": "^0.6.1"
+  }
+}

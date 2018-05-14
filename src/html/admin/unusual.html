@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>和金在线-单据回传失败处理</title>
+    <!--resinclude "admin.unusual-css"-->
+</head>
+
+<body>
+    <header class="bs-docs-nav" id="top">
+        <div class="navbar-header">
+            <a href="index.html" class="navbar-brand">和金在线</a>
+        </div>
+        <nav id="bs-navbar" class="collapse navbar-collapse navbar-header-collapse">
+            <!-- <ul class="nav navbar-right">
+                <li>
+                    <a role="button" href="#" id="header-loginitem" class="">登录<span class="J_re_admin">/注册</span></a>
+                    <ul class="dropdown-menu" aria-labelledby="header-loginitem">
+                        <li><a href="setting.html"><span class="glyphicon glyphicon-cog"></span> 账户设置</a></li>
+                        <li class="divider"></li>
+                        <li><a href="javascript:;" id="header-resetpassword"><span class="glyphicon glyphicon-edit"></span> 修改密码</a></li>
+                        <li class="divider"></li>
+                        <li><a href="javascript:;" id="header-logout"><span class="glyphicon glyphicon-off"></span> 退出</a></li>
+                    </ul>
+                </li>
+            </ul> -->
+        </nav>
+    </header>
+    <div id="main">
+        <!--include "./admin/partial/menu.html"-->
+        <div class="right-body">
+            <div class="breadcrumbs" id="breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="index.html"><i class="glyphicon glyphicon-home"></i> 主页</a>
+                    </li>
+                    <li class="active">回传失败案件处理</li>
+                </ul>
+            </div>
+            <div class="container-fluid" style="margin-top:30px">
+                <div class="col-md-12">
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <label class="input-group-addon">保险公司：</label>
+                            <select id="tenantId" class="form-control">
+                                <option value="">请选择</option>
+                                <option value="10001">太保</option>
+                                <option value="10002">金饭碗</option>
+                                <option value="10003">新安怡</option>
+                                <option value="10004">太保移动</option>
+                                <option value="10005">fesco</option>
+                                <option value="10009">fesco外包</option>
+                                <option value="10006">万家</option>
+                                <option value="10007">平安生产</option>
+                                <option value="10008">平安历史</option>
+                                <option value="99999">理赔宝</option>
+                            </select>
+                            <!-- <input type="hidden" value="" id="tenantId" class="form-control"> -->
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="input-group">
+                            <label class="input-group-addon">赔案号：</label>
+                            <input type="text" value="" id="paymentNo" class="form-control" placeholder="请输入赔案号">
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-2">
+                        <input type="button" id="passBack" class="btn btn-primary" value="重新回传" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--resinclude "admin.unusual-jshtml"-->
+    <!--resinclude "admin.unusual-js"-->
+</body>
+
+</html>

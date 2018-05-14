@@ -1,0 +1,39 @@
+{
+    "rtnCode": "2000",
+    "rtnMsg": "success",
+    "personFamilyList": [{
+        "id": 1000799,
+        "name": "沈硼",
+        "cardType": "6",
+        "cardNo": "dfsagreqrewqt43254325",
+        "cardPhoto": "678951a4-aa6d-4140-812e-892230f611eb.jpg",
+        "bornDate": "1980-07-10",
+        "relation": "0",
+        "gender": "1",
+        "status": "1",
+        "createTime": 1448278387000
+    }, {
+        "id": 1000798,
+        "name": "沈慧茹",
+        "cardType": "1",
+        "cardNo": "10010236554847562",
+        "cardPhoto": "d3b9035b-6110-45b4-8def-cc1a317304e3.jpg",
+        "bornDate": "1984-06-08",
+        "relation": "3",
+        "gender": "1",
+        "status": "1",
+        "createTime": 1448277683000
+    }, {
+        "id": 1000800,
+        "name": "王之鑫",
+        "cardType": "1",
+        "cardNo": "12121121212",
+        "cardPhoto": "0686623b-8300-41ac-a1f3-f5e3cf2f9fd1.jpg",
+        "bornDate": "2015-11-11",
+        "relation": "1",
+        "gender": "0",
+        "status": "1",
+        "createTime": 1448281525000
+    }],
+    "total": 26
+}

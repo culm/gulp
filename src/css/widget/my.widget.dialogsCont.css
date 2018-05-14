@@ -1,0 +1,294 @@
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_1447759778_5026736.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_1447759778_5026736.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/font_1447759778_5026736.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/font_1447759778_5026736.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_1447759778_5026736.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+                    
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.iDialog,.iDialog-theme-normal,.iDialog-theme-imagebox{
+ display: none;
+ position: absolute;
+ z-index: 9999;
+ padding:0px;
+ margin:0px;
+}
+/*----------------default theme------------------*/
+.iDialog-container {
+	background: #fff;
+	border: 1px solid #21c0c0;
+	/*position: absolute;*/
+	border-radius: 6px;
+}
+.iDialog-header {
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid #b5b5b5;
+	line-height: 40px;
+	position: relative;
+}
+.iDialog-header-title {
+	font-size: 18px;
+	color:#2b2b2b;
+	padding: 11px 0 0 16px;
+    margin:0px;
+}
+.iDialog-header-close {
+	width: 40px;
+	height: 40px;
+	display: block;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	cursor: pointer;
+	text-align: center;
+	vertical-align: middle;
+	font-size:24px;
+}
+.iDialog-content{
+	padding:20px;
+	padding-bottom:6px;
+	text-align: left;
+	min-height:300px;
+	min-width:400px;
+}
+.iDialog-content>ul>li{height:25px;line-height:25px;}
+.iDialog-toolbar{
+	border:none;
+	background: #fff;
+	margin-bottom: 0px;
+	text-align: center;
+	padding:5px;
+	padding-bottom:0px;
+	margin-bottom:8px;
+}
+.iDialog-toolbar-button{
+	width: 120px;
+	height: 36px;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	cursor: pointer;
+	outline: none;
+	margin:8px;
+}
+.iDialog-button-cancel{
+	border: 1px solid #D3D3D3;
+	background: #FFF;
+	color: #000;
+}
+.iDialog-button-ok{
+	border: 1px solid #22C0C1;
+	background: #22C0C1;
+}
+.iDialog-button-ok:hover {
+	background: #1694A2;
+	border: 1px solid #1694A2;
+}
+.iDialog-button-cancel:hover {
+	background: #D3D3D3;
+	border: 1px solid #D3D3D3;
+}
+.iDialog-mask {
+	display: none;
+	position: fixed;
+	z-index: 200;
+	background: #BABABA;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	height: 100%;
+	width: 100%;
+	top: 0;
+	bottom: 0;
+}
+.tooltip1{
+	position: absolute;
+	width:140px;
+	height:25px;
+	line-height:25px;
+	background: #f8f5cf;
+	border:1px solid #8f8f8f;
+	z-index: 1000;
+	font-size: 12px;
+	font-family: "微软雅黑";
+	text-align:center;
+	display:none;
+}
+/*----------------normal theme------------------*/
+.iDialog-theme-normal .iDialog-container{
+	box-sizing:border-box;
+	border: 0px solid #fff;
+	border-left:none;
+	/*position: absolute;*/
+	border-radius:0px;
+}
+.iDialog-theme-normal .iDialog-header {
+	width: 100%;
+	border-bottom: 0px solid #ececec;
+	padding-bottom: 0px;
+	position: relative;
+}
+.iDialog-theme-normal .iDialog-header-title {
+	font-size:22px;
+	color:#2b2b2b;
+	padding:0px;
+	padding-top:30px;
+	padding-bottom: 14px;
+	margin: 0px 30px;
+    font-weight: normal;
+    border-bottom: 1px solid #ececec;
+}
+.iDialog-theme-normal .iDialog-header-close {
+	width: 40px;
+	height: 40px;
+	display: block;
+	position: absolute;
+	right: 0px;
+	top: 10px;
+	cursor: pointer;
+	text-align: center;
+	vertical-align: middle;
+	font-weight: normal;
+	font-size:36px;
+	color:#b7b7b7;
+}
+.iDialog-theme-normal .iDialog-content{
+	padding:0px;
+	padding-top:45px;
+	padding-bottom:6px;
+	text-align: center;
+	margin:0px 30px;
+}
+.iDialog-theme-normal .iDialog-toolbar{
+	border:none;
+	background: #fff;
+	margin-bottom: 0px;
+	text-align: center;
+	padding:5px;
+	padding-bottom:0px;
+	margin-bottom:8px;
+}
+.iDialog-theme-normal .iDialog-toolbar-button{
+	width: 120px;
+	height: 36px;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	cursor: pointer;
+	outline: none;
+	margin:8px;
+}
+.iDialog-theme-normal .iDialog-button-cancel{
+	border: 1px solid #D3D3D3;
+	background: #FFF;
+	color: #000;
+}
+.iDialog-theme-normal .iDialog-button-ok{
+	border: 1px solid #22C0C1;
+	background: #22C0C1;
+}
+.iDialog-theme-normal .iDialog-button-ok:hover {
+	background: #1694A2;
+	border: 1px solid #1694A2;
+}
+.iDialog-theme-normal .iDialog-button-cancel:hover {
+	background: #D3D3D3;
+	border: 1px solid #D3D3D3;
+}
+/*----------------imagebox theme------------------*/
+.iDialog-theme-imagebox .iDialog-container{
+	box-sizing:border-box;
+	border: 0px solid #fff;
+	border-left:none;
+	/*position: absolute;*/
+	border-radius:0px;
+}
+.iDialog-theme-imagebox .iDialog-header {
+	width: 100%;
+	border-bottom: 0px solid #ececec;
+	padding-bottom: 0px;
+	position: absolute;
+}
+.iDialog-theme-imagebox .iDialog-header-title {
+	font-size:22px;
+	color:#2b2b2b;
+	padding:0px;
+	padding-top:2px;
+	padding-bottom: 2px;
+	margin: 0px 2px;
+    font-weight: normal;
+    border-bottom: 1px solid #ececec;
+    display: none;
+}
+.iDialog-theme-imagebox .iDialog-header-close {
+	width: 40px;
+	height: 40px;
+	display: block;
+	position: absolute;
+	right: 0px;
+	top: 10px;
+	cursor: pointer;
+	text-align: center;
+	vertical-align: middle;
+	font-weight: imagebox;
+	font-size:48px;
+	color:#fff;
+}
+.iDialog-theme-imagebox .iDialog-header-close:hover {
+	font-weight: bold;
+	color: #b7b7b7;
+}
+.iDialog-theme-imagebox .iDialog-content{
+	padding:0px;
+	padding-top:0px;
+	padding-bottom:0px;
+	text-align: center;
+	margin:0px 0px;
+}
+.iDialog-theme-imagebox .iDialog-toolbar{
+	border:none;
+	background: #fff;
+	margin-bottom: 0px;
+	text-align: center;
+	padding:5px;
+	padding-bottom:0px;
+	margin-bottom:8px;
+}
+.iDialog-theme-imagebox .iDialog-toolbar-button{
+	width: 120px;
+	height: 36px;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	cursor: pointer;
+	outline: none;
+	margin:8px;
+}
+.iDialog-theme-imagebox .iDialog-button-cancel{
+	border: 1px solid #D3D3D3;
+	background: #FFF;
+	color: #000;
+}
+.iDialog-theme-imagebox .iDialog-button-ok{
+	border: 1px solid #22C0C1;
+	background: #22C0C1;
+}
+.iDialog-theme-imagebox .iDialog-button-ok:hover {
+	background: #1694A2;
+	border: 1px solid #1694A2;
+}
+.iDialog-theme-imagebox .iDialog-button-cancel:hover {
+	background: #D3D3D3;
+	border: 1px solid #D3D3D3;
+}

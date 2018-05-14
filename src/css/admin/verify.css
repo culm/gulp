@@ -1,0 +1,526 @@
+header {
+    box-shadow: 0 5px 10px #ddd;
+    height: 80px;
+    clear: both;
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    z-index: 10;
+}
+
+.logo {
+    width: 130px;
+    height: 40px;
+    margin: 20px;
+    background: url(../../img/logo.png);
+}
+
+.nav>li>a {
+    padding: 20px 30px;
+}
+
+.nav > li > a > img.avatar {
+    border-radius: 50%;
+    border: 1px solid #999;
+    margin-right: 10px;
+    height: 40px;
+    width: 40px;
+}
+
+.left-menu {
+    background-color: #fff;
+    border-top: none;
+    position: fixed;
+    top: 0px;
+    left: -200px;
+    z-index: 2;
+}
+
+.left-menu .glyphicon{
+    position: absolute;
+    right: -15px;
+    top: 300px;
+    padding: 100px 0;
+    background-color: #fff;
+    color: #ff9729;
+    cursor: pointer;
+    overflow-y: auto
+}
+
+.left-menu .pic{
+    overflow-y: auto;
+    padding: 10px 0;
+}
+
+.left-menu .pic img{
+    width: 170px;
+    height: 170px;
+    margin: 15px;
+    border: 1px solid #eee;
+}
+
+.left-menu img.cur{
+    border-color: #ff9729
+}
+
+/* 确认切割模态框 */
+.mask {
+    position: absolute;
+    z-index: 99;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.6;
+    display: none;
+}
+
+.show-imgs li {
+    list-style: none;
+}
+
+.show-imgs {
+    width: 100%;
+    /* height: 700px; */
+    height: 80%;
+    margin: 100px auto;
+    background-color: #fff;
+    text-align: center;
+    overflow: hidden;
+    display: none;
+    position: absolute;
+    z-index: 999;
+}
+
+.show-imgs .show-left {
+    width: 80%;
+    height: 100%;
+    padding-top: 50px;
+    background-color: #eee;
+    float: left;
+}
+
+.show-imgs .show-right {
+    width: 20%;
+    height: 100%;
+    background-color: skyblue;
+    float: left;
+    overflow: auto;
+}
+
+.show-right img {
+    width: 90%;
+    margin:15px;
+}
+
+.show-right input {
+    position: fixed;
+}
+
+.show-right .submit {
+    top: 120px;
+    right: 230px;
+}
+
+.show-right .restart {
+    top: 120px;
+    right: 90px;
+}
+
+.show-imgs .small-imgs {
+    margin-top: 60px;
+}
+
+.small-imgs .active {
+    border: 5px solid green;
+}
+
+.right-body.active{
+    margin-left: 0;
+}
+.right-body {
+    background-color: #eee;
+    border-top: none;
+}
+.right-body .breadcrumbs {
+    background: #eee;
+    padding: 20px 30px;
+    border-bottom: none;
+}
+
+.right-body .main {
+    margin: 0 30px;
+    position: relative;
+}
+
+.right-body .btn-save{
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    z-index: 1;
+}
+
+.right-body .btn-submit{
+    position: absolute;
+    top: 10px;
+    right: 120px;
+    z-index: 1;
+}
+
+.right-body .isAutoTask{
+    position: absolute;
+    top: 18px;
+    right: 240px;
+    z-index: 1;
+}
+
+.detail {
+    display: none;
+}
+
+.detail-show {
+    display: block;
+}
+
+.detail-title {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5
+}
+.detail-title .shenqing{
+    display: block;
+    clear: both;
+    padding-top: 10px;
+    overflow: hidden;
+}
+.detail-title .shenqing div{
+    width:10%;
+    float:left;
+    padding-left:1%;
+    overflow: hidden
+}
+
+.detail-body {
+    background-color: #fff;
+    overflow: hidden;
+    height: 60%;
+}
+
+.detail-body .detail-keyBox{
+    overflow: auto
+}
+
+.detail-body .col-md-4 {
+    padding: 10px 0;
+}
+
+.detail-body .col-md-4 span {
+    width: 48%;
+    display: inline-block;
+    text-align: right;
+    color: #666;
+}
+
+.detail-body .col-md-4 span:last-child {
+    text-align: left;
+    margin-left: 4%;
+    color: #333;
+}
+
+.detail-table {
+    margin: 20px;
+    text-align: center;
+    border: 1px solid #e5e5e5;
+    border-bottom: none;
+    position: relative;
+}
+.detail-table div {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #e5e5e5;
+    border-left: 1px solid #e5e5e5;
+}
+.detail-table .detail-thead div:first-child,
+.detail-table .detail-tr div:first-child {
+    border-left: none;
+}
+
+.detail-table .detail-thead {
+    background-color: #f6f7fb;
+}
+
+.detail-table .detail-tbody{
+    overflow: auto;
+    border: none;
+}
+
+.detail-edit {
+    padding: 10px 0;
+    margin: 0;
+}
+
+.detail-edit .input-group{
+    margin-top: 15px;
+}
+
+.detail-edit .inputEdit span {
+    width: 60%;
+    display: inline-block;
+    padding: 5px 0;
+    font-size: 14px;
+}
+
+.detail-edit .inputEdit span:first-child {
+    text-align: right;
+    margin-right: 2%;
+    width: 30%;
+    color: #333;
+}
+
+.detail-edit .col-md-12 input {
+    width: 90%;
+}
+
+
+.btnx {
+    border-radius: 0;
+    color: #fff;
+    width: 100px;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btnx:hover,
+.btnx:active {
+    color: #fff
+}
+
+.btn-green {
+    background-color: #7fc675;
+    margin-right: 10px;
+}
+
+.btn-orgin {
+    background-color: #ff9729;
+    margin-left: 10px;
+}
+
+.recognition-warning {
+    color: #f00;
+}
+
+.btn-defult {
+    padding: 10px 25px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    background-color: #fff;
+    margin-left: 20px;
+}
+
+.groupEidt a {
+    border: 1px solid #ff9729;
+    border-radius: 0;
+    background-color: #fff;
+    color: #333;
+    padding: 10px 25px;
+}
+
+.groupEidt a:hover,
+.groupEidt a:active {
+    border: 1px solid #ff9729;
+    background-color: #ff9729;
+    color: #fff;
+}
+
+.groupEidt a.cur {
+    background-color: #ff9729;
+    color: #fff;
+}
+
+.groupButton button.cur{
+    background-color: #ff9729;
+    border: 1px solid #ff9729;
+    color: #fff;
+}
+.groupButton button:hover,
+.groupButton button:active {
+    border: 1px solid #ff9729;
+    background-color: #ff9729;
+    color: #fff;
+}
+.drugNamebox{position: relative;}
+.drugNameList{position: absolute;top:30px;background-color: #fff;width: 100%;padding: 0;z-index: 20;}
+.drugNameLi{list-style: none;height:30px;line-height: 30px;overflow: hidden;max-width: 100%;padding:0 10px;border-bottom: 1px solid #ccc;text-align:left;} 
+
+.imgRepeatBox{
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    background-color: #eee;
+}
+.imgRepeatBox img{
+    max-width: none;
+    width: 100%;
+}
+.imgRepeatBox .glyphicon-repeat {
+    color: #ff9729;
+    position: absolute;
+    top:10px;
+    right: 10px;
+    padding: 5px;
+    z-index: 2;
+}
+.imgRepeatBox .point{
+    height: 50px;
+    width:50px;
+    background-color: rgba(0,0,0,0.5);
+    border: 1px solid #f00;
+    cursor: move;
+    position: absolute;
+    top:0px;
+    left: 0px;
+    font-size: 25px;
+    color: #fff;
+    text-align: center;
+    z-index: 1;
+}
+.imgRepeatBox .point-num{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #f00;
+    line-height: 20px;
+    background-color: #fff;
+    padding: 3px;
+    z-index: 1;
+}
+
+/* 添加切割框 */
+
+.verify-item {
+    width: 400px;
+    height: 60px;
+    position: absolute;
+    left: 300px;
+    top: 200px;
+    background-color: #000000;
+    opacity: 0.4;   
+    color: red;
+    z-index: 9;
+    /* display: none; */
+    /* box-sizing: border-box; */
+}
+
+.verify-item.active{
+    margin-left: 200px;
+}
+
+.verify-item .item {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.verify-item .item div {
+    position: absolute;
+}
+
+.item-content {
+    cursor: pointer;
+    left: 4px;
+    top: 4px;
+    bottom: 4px;
+    right: 4px;
+}
+
+.verify-item .item .item-left {
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: red;
+    /* cursor: col-resize; */
+    cursor: e-resize;
+}
+
+.verify-item .item .item-top {
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: red;
+    /* cursor: row-resize; */
+    cursor: n-resize;
+}
+
+.verify-item .item .item-right {
+    top: 0;
+    right: 0;
+    width: 4px;
+    height: 100%;
+    background-color: red;
+    /* cursor: col-resize; */
+    cursor: e-resize;
+}
+
+.verify-item .item .item-bottom {
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background-color: red;
+    /* cursor: row-resize; */
+    cursor: s-resize;
+}
+
+.verify-item .item .item-point {
+    bottom: 0;
+    right: 0;
+    height: 5px;
+    width: 5px;
+    background-color: red;
+    cursor: crosshair;
+}
+
+.verify-item .item .item-delete {
+    top: 0;
+    right: 4px;
+    cursor: default;
+}
+
+/*.imgRepeatBox .left-bot{
+    border: 2px solid #7fc675;
+}
+.imgRepeatBox .right-top{
+    border: 2px solid #337ab7;
+}
+.imgRepeatBox .right-bot{
+    border: 2px solid #ff9729;
+}*/
+
+.rotate90{
+    transform:rotate(90deg);
+    -ms-transform:rotate(90deg);    /* IE 9 */
+    -moz-transform:rotate(90deg);   /* Firefox */
+    -webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+    -o-transform:rotate(90deg);     /* Opera */
+}
+.rotate180{
+    transform:rotate(180deg);
+    -ms-transform:rotate(180deg);   /* IE 9 */
+    -moz-transform:rotate(180deg);  /* Firefox */
+    -webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+    -o-transform:rotate(180deg);    /* Opera */
+}
+.rotate270{
+    transform:rotate(270deg);
+    -ms-transform:rotate(270deg);   /* IE 9 */
+    -moz-transform:rotate(270deg);  /* Firefox */
+    -webkit-transform:rotate(270deg); /* Safari 和 Chrome */
+    -o-transform:rotate(270deg);    /* Opera */
+}
+.has_hos {width:360px; border-radius:5px; background:#fff; border:1px solid #ccc; position: absolute; left:350px; top:60px;
+padding-top: 30px; padding-left: 40px; padding-bottom:20px;}
+.has_hos button {margin-top:15px; margin-left:225px;}
+.close_hos {position: absolute; right:0px; top:0px; cursor:pointer;}

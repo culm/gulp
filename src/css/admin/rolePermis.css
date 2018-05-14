@@ -1,0 +1,26 @@
+.left-menu > .nav > li > a.rolePermis-active {
+    text-decoration: none;
+    background-color: #555;
+    color: #f57c00;
+    border-right: 5px solid #f57c00;
+}
+#data_modal_role .table-container table.table thead{display: none;}
+#data_modal_role .table-container table.table tbody tr td:first-child{width:65px;}
+.search{padding-top: 20px;padding-bottom: 20px;border-bottom: 1px solid #eeeeee;}
+#search{min-width: 100px;}
+#rolePermis-container{padding-top: 20px;}
+.order-pagination .pagination>li>a{padding-left: 20px; padding-right: 20px}
+#rolePermis-container tbody tr{cursor: pointer;}
+.b-table tbody td>div{padding-left: 20px;}
+.b-table tbody td>div{padding-left: 20px;}
+.b-table.table>thead>tr>th{
+	font-size: 16px;
+	font-weight: bold;
+	border-bottom-width: 2px;
+}
+
+/*前端分页*/
+.li_page { display: inline-block; width:50px; height:35px; line-height: 35px; text-align: center; border: 1px solid #ddd; cursor: pointer;}
+.li_page:first-child {border-top-left-radius: 4px; border-bottom-left-radius: 4px;}
+.li_page:last-child {border-top-right-radius: 4px; border-bottom-right-radius: 4px;}
+.li_page.active {color: #fff; background-color: #337ab7; border-color: #337ab7;}

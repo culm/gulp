@@ -1,0 +1,76 @@
+.left-menu > .nav > li > a.setting-active {
+    text-decoration: none;
+    background-color: #555;
+    color: #f57c00;
+    border-right: 5px solid #f57c00;
+}
+.infoSetting{
+	margin:15px;
+	padding: 15px;
+	border:1px solid #ddd;
+	-webkit-box-shadow: 0 0 3px #eee,inset 0 0 3px #fff;
+    box-shadow: 0 0 3px #eee,inset 0 0 3px #fff;
+}
+.infoSetting .tab-pane{
+	padding: 10px;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+	border:none;
+	border-bottom: 2px solid #f57c00;
+}
+.form-horizontal .control-label{
+	font-weight: 500;
+	padding-top: 0;
+}
+
+
+.container{
+    width:300px;
+}
+.container img{
+	width:300px;
+}
+.tmp{
+    overflow: hidden;
+}
+.tmp.have-img .inner {
+    display: block;
+}
+.inner{
+    position: relative;
+    font-size: 0;
+    overflow: hidden;
+    display: none;
+}
+.frames{
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: move;
+    outline: rgba(0, 0, 0, 0.6) solid 10000px;
+}
+.customer-fileupload.fileupload-container .fileupload-add label:before,
+.customer-fileupload.fileupload-container .fileupload-add label:after{
+    display: none;
+}
+#upload-avatar .fileupload-add{width: 140px;height: 140px;}
+.customer-fileupload.fileupload-container .fileupload-add{
+    border: 2px solid #ddd;
+}
+.customer-fileupload.fileupload-container .fileupload-add label{
+    background-size: 100% 100%;
+}
+#upload-avatar .btn-pic-add label{
+    background-image: url(../../img/ukang/person.png);
+}
+/*.btn-pic-add{
+    display: inline-block;
+    border: 2px dashed #b7b7b7;
+    position: relative;
+}
+*/
+.edit-basicinfo,.edit-insuranceinfo{min-width: 100px;}
+.tip-info{color: rgba(255, 0, 0, 0.8);
+    font-size: 14px;
+    margin-left: 10px;}

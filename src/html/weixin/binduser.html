@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>查看理赔单-理赔通</title>
+    <!--include "./weixin/partial/angularcss.html"-->
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <!--resinclude "weixin.binduser-css"-->
+</head>
+<body ng-app="myApp" ng-controller="binduserController">
+    <header class="tit">
+        <section class="logo"></section>
+    </header>
+    <section class="content">
+        <form name="form" novalidate="novalidate" class="input-group">
+            <!-- <div class="line_input {{ngclass.insurclass}}">
+                <label>保单号</label>
+                <span class="error" ng-show="valigate.insur" ng-cloak>保单号不能为空</span>
+                <input ng-focus="testInsur('focus')" ng-blur="testInsur()" type="text" name="insuranceNo" ng-model="formData.insuranceNo" data-tips="保单号码" required />  
+            </div> -->
+            <div class="line_input ">
+                <label>证件类型</label>
+                <input type="text"value="身份证" disabled />
+                <input type="hidden" name="cardType" ng-model="formData.cardType" [ng-value="0"] required />  
+                <hr>
+            </div>
+            <div class="line_input {{ngclass.idCardclass}}">
+                <label>身份证号</label>
+                <span class="error" ng-show="valigate.idCard" ng-cloak>身份证号不能为空</span>
+                <span class="error" ng-show="valigate.idCardsure" ng-cloak>请输入正确的身份证号</span>
+                <input ng-focus="testIdcard('focus')" ng-blur="testIdcard()" type="text" name="cardNo" ng-model="formData.cardNo" data-tips="身份件号码" required /> 
+                <hr>
+            </div>
+            <div class="line_input {{ngclass.idMobileClass}}">
+                <label>手机号</label>
+                <span class="error" ng-show="valigate.Mobile" ng-cloak>手机号号不能为空</span>
+                <span class="error" ng-show="valigate.Mobileture" ng-cloak>请输入正确的手机号</span>
+                <input ng-focus="testIdMobile('focus')" ng-blur="testIdMobile()" type="text" name="mobile" ng-model="formData.mobile" data-tips="手机号" required /> 
+                <hr>
+            </div>
+            <!-- <div class="line_input {{ngclass.codeclass}}">
+                <label>验证码</label>
+                <span class="error" ng-show="valigate.code" ng-cloak>验证码不能为空</span>
+                <span class="error" ng-show="valigate.code4" ng-cloak>请输入6位验证码</span>
+                <input ng-focus="testCode('focus')" ng-blur="testCode()" type="text" name="mobileCode" ng-model="formData.mobileCode" data-tips="验证码" required /> 
+                <a name="imgCode" class="btn img_code" ng-model="imgCode" ng-click="sendCode()">点击发送验证码</a>
+                <hr>
+            </div> -->
+            <div id="verifyBtn" ng-click="submit()">立即绑定</div>
+        </form>
+    </section>
+    <my-dialog></my-dialog>
+    <!-- <my-loading></my-loading> -->
+</body>
+<!--resinclude "weixin.binduser-js"-->
+</html>

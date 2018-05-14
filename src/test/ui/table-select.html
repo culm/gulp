@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="../../js/jquery-1.11.3.js" ></script>
+		<script type="text/javascript" src="../../bootstrap/js/bootstrap.js" ></script>
+		<script type="text/javascript" src="../../js/my.js" ></script>
+		<script type="text/javascript" src="../../js/script/ajax.js" ></script>
+		<script type="text/javascript" src="../../js/script/string.js" ></script>
+		<script type="text/javascript" src="../../js/script/string.cardno.js" ></script>
+		<script type="text/javascript" src="../../js/widget/my.widget.js" ></script>
+		<script type="text/javascript" src="../../js/widget/ui/my.widget.table.js" ></script>
+		<script type="text/javascript" src="../../js/widget/script/my.widget.fileupload.js" ></script>
+		<script type="text/javascript" src="../../js/widget/script/my.widget.tooltip.js" ></script>
+		<script type="text/javascript" src="../../js/widget/ui/my.widget.dialog.js" ></script>
+		<link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="../../css/widget/ui/my.widget.table.css">
+		<link rel="stylesheet" type="text/css" href="../../css/widget/script/my.widget.fileupload.css">
+		<link rel="stylesheet" type="text/css" href="../../css/widget/ui/my.widget.dialog.css">
+		<style type="text/css">
+			.address{width: 20%}
+			.title{
+				width: 20%;
+			}
+			.img{width: 20%}
+			.status{width:20%}
+			.myaction{width: 20%}
+		</style>
+	</head>
+	<body style="height:1000px">
+		<div style="width:600px;margin:auto;position:relative;margin-top:20px;">
+			<button class="btn btn-danger" id="add">添加</button>
+			<button class="btn btn-danger" id="choose">获取选中</button>
+		</div>
+		<div id="boostrap-container" style="width:800px;margin:auto;position:relative;margin-top:20px;"></div>
+		<script type="text/javascript">
+		var ServerPath = '/chealth-app-web/';
+			$(function(){
+				$('#add').on('click', function(){
+					window.table.appendRow({isNew: true, 'name': 'dd'}, true);
+				});
+				$('#choose').on('click', function(){
+					var table = window.table;
+					alert(JSON.stringify(table.getSelectStatus()));
+				});
+				var selectdata = [{
+						id: 0, name: '零'
+					},{
+						id: 1,name: '壹'
+					},{
+						id: 2, name: '贰'
+					},{
+						id: 3, name: '叁'
+					},{
+						id: 4, name: '四'
+					},{
+						id: 5, name: '五'
+					},{
+						id: 6, name: '六'
+					},{
+						id: 7, name: '七'
+					},{
+						id: 8, name: '九'
+					},{
+						id: 9, name: '十'
+					}];
+				var table = window.table = my.widget.bTable({
+					container: '#boostrap-container',
+					tableClass: 'table-condensed table-hover table-bordered',
+					bindDropdown: true,
+					multi: true,
+					collumns:[{
+							title: '',
+							field: 'type',
+							class: 'type',
+							editor: {
+								type: 'select',
+								options: {
+									multi: true,
+									valueField: 'id',
+									textField: 'name'
+								},
+								getDefaultData: function(){
+									return selectdata;
+								}
+							},
+							formatter: function(value, rowValue, index, isEditting){
+								var txt = [];
+								var _selectData = {};
+								//_selectData数据处理可以放到外部，处理一次就行
+								my.each(selectdata, function(_index, obj){
+									_selectData[obj.id] = obj.name;
+								});
+								if(typeof value === 'string') return _selectData[value];
+								my.each(value, function(__index, id){
+									txt.push(_selectData[id]);
+								});
+								return txt.join(',')
+							},
+							onClick: function(rowValue, rowIndex, target){
+								return false;
+							}
+						},{
+							title: '医疗机构名称',
+							field: 'name',
+							class: 'title',
+							onClick: function(rowValue, rowIndex, target){
+								return false;
+							}
+						},{
+							title: '操作',
+							field: 'myaction',
+							class: 'myaction',
+							updateWhenEdit: true,
+							formatter: function(rowValue, value, index, isEditting){
+								return [{
+									text: isEditting ? '保存':'修改',
+									value: isEditting ? 2 : 3,
+									class: 'btn btn-link'
+								},{
+									text: isEditting ?'取消':'删除',
+									value: isEditting ? 0 : 1,
+									class: 'btn btn-danger'
+								}]
+							},
+							onClick: function(rowValue, rowIndex, target){
+								var value = target.data('value');
+								if(value == '2'){//
+									if(this.validateRow(rowIndex)){
+										this._endEditing(rowIndex);
+									}
+									return false;
+								}
+								else if(value == '1') {
+									// if(rowValue.isNew)
+									this.delRow(rowIndex);
+									return false;
+								}
+								else if(value == '0'){
+									if(rowValue.isNew) this.delRow(rowIndex);
+									else this._endEditing(rowIndex);
+									return false;
+								}
+								return true;
+							}
+						}],
+					// pageSize: 20,
+					// url: '',
+					onBeforeEdit: function(rowValue, index){
+
+					},
+					onClick: function(rowValue, index){
+						this.beginEditIng(index);
+					}
+				});
+				var data = [
+					{type: [0, 1], 'name': 'name1'},
+					{type: [0], 'name': 'name2'},
+					{type: [2], 'name': 'name22'},
+					{type: [], 'name': 'name11'}];
+				table.loadData(data);
+			});
+		</script>
+	</body>
+</html>

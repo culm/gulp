@@ -1,0 +1,17 @@
+{
+"rtnCode":"2000",
+"rtnMsg":"分配成功",
+"roleId":10005,
+"privileges":[{
+	"id":11111,
+	"privilegeName":"ddd1"
+},
+{
+	"id":11111,
+	"privilegeName":"ddd2"
+},
+{
+	"id":11111,
+	"privilegeName":"ddd3"
+}]
+}

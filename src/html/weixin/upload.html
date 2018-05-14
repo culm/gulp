@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>上传理赔单-理赔通</title>
+    <!--include "./weixin/partial/angularcss.html"-->
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <!--resinclude "weixin.index-css"-->
+</head>
+<body ng-app="myApp" ng-controller="uploadController">
+    <header class="tit firstpage">
+        <section class="logo"></section>
+        <span id="upload-submit" class="btn" ng-click="uploadImage()">提交</span>
+    </header>
+    <section class="content firstpage">
+        <div>
+            <div class="weui_cell">
+                <div class="weui_cell_hd">
+                    <label class="hospital-label">选择医院:</label>
+                </div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input id="hospitalname" placeholder="医院名字" class="weui_input" type="text">
+                </div>
+            </div>
+        </div>
+        <div>
+        <div id="test"></div>
+            <ul class="upload-box">
+                <li ng-repeat="local in localIds" ng-cloak>
+                  <div class="upload-img">
+                    <span class="close iconfont icon-close" ng-click="removeImg(local)"></span>
+                    <img mysrc="{{local}}">
+                  </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <footer class="firstpage">
+        <span id="upload-add"><i class="iconfont icon-plusbold" ng-click="chooseImage()"></i></span>
+        <a class="active" ><i class="iconfont icon-uploado"></i>上传单据</a>
+        <a ng-click="wxLocation('user')"><i class="iconfont icon-usero"></i>我的</a>
+    </footer>
+    <my-dialog></my-dialog>
+    <section id="tenantList" class="modal cur {{style.tenantActive}}">
+        <div class="actionMenu {{style.tenantActive}}">
+            <ul>
+                <li class="actionMenu_title"> <input type="text" id="tenant"></li>
+                <li class="actionMenu_cell"></li>
+                <li class="actionMenu_cell"></li>
+                <li class="actionMenu_cell"></li>
+                <li class="actionMenu_cell"></li>
+            </ul>
+            <div class="actionMenu_btn" ng-click="hideModal('tenantActive')">取消</div>
+        </div>
+    </section>
+    <!-- <my-loading></my-loading> -->
+</body>
+<!--resinclude "weixin.index-js"-->
+</html>

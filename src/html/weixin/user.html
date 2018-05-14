@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>上传理赔单-理赔通</title>
+    <!--include "./weixin/partial/angularcss.html"-->
+    <!--resinclude "weixin.user-css"-->
+</head>
+
+<body ng-app="myApp" ng-controller="userController">
+    <header class="tit">
+        <section class="logo"></section>
+    </header>
+    <section class="content">
+        <div class="banner">
+            <div class="avatar"><img src="{{user.photo}}" alt="头像"></div>
+            <span ng-bind="user.name"></span>
+        </div>
+        <ul class="table-view user-list">
+            <li class="table-view-cell" ng-click="wxLocation('userInfo')"><a href="javascript:;"><i class="iconfont icon-usero"></i>个人信息</a></li>
+            <li class="table-view-cell" ng-click="wxLocation('mylist')"><a href="javascript:;"><i class="iconfont icon-docclipo"></i>我的保单</a></li>
+            <!-- <li style="display:none" class="table-view-cell" ng-click="wxLocation('userInfo')"><a href="javascript:;"><i class="iconfont icon-locationo"></i>联系地址</a></li> -->
+            <li class="table-view-cell" ng-click="wxLocation('family')"><a href="javascript:;"><i class="iconfont icon-userinfoo"></i>家属信息</a></li>
+            <!-- <li class="table-view-cell" ng-click="wxLocation('bank')"><a href="javascript:;"><i class="iconfont icon-bankcardo"></i>收款银行</a></li> -->
+        </ul>
+    </section>
+    <footer>
+        <a ng-click="wxLocation('upload')"><i class="iconfont icon-uploado"></i>上传单据</a>
+        <a class="active"><i class="iconfont icon-usero"></i>我的</a>
+    </footer>
+    <!-- <my-loading></my-loading> -->
+    <my-dialog></my-dialog>
+</body>
+<!--resinclude "weixin.user-js"-->
+</html>

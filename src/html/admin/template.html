@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>和金在线-模板管理</title> 
+		<!--resinclude "admin.template-css"-->
+	</head> 
+	<body>
+		<!--include "./common/header.html"-->
+		<div id="main">
+			<!--include "./admin/partial/menu.html"-->
+			<div class="right-body">
+				<div class="breadcrumbs" id="breadcrumbs">
+					<ul class="breadcrumb">
+						<li>
+							<a href="index.html"><i class="glyphicon glyphicon-home"></i> 主页</a>
+						</li>
+						<li class="active">模板管理</li>
+					</ul>
+				</div>
+				<div class="container-fluid" style="margin-top:30px">
+					<div class="col-md-9">
+						<button id="add-item" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> 添加数据项</button>
+						<button id="save-template" class="btn btn-primary"><span class="glyphicon"></span>保存</button>
+						<div id="upload-avatar" class="customer-fileupload">
+							<button id="img-upload" class="btn btn-primary"><span class="glyphicon"></span>上传模板图片</button>
+						</div>
+						<button style="display:none; cursor:pointer;" id="otherHosLoad" class="btn btn-primary"><span class="glyphicon"></span>从其他医院载入</button>
+						<div class="title_image"><span>定位图片：</span><img src="" /></div>
+						<div class="feature_images"><span>特征图片：</span><img src="" /></div>
+						<button style="display:none;" id="jiaozhengBtn" class="btn btn-primary"><span class="glyphicon"></span>矫正</button>
+						<button style="display:none;" id="autoJiaoZheng" class="btn btn-primary"><span class="glyphicon"></span>自动矫正</button>
+					</div> 
+					<div class="col-md-3">
+						<div id="uploadTempTemplateImg" class="customer-fileupload">
+							<button id="img-upload" class="uploadTempTemplateImg btn btn-primary"><span class="glyphicon"></span>上传</button>
+						</div>
+						<button class="testTemplateBtn btn btn-primary"><span class="glyphicon"></span>测试</button>
+					</div>
+				</div>
+                
+                <div class="title_image_list">
+					<div class="container-fluid">
+					    <ul class="list-group"></ul>
+					    <button id="add-title-image-btn" class="btn btn-primary"><span class="glyphicon"></span>增加定位图片</button>					
+					</div>					
+				</div>
+
+				<div class="container-fluid">
+					<div class="col-md-9">
+						<button class="loadOriginal btn btn-primary"><span class="glyphicon"></span>载入原图</button>
+						<button class="manualLevel btn btn-primary"><span class="glyphicon"></span>手动拉平</button>
+						<button class="scaleImg btn btn-primary"><span class="glyphicon"></span>缩放</button>
+					</div> 
+				</div>
+
+				<div class="container-fluid">
+					<div class="col-md-10">
+						<div class="col-md-2">
+							<div class="">
+								<select id="voucherType" class="form-control">
+									<option typeMark="0" value="">请选择</option>
+									<!-- <option typeMark="chufang" value="100">处方大类</option> -->
+									<option typeMark="chufang" value="110">西药无医保处方</option>
+									<option typeMark="chufang" value="120">中药无医保处方</option>
+									<option typeMark="chufang" value="130">西药有医保处方</option>
+									<option typeMark="chufang" value="140">中药有医保处方</option>
+									<!-- <option typeMark="shouju" value="200">收据大类</option> -->
+									<option typeMark="shouju" value="210">有医保收据</option>
+									<option typeMark="shouju" value="220">无医保收据</option>
+									<option typeMark="shouju" value="230">挂号收据</option>
+									<!-- <option typeMark="zhuyuan" value="300">住院收据大类</option> -->
+									<option typeMark="zhuyuan" value="310">住院收据</option>
+									<!-- <option typeMark="fapiao" value="400">明细清单大类</option> -->
+									<option typeMark="fapiao" value="410">明细清单</option>
+									<!-- <option typeMark="jiaozheng" value="800">矫正大类</option> -->
+									<option mark="jiaozheng" typeMark="jiaozheng-chufang" value="810">矫正处方</option>
+									<option mark="jiaozheng" typeMark="jiaozheng-shouju" value="820">矫正收据</option>
+									<option mark="jiaozheng" typeMark="jiaozheng-zyshouju" value="830">矫正住院收据</option>
+									<option mark="jiaozheng" typeMark="jiaozheng-mxqingdan" value="840">矫正明细清单</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="check_input">
+								<input id="hospitalName" type="text" value="" class="form-control" placeholder="医院名字">
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="">
+								<select id="provinceSelector" class="form-control">
+									<option value="">请选择</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="">
+								<select id="citySelector" class="form-control">
+									<option value="">请选择</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-2">
+							<div class="">
+								<select id="countySelector" class="form-control">
+									<option value="">请选择</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-2 ">
+                        	<input class="form-control" id="yearVal" type="text" value="" placeholder="填写模板年份">
+                    	</div>
+					</div>
+				</div>
+				<div class="container-fluid">
+					<div id="templatecontainer" onselectstart="return false;">
+						<img draggable="false" class="templateimg" src="">
+						<!-- 四个点校正 -->
+						<a class="point left-top" draggable="true"><span class="point-num">1</span><span class="glyphicon glyphicon-fullscreen"></span></a>
+				        <a class="point right-top" draggable="true"><span class="point-num">2</span><span class="glyphicon glyphicon-fullscreen"></span></a>
+				        <a class="point left-bot" draggable="true"><span class="point-num">3</span><span class="glyphicon glyphicon-fullscreen"></span></a>
+				        <a class="point right-bot" draggable="true"><span class="point-num">4</span><span class="glyphicon glyphicon-fullscreen"></span></a>
+				        <!-- 校正文字框选择 -->
+						<div class="correctChar correctCharSize">
+							<div class="correctChar correctChar-content"></div>
+							<div class="correctChar correctChar-right"></div>
+							<div class="correctChar correctChar-bottom"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="itemcontainer" class="container" style="width:400px;">
+			<div class="attr-items"></div>
+			<div class="btn-group btn-group-justified" style="margin-top:10px;">
+				<a id="attr-cancel" type="button" class="btn btn-default">取消</a>
+				<a id="item-del" type="button" class="btn btn-default">删除</a>
+				<a id="attr-add" type="button" class="btn btn-default">添加</a>
+				<a id="attr-save" type="button" class="btn btn-default">保存</a>
+			</div>
+		</div>
+		<!-- 测试模板 -->
+		<div class="testTemplate">
+			<div class="closeTemp"><img src="img/admin/close_button.png"></div>
+			<div class="largeImage"><img src="img/2015062600302402012.jpg" /></div>
+			<div class="smallImage">
+				<!-- <div class="smallLeft"><img src="img/downloadNamePhoto.jpg" /><span>/mydata/lpt/templates/temp/downloadNamePhoto.jpg</span></div>
+				<div class="smallLeft"><img src="img/downloadNamePhoto.jpg" /><span>/mydata/lpt/templates/temp/downloadNamePhoto.jpg</span></div>
+				<div class="smallLeft"><img src="img/downloadNamePhoto.jpg" /><span>/mydata/lpt/templates/temp/downloadNamePhoto.jpg</span></div> -->
+			</div>
+		</div>
+		<!--resinclude "admin.template-jshtml"-->
+		<!--resinclude "admin.template-js"-->
+	</body>
+</html>

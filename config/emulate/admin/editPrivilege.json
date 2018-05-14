@@ -1,0 +1,10 @@
+{
+	"rtnCode":"2000",
+	"rtnMsg":null,
+	"privilege":
+	{
+		"id":1000283,
+		"code":"1002",
+		"name":"修改保存"
+	}
+}

@@ -1,0 +1,140 @@
+<section class="modal modal-top {{style.basicInfoActive}}">
+    <header>理赔单基本信息</header>
+    <ul class="table-view module content" my-auto-height ng-transclude>
+        <li class="table-view-cell cur"><span class="pull-left">公司名字:</span><span class="pull-right">{{basicInfo.company}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">保单号:</span><span class="pull-right">{{basicInfo.insuranceNo}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">岗位:</span><span class="pull-right">{{basicInfo.job}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">年龄:</span><span class="pull-right">{{basicInfo.age}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">员工姓名:</span><span class="pull-right">{{basicInfo.name}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">性别:</span><span class="pull-right">{{basicInfo.gender | gender}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">出生年月:</span><span class="pull-right">{{basicInfo.bornDate | date:'yyyy-MM-dd'}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">证件号码:</span><span class="pull-right">{{basicInfo.cardNo}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">证件类型:</span><span class="pull-right">{{basicInfo.cardType}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">证件有效期:</span><span class="pull-right">{{basicInfo.validDate | date:'yyyy-MM-dd'}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">员工号:</span><span class="pull-right">{{basicInfo.jobNo}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">手机号码:</span><span class="pull-right">{{basicInfo.mobile}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">分机电话:</span><span class="pull-right">{{basicInfo.telephone}}</span></li>
+    </ul>
+    <footer>
+        <a class="left" ng-click="hideModal('basicInfoActive','menuActive')">关闭</a>
+        <a class="right" ng-click="hideModal('basicInfoActive')">查看理赔单资料</a>
+    </footer>
+</section>
+<section class="modal modal-top {{style.medicalActive}}">
+    <header>医疗账单资料</header>
+    <ul class="table-view module content" my-auto-height ng-transclude>
+        <ul class="table-view" style="margin-bottom:0;border:none" ng-repeat="list in medical.invocieInfo">
+            <li class="table-view-cell cur"><span class="pull-left">就诊日期:</span><span class="pull-right">{{list.visitDate | newDate0}}</span></li>
+            <li class="table-view-cell cur"><span class="pull-left">收据数量:</span><span class="pull-right">{{list.invoiceNum}}</span></li>
+            <li class="table-view-cell cur"><span class="pull-left">收据金额:</span><span class="pull-right">{{list.invoiceAmount}}</span></li>
+            <li class="table-view-cell cur"><span class="pull-left">病因:</span><span class="pull-right">{{list.diseaseCause}}</span></li>
+        </ul>
+        <li class="table-view-cell cur"><span class="pull-left">收据数量总数:</span><span class="pull-right">{{medical.invoiceNumTotal}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">收据总额:</span><span class="pull-right">{{medical.invoiceAmountTotal}}</span></li>
+    </ul>
+    <footer>
+        <a class="left" ng-click="hideModal('medicalActive','menuActive')">关闭</a>
+        <a class="right" ng-click="hideModal('medicalActive')">查看理赔单资料</a>
+    </footer>
+</section>
+<section class="images {{style.imagesActive1}}" ng-click="hideImg(1)">
+    <ul class="images-box">
+        <li ng-repeat="v in prescription"><img src="{{imgPath}}{{v.imageName}}" height="170" width="170" alt=""></li>
+    </ul>
+</section>
+<section class="modal modal-top {{style.prescriptionActive}} {{style.toImg1}}">
+    <header>{{hospitalName}} 处方<span class="yuantu" ng-click="showImg(1)">处方原图</span></header>
+    <ul class="table-view module content" ng-repeat="v in prescription" ng-show="{{$index == 0}}" my-auto-height ng-transclude>
+        <li class="table-view-cell cur"><span class="pull-left">姓名：</span><span class="pull-right">{{v.patientName}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">性别：</span><span class="pull-right">{{v.patientSex | gender}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">年龄：</span><span class="pull-right">{{v.patientAge}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">处方号码：</span><span class="pull-right">{{v.prescriptionId}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">就诊卡号：</span><span class="pull-right">{{v.cardId}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">科别：</span><span class="pull-right">{{v.department}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">就诊日期：</span><span class="pull-right">{{v.visitDate | date:'yyyy-MM-dd'}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">诊断结果：</span><span class="pull-right">{{v.diagnoise}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">处方医生：</span><span class="pull-right">{{v.doctor}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">发药药房：</span><span class="pull-right">{{v.delivery}}</span></li>
+        <li style="height:15px;width:100%;background:#ebebeb;"></li>
+        <li class="table-view-cell cur" ng-repeat="list in v.detailList">
+            <ul class="table-view" style="margin-bottom:0;border:none" >
+                <li class="table-view-cell cur"><span class="pull-left">药品名称：</span><span class="pull-right">{{list.drugName}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">规格：</span><span class="pull-right">{{list.drugUsageVolume}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">每日剂量：</span><span class="pull-right">{{list.drugDose}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">频次：</span><span class="pull-right">{{list.drugFrequency}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">用法：</span><span class="pull-right">{{list.drugUsageRoute}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">单价：</span><span class="pull-right">{{list.drugPrice}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">数量：</span><span class="pull-right">{{list.drugSpec}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">金额：</span><span class="pull-right">{{list.drugCost}}</span></li>
+            </ul>
+        </li>
+    </ul>
+    <footer>
+        <a class="left" ng-click="hideModal('prescriptionActive','menuActive')">关闭</a>
+        <a class="right" ng-click="hideModal('prescriptionActive')">查看理赔单资料</a>
+    </footer>
+</section>
+<section class="images {{style.imagesActive2}}" ng-click="hideImg(2)">
+    <ul class="images-box">
+        <li ng-repeat="v in receipt"><img src="{{imgPath}}{{v.imageName}}" height="170" width="170" alt=""></li>
+    </ul>
+</section>
+<section class="modal modal-top {{style.receiptActive}} {{style.toImg2}}">
+    <header>{{hospitalName}} 收据<span class="yuantu" ng-click="showImg(2)">收据原图</span></header>
+    <ul class="table-view module content" ng-repeat="v in receipt" ng-show="{{$index == 0}}" my-auto-height ng-transclude>
+        <li class="table-view-cell cur"><span class="pull-left">流水号：</span><span class="pull-right">{{v.hospitalType}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">NO：</span><span class="pull-right">{{v.no}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">姓名：</span><span class="pull-right">{{v.receiptName}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">性别：</span><span class="pull-right">{{v.receiptSex | gender}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">医保类型：</span><span class="pull-right">{{v.medicareType}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">社保卡号：</span><span class="pull-right">{{v.medicareCardNo}}</span></li>
+        <li class="table-view-cell cur">
+            <ul class="table-view" style="margin-bottom:0;border:none" ng-repeat="list in v.tollList" >
+                <li class="table-view-cell cur"><span class="pull-left">项目：</span><span class="pull-right">{{list.tollName}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">规格：</span><span class="pull-right">{{list.tollSpec}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">单价：</span><span class="pull-right">{{list.tollPrice}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">数量：</span><span class="pull-right">{{list.num}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">单位：</span><span class="pull-right">{{list.tollDose}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">金额：</span><span class="pull-right">{{list.tollCost}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">等级：</span><span class="pull-right">{{list.tollGrade}}</span></li>
+            </ul>
+        </li>
+        <li class="table-view-cell cur">
+            <ul class="table-view" style="margin-bottom:0;border:none">
+                <li class="table-view-cell cur"><span class="pull-left">门诊大额支付：</span><span class="pull-right">{{v.clinicPay}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">退休补充支付：</span><span class="pull-right">{{v.retirementPay}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">残军补助支付：</span><span class="pull-right">{{v.disabledPay}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">单位补充险支付：</span><span class="pull-right">{{v.unitAddPay}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">基金支付：</span><span class="pull-right">{{v.fundPay}}</span></li>
+            </ul>
+        </li>
+        <li class="table-view-cell cur">
+            <ul class="table-view" style="margin-bottom:0;border:none">
+                <li class="table-view-cell cur"><span class="pull-left">本次医保范围金额：</span><span class="pull-right">{{v.medicareScopeMoney}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">累计医保范围金额：</span><span class="pull-right">{{v.medicareScopeAllMoney}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">年度门诊大额累计支付：</span><span class="pull-right">{{v.clinicLargeMoney}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">个人账户余额：</span><span class="pull-right">{{v.personalMoney}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">个人账户支付：</span><span class="pull-right">{{v.personalPay}}</span></li>
+          </ul>
+        </li>
+        <li class="table-view-cell cur">
+            <ul class="table-view" style="margin-bottom:0;border:none">
+                <li class="table-view-cell cur"><span class="pull-left">自付一</span><span class="pull-right">{{v.selfPay1}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">起付金额：</span><span class="pull-right">{{v.selfPayFee}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">超封顶金额：</span><span class="pull-right">{{v.cappedMoney}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">自付二：</span><span class="pull-right">{{v.selfPay2}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">自费：</span><span class="pull-right">{{v.ownExpense}}</span></li>
+                <li class="table-view-cell cur"><span class="pull-left">个人支付金额：</span><span class="pull-right">{{v.selfPayMoney}}</span></li>
+          </ul>
+        </li>
+        <li class="table-view-cell cur"><span class="pull-left">合计大写</span><span class="pull-right">{{v.totalUpperCase}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">小写</span><span class="pull-right">{{v.totalLowerCase}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">收款单位</span><span class="pull-right">{{v.tollUnit}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">收款人</span><span class="pull-right">{{v.payee}}</span></li>
+        <li class="table-view-cell cur"><span class="pull-left">日期</span><span class="pull-right">{{v.tollDate | date:'yyyy-MM-dd'}}</span></li>
+    </ul>
+    <footer>
+        <a class="left" ng-click="hideModal('receiptActive','menuActive')">关闭</a>
+        <a class="right" ng-click="hideModal('receiptActive')">查看理赔单资料</a>
+    </footer>
+</section>

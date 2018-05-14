@@ -1,0 +1,41 @@
+{
+    "weixindemo-common":{
+        "js":[
+            "js/jquery-1.11.3.min.js",
+            "js/bootstrap.min.js",
+            "js/my.js",
+            "js/script/ajax.js",
+            "js/widget/defer/my.defer.js",
+            "js/service/my.service.js",
+            "js/widget/my.widget.js"
+        ],
+        "css":[
+            "bootstrap/css/bootstrap.min.css"
+        ]
+    },
+    "weixindemo.index":{
+        "js":[
+            "js/script/string.js",
+            "js/script/base64.js",
+            "js/script/md5.js",
+            "js/service/script/my.service.weixinDemo.js",
+            "js/weixindemo/my.weixindemo.js"
+        ],
+        "css":[
+            "css/weixindemo/index.css"
+        ],
+        "dependent":[
+            "my.widget.loading",
+            "my.widget.imgslider",
+            "jquery.autoCenter",
+            "my.widget.dialog",
+            "weixindemo-common"
+        ],
+        "relatefile": "weixindemo/index.html"
+    },
+    "static": [ 
+        "img/weixindemo",
+        "css/widget/images",
+        "css/widget/img"
+    ]
+}

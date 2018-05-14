@@ -1,0 +1,71 @@
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+	border:none;
+	border-bottom: 2px solid #f57c00;
+}
+.bs-dropzone{border:none;}
+
+tr .editInput.cur{
+	cursor: auto;
+    border: 1px solid #fff;
+    background-color: #fff;
+    box-shadow: none;
+    padding:0;
+}
+tr:hover .editInput.cur{
+	background-color: #f5f5f5;
+	border: 1px solid #f5f5f5;
+}
+.tab-detail .row{
+	padding: 0
+}
+.tab-detail .row .col-md-6{
+	border-right: 1px solid #ddd;
+	padding: 10px;
+}
+.tab-detail .row .col-md-6:last-child{
+	border-right: none;
+}
+.tab-detail .row.bs-dropzone>div:hover{
+	background-color: #f2f2f2;
+}
+.tab-detail .row.bs-dropzone>div:hover .editInput.cur{
+	background-color: #f2f2f2;
+	border: 1px solid #f2f2f2;
+}
+.tab-detail .lipeidan-person td.info{word-break: break-all;text-align: left; padding-left:20px;line-height: 35px; }
+.tab-detail .nav img{width: 100%;height: 100%;}
+
+.lipeidan-person {border-radius:3px;padding:10px;}
+.lipeidan-person .widget-title{text-align: left;font-size: 16px;line-height: 40px;}
+.lipeidan-person label{font-weight: normal;}
+.lipeidan-person td{font-size: 14px;}
+.lipeidan-person tbody td>div{padding-left: 10px;}
+.lipeidan-person.b-table.table>thead>tr>th{font-weight: bold;}
+.lipeidan-person.table-bordered {border:none;border-bottom:1px solid #ddd;}
+.shouju-person {margin-top:20px;}
+.shouju-person.table>tbody>tr>td{padding:3px 8px;}
+@media (min-width: 768px){
+	.modal-sm {
+	    width: 360px;
+	}
+}
+.widget-title{
+	color: #fff;
+	font-weight: bold;
+}
+.widget-title a{
+	color: #fff;
+}
+.widget-title a:hover,
+.widget-title a:focus{
+	color: #fff;
+}
+.editflag{display: none}
+.beforeedit{
+	text-align: left;
+    line-height: 30px;
+    min-height: 30px;
+}
+.editing-flag .editflag{display: block;}
+.editing-flag .beforeedit{display: none;padding-left: 20px;}
+.personinfo-edit{display: none}

@@ -1,0 +1,301 @@
+{
+	"rtnCode":"2000",
+	"list":[
+    {
+        "label": "药品列表",
+        "name": "DrugDetails",
+        "lineHeight": "76",
+        "maxLines": "5",
+        "key": "items",
+        "index": 0,
+        "x": "112",
+        "y": "379",
+        "w": "1397",
+        "h": "30",
+        "test": "test",
+        "items": [
+            {
+                "label": "药品名称",
+                "name": "name",
+                "w": 400,
+                "h": 40,
+                "path": "DrugDetails",
+                "index": 13,
+                "x": 137,
+                "y": 435
+            },
+            {
+                "label": "规格",
+                "name": "spec",
+                "w": 400,
+                "h": 36,
+                "path": "DrugDetails",
+                "index": 14,
+                "x": 138,
+                "y": 477
+            },
+            {
+                "label": "每次剂量",
+                "name": "usageVolume",
+                "w": 140,
+                "h": 40,
+                "path": "DrugDetails",
+                "index": 15,
+                "x": 543,
+                "y": 436,
+                "shifx":10
+            },
+            {
+                "label": "频次",
+                "name": "frequency",
+                "w": 140,
+                "h": 40,
+                "path": "DrugDetails",
+                "index": 16,
+                "x": 704,
+                "y": 437
+            },
+            {
+                "label": "用法",
+                "name": "用法",
+                "shiftX": 700,
+                "shiftY": 0,
+                "w": 140,
+                "h": 40,
+                "path": "DrugDetails",
+                "index": 17,
+                "x": 847,
+                "y": 436
+            },
+            {
+                "label": "单价",
+                "name": "price",
+                "shiftX": 850,
+                "shiftY": 0,
+                "w": 180,
+                "h": 40,
+                "path": "DrugDetails",
+                "index": 18,
+                "x": 997,
+                "y": 437
+            },
+            {
+                "label": "数量",
+                "name": "dose",
+                "shiftX": 1030,
+                "shiftY": 0,
+                "w": 120,
+                "h": 40,
+                "path": "DrugDetails",
+                "index": 19,
+                "x": 1186,
+                "y": 438
+            },
+            {
+                "label": "金额",
+                "name": "cost",
+                "shiftX": 1150,
+                "shiftY": 0,
+                "w": 180,
+                "h": 40,
+                "path": "DrugDetails",
+                "index": 20,
+                "x": 1337,
+                "y": 434
+            }
+        ]
+    },
+    {
+        "label": "测试列表",
+        "name": "mylist",
+        "key": "test",
+        "index": 1,
+        "x": 123,
+        "y": 529,
+        "w": 100,
+        "h": 30,
+        "test": [
+            {
+                "label": "名字1",
+                "name": "name1",
+                "path": "mylist",
+                "index": 21,
+                "x": 149,
+                "y": 592,
+                "w": 100,
+                "h": 30
+            },
+            {
+                "label": "名字2",
+                "name": "name2",
+                "path": "mylist",
+                "index": 22,
+                "x": 279,
+                "y": 597,
+                "w": 100,
+                "h": 30
+            }
+        ]
+    },
+    {
+        "label": "就诊卡",
+        "name": "cardID",
+        "direction": "R",
+        "size": 200,
+        "shiftX": 0,
+        "shiftY": 0,
+        "x": 1247,
+        "y": 77,
+        "index": 2,
+        "w": 195,
+        "h": 36
+    },
+    {
+        "label": "NO",
+        "name": "chufangID",
+        "direction": "R",
+        "size": 200,
+        "shiftX": 0,
+        "shiftY": 0,
+        "index": 3,
+        "x": 1246,
+        "y": 30,
+        "w": 210,
+        "h": 42
+    },
+    {
+        "label": "科别",
+        "name": "department",
+        "direction": "R",
+        "size": 200,
+        "shiftX": 0,
+        "shiftY": 0,
+        "index": 4,
+        "x": 1245,
+        "y": 120,
+        "w": 196,
+        "h": 33
+    },
+    {
+        "label": "姓名",
+        "name": "name",
+        "direction": "R",
+        "size": 100,
+        "shiftX": 0,
+        "shiftY": 0,
+        "index": 5,
+        "x": 163,
+        "y": 155,
+        "w": 100,
+        "h": 41
+    },
+    {
+        "label": "性别",
+        "name": "sex",
+        "direction": "R",
+        "size": 50,
+        "shiftX": 0,
+        "shiftY": 0,
+        "index": 6,
+        "x": 375,
+        "y": 157,
+        "w": 59,
+        "h": 37
+    },
+    {
+        "label": "年龄",
+        "name": "age",
+        "direction": "R",
+        "size": 100,
+        "shiftX": 0,
+        "shiftY": 0,
+        "index": 7,
+        "x": 507,
+        "y": 163,
+        "w": 100,
+        "h": 33
+    },
+    {
+        "label": "病情及诊断",
+        "name": "diagnoise",
+        "direction": "R",
+        "size": 300,
+        "shiftX": 0,
+        "shiftY": 0,
+        "index": 8,
+        "x": 255,
+        "y": 207,
+        "w": 277,
+        "h": 38
+    },
+    {
+        "label": "日期",
+        "name": "date",
+        "direction": "R",
+        "size": 300,
+        "shiftX": 205,
+        "shiftY": 0,
+        "index": 9,
+        "x": 967,
+        "y": 837,
+        "w": 312,
+        "h": 47
+    },
+    {
+        "label": "药费",
+        "name": "fee",
+        "direction": "R",
+        "size": 150,
+        "shiftX": 0,
+        "shiftY": 0,
+        "index": 10,
+        "x": 152,
+        "y": 944,
+        "w": 302,
+        "h": 41
+    },
+    {
+        "label": "处方医生",
+        "name": "doctor",
+        "direction": "R",
+        "size": 200,
+        "shiftX": 0,
+        "shiftY": 0,
+        "index": 11,
+        "x": 245,
+        "y": 836,
+        "w": 118,
+        "h": 49
+    },
+    {
+        "label": "病例号",
+        "name": "stest",
+        "path": "",
+        "index": 12,
+        "x": 1244,
+        "y": 168,
+        "w": 201,
+        "h": 30
+    },
+    {
+        "label": "处方",
+        "name": "tt",
+        "path": "",
+        "index": 24,
+        "x": 835,
+        "y": 22,
+        "w": 100,
+        "h": 63
+    },
+    {
+        "label": "处方1",
+        "name": "tt1",
+        "path": "",
+        "index": 25,
+        "x": 302,
+        "y": 21,
+        "w": 526,
+        "h": 62
+    }
+]
+}

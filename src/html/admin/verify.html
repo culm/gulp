@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>和金在线-理赔单修改</title>
+    <!--resinclude "admin.verify-css"-->
+</head>
+
+<body>
+    <div id="main">
+        <div class="left-menu hidden-xs hidden-sm">
+            <div class="pic"></div>
+            <span class="glyphicon glyphicon-triangle-right" title="点击选择单据"></span>
+        </div>
+        <!-- 确认切割 -->
+        <div class="mask" id="mask"></div>
+        <div class="show-imgs">
+            <div class="show-left">
+                <img src="" alt="">
+            </div>
+            <div class="show-right">
+                <div class="title">
+                    <input type="button" class="btn btn-primary submit" value="确定提交">
+                    <input type="button" class="btn btn-primary restart" value="重新切割">
+                </div>
+                <div class="small-imgs">
+                </div>
+            </div>
+        </div>
+        <div class="right-body active">
+            <div class="main">
+                <div class="isAutoTask">
+                    <input type="checkbox" value="" id="isAutoTask"> 是否自动获取任务</div>
+                <button data-value="1999" type="button" class="btn btnx btn-green pull-right btn-save">保存</button>
+                <button type="button" class="btn btnx btn-green pull-right btn-submit">申请</button>
+                <div class="main-verify"></div>
+            </div>
+        </div>
+    </div>
+    <input id="status" value="20100" type="hidden">
+    <!--resinclude "admin.verify-jshtml"-->
+    <!--resinclude "admin.verify-js"-->
+</body>
+
+</html>

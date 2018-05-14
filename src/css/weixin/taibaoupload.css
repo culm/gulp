@@ -1,0 +1,94 @@
+header {
+    height:55px;
+    background-color: #000;
+}
+#upload-add{
+	width: 50px;
+    height: 50px;
+    font-size: 45px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    background-color: #03bbd3;
+    border-radius: 50px;
+    position: absolute;
+    bottom: 65px;
+    right: 15px;
+}
+#upload-submit{
+	/*position: absolute;
+    top: 6px;
+    right: 10px;*/
+    font-size: 1em;
+    padding: 0;
+    color: #333;
+    border: none;
+    height: 32px;
+    color: #f47b03;
+    font-weight: bold;
+    width: 60px;
+    line-height: 32px;
+}
+.upload-box{
+	width: 100%;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+   	margin: 20px 0 50px;
+}
+.upload-box li{
+	float: left;
+	width: 33%;
+	list-style:none;
+	margin-bottom: 20px;
+}
+.upload-img{
+	width: 70%;
+	margin: 0 auto;
+	padding:10px;
+	background-color: #fff;
+	-webkit-box-shadow: 0 0 5px #999;
+    box-shadow: 0px 0px 5px #999;
+    position: relative;
+}
+.upload-img > span {
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	width: 26px;
+	height:26px;
+	border-radius: 20px;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	line-height: 26px;
+}
+.upload-img > span.close{
+	background-color: #f47b03;
+    font-size: 10px;
+}
+.upload-img > span.num{
+	background-color: #03bbd3;
+}
+.upload-img > img{
+	width: 100%;
+}
+.hospital-label{padding-right: 10px;}
+#hospitalname{margin-top: 15px;font-size: 14px;}
+
+.AutoCompleteTitle .title{
+    position: inherit;
+    display: inherit;
+    width: 100%;
+    padding-left: 9px;
+    margin: auto;
+    font-size: 12px;
+    line-height: 20px;
+    color: #333;
+    text-align: inherit;
+    white-space: nowrap;
+}
+
+/**/
+.title-cent {display:block; height:100%; line-height: 55px; text-align:center; color:#fff;}
+.material {height:50px; margin-top:55px; line-height: 50px; text-align: left; font-weight:bold; padding-left:15px;}

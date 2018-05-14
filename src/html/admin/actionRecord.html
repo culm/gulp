@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>和金在线-操作记录</title>
+    <!--resinclude "admin.actionRecord-css"-->
+</head>
+<body>
+    <!--include "./common/header.html"-->
+    <div id="main">
+        <!--include "./admin/partial/menu.html"-->
+        <div class="right-body">
+            <div class="breadcrumbs" id="breadcrumbs">
+                <ul class="breadcrumb">
+                    <li>
+                        <a href="index.html"><i class="glyphicon glyphicon-home"></i> 主页</a>
+                    </li>
+                    <li class="active">操作记录</li>
+                </ul>
+            </div>
+            <div class="container-fluid" style="margin-top:30px">
+                <div class="col-md-9">
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <label class="input-group-addon">用户名：</label><input type="text" value="" id="searchVal" class="form-control" placeholder="用户名">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <label class="input-group-addon">开始日期：</label>
+                            <input type="text" id="starttime" class="form-control" placeholder="开始日期" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <label class="input-group-addon">结束日期：</label>
+                            <input type="text" id="endtime" class="form-control" placeholder="结束日期" />
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <button id="search" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> 查询</button>
+                    </div> 
+                </div> 
+            </div>
+            <div class="container-fluid">
+                <div id="recordList"></div>
+                <div id="pagination-container"></div>
+                <h3 class="text-center hide" id="pagination-container-tips">模板列表空</h3>
+            </div>
+        </div>
+    </div>
+<!--resinclude "admin.actionRecord-jshtml"-->
+<!--resinclude "admin.actionRecord-js"-->
+</body>
+</html>
+

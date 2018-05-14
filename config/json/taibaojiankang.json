@@ -1,0 +1,44 @@
+{
+	"taibao-common":{
+		"js":[
+			"js/jquery-1.11.3.min.js",
+			"bootstrap/js/bootstrap.min.js",
+			"js/my.js",
+			"js/script/ajax.js",
+			"js/widget/defer/my.defer.js",
+			"js/service/my.service.js",
+			"js/widget/my.widget.js"
+		],
+		"css":[
+			"bootstrap/css/bootstrap.min.css", 
+			"css/taibao/common.css",
+			"css/taibao/fonts/fonts.css"
+		]
+	},
+	"taibao.upload2":{
+		"js":[
+			"js/script/string.js",
+			"js/script/base64.js",
+			"js/script/md5.js",
+			"js/service/taibao/my.service.taibaojiankang.js",
+			"js/taibao/common.js",
+			"js/taibao/upload2.js"
+		],
+		"css":[
+			"css/taibao/page2.css"
+		],
+		"dependent":[
+			"my.widget.loading",
+			"jquery.autoCenter",
+			"my.widget.dialog",
+			"taibao-common"
+		],
+		"relatefile": "taibao/upload2.html"
+	},
+	"static": [
+		"css/taibao/fonts",
+		"css/taibao/images2",
+		"js/taibao/android",
+		"js/taibao/ios"
+	]
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>和金在线-理赔单详情</title>
+		<!--resinclude "admin.detail-css"-->
+	</head>
+	<body>
+		<!--include "./common/header.html"-->
+		<div id="main">
+			<!--include "./admin/partial/menu.html"-->
+			<div class="right-body">
+				<div class="breadcrumbs" id="breadcrumbs">
+					<ul class="breadcrumb">
+						<li>
+							<a href="index.html"><i class="glyphicon glyphicon-home"></i> 主页</a>
+						</li>
+						<li class="active">理赔单详情</li>
+					</ul>
+				</div>
+				<div class="container-fluid">
+					<div class="row lipeidanHeader">
+						<div class="col-md-4">
+							<span>理赔单号:</span>
+							<span id="paymentNo"></span>
+						</div>
+						<div class="col-md-4">
+							<span>上传日期:</span>
+							<span id="paymentDate"></span>
+						</div>
+						<div class="col-md-4">
+							<span>订单状态:</span>
+							<span id="payment"></span>
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid">
+					<ul class="nav nav-tabs" role="tablist">
+					    <li role="presentation" class="active">
+					    	<a href="#lipeidan" aria-controls="lipeidan" role="tab" data-toggle="tab">理赔单</a>
+					    </li>
+					    <li role="presentation">
+					    	<a href="#prescriptionDetail" aria-controls="prescriptionDetail" role="tab" data-toggle="tab">处方</a>
+					    </li>
+					    <li role="presentation">
+					    	<a href="#receiptDetail" aria-controls="receiptDetail" role="tab" data-toggle="tab">收据</a>
+					    </li>
+					    <li role="presentation">
+					    	<a href="#otherDetail" aria-controls="otherDetail" role="tab" data-toggle="tab">其他</a>
+					    </li>
+					    <div class="btn-group" style="float:right;" id="status-contianer">
+					      <button id="payment-commit" data-value="1999" type="button" class="btn btn-success personinfo-status">审核完成</button>
+					      <button id="payment-cancel" type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">审核不通过
+					        <span class="caret"></span>
+					        <span class="sr-only">点击切换</span>
+					      </button>
+					      <ul class="dropdown-menu dropdown-menu-right">
+					        <li><a href="#" data-value="1001" id="receipt-defect">单据不全</a></li>
+					        <li><a href="#" data-value="1002" id="personinfo-defect">理赔人信息不全</a></li>
+					      </ul>
+					    </div>
+					</ul>
+					<div class="tab-content" id="detail-content">
+					    <div role="tabpanel" class="tab-pane active" id="lipeidan">
+					    	<div class="border-color-blue table-box" style="margin-top:15px;">
+						    	<div class="row header-color-blue" style="margin:0;clear:both">
+							    	<div class="widget-title">
+							    		<div style="width:50%;float:left">
+							    			<h4>保险索赔员工或家属资料</h4>
+							    		</div>
+							    		<div  style="text-align:right;width:50%;float:left;display:none">
+							    			<a href="javascript:;" class="btn btn-link hide personinfo-edit"><span class="glyphicon glyphicon-edit"></span> 修改</a>
+							    			<a href="javascript:;" class="btn btn-link hide personinfo-submit" id="loadEvent001"><span class="glyphicon glyphicon-ok"></span> 提交</a>
+							    			<a href="javascript:;" class="btn btn-link hide personinfo-close"><span class="glyphicon glyphicon-remove"></span> 取消</a>
+							    		</div>
+							    	</div>
+						    	</div>
+						    	
+								<div class="widget-body">
+									<table class="table table-bordered table-hover lipeidan-person" id="lipeidanInfo" style="margin-bottom:0;">
+
+									</table>
+								</div>
+							</div>
+							<div class="border-color-blue" style="overflow:hidden;margin-top:15px;">
+								<div class="header-color-blue">
+									<h4 class="widget-title">医疗账单资料</h4>
+								</div>
+								<div class="widget-body">
+									<div class="drug-container" style="margin:10px">
+										<div id="drug-container" class="col-md-10"></div>
+										<div class="col-md-2" style="padding:0">
+											<table class="b-table table table-bordered table-hover lipeidan-person">
+												<thead>
+													<tr>
+														<th>备注</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>备注内容</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+					    </div>
+					    <div role="tabpanel" class="tab-pane tab-detail" id="prescriptionDetail">
+					    	<div class="prescriptionDetail widget-box widget-color-blue"></div>
+					    </div>
+					    <div role="tabpanel" class="tab-pane tab-detail" id="receiptDetail">
+					    	<div class="receiptDetail widget-box widget-color-blue"></div>
+					    </div>
+					    <div role="tabpanel" class="tab-pane tab-detail" id="otherDetail">
+					    	<div class="otherDetail widget-box widget-color-blue"></div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<input type="hidden" value="" id="params_status">
+		<!--resinclude "admin.detail-jshtml"-->
+		<!--resinclude "admin.detail-js"-->
+	</body>
+</html>

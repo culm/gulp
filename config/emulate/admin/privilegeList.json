@@ -1,0 +1,81 @@
+{
+"rtnCode":"2000",
+"rtnMsg":null,
+"privilegeList":
+[
+	{
+		"id":10001,
+		 "code":"10001",       
+		"name":"权限1",      
+		"description":"描述"     
+	},
+	{
+		"id":10002,
+		 "code":"10002",       
+		"name":"权限2",      
+		"description":"描述"     
+	},
+	{
+		"id":10003,
+		 "code":"10003",       
+		"name":"权限3",      
+		"description":"描述"     
+	},
+	{
+		"id":10004,
+		 "code":"10004",       
+		"name":"权限4",      
+		"description":"描述"     
+	},
+	{
+		"id":10005,
+		 "code":"10005",       
+		"name":"权限5",      
+		"description":"描述"     
+	},
+	{
+		"id":10006,
+		 "code":"10006",       
+		"name":"权限6",      
+		"description":"描述"     
+	},
+	{
+		"id":10007,
+		 "code":"10007",       
+		"name":"权限7",      
+		"description":"描述"     
+	},
+	{
+		"id":10008,
+		 "code":"10008",       
+		"name":"权限8",      
+		"description":"描述"     
+	},
+	{
+		"id":10009,
+		 "code":"10009",       
+		"name":"权限9",      
+		"description":"描述"     
+	},
+	{
+		"id":10010,
+		 "code":"1234",       
+		"name":"权限10",      
+		"description":"描述"     
+	},
+	{
+		"id":10011,
+		 "code":"1234",       
+		"name":"权限11",      
+		"description":"描述"     
+	},
+	{
+		"id":10012,
+		 "code":"1234",       
+		"name":"权限12",      
+		"description":"描述"     
+	}
+],
+"total":12,
+"pageNum":1
+}

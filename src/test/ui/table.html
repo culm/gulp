@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="../../js/jquery-1.11.3.js" ></script>
+		<script type="text/javascript" src="../../bootstrap/js/bootstrap.js" ></script>
+		<script type="text/javascript" src="../../js/my.js" ></script>
+		<script type="text/javascript" src="../../js/script/ajax.js" ></script>
+		<script type="text/javascript" src="../../js/script/string.js" ></script>
+		<script type="text/javascript" src="../../js/script/string.cardno.js" ></script>
+		<script type="text/javascript" src="../../js/widget/my.widget.js" ></script>
+		<script type="text/javascript" src="../../js/widget/ui/my.widget.table.js" ></script>
+		<script type="text/javascript" src="../../js/widget/script/my.widget.fileupload.js" ></script>
+		<script type="text/javascript" src="../../js/widget/script/my.widget.tooltip.js" ></script>
+		<script type="text/javascript" src="../../js/widget/ui/my.widget.dialog.js" ></script>
+		<link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" type="text/css" href="../../css/widget/ui/my.widget.table.css">
+		<link rel="stylesheet" type="text/css" href="../../css/widget/script/my.widget.fileupload.css">
+		<link rel="stylesheet" type="text/css" href="../../css/widget/ui/my.widget.dialog.css">
+		<style type="text/css">
+			.address{width: 20%}
+			.title{
+				width: 20%;
+			}
+			.img{width: 20%}
+			.status{width:20%}
+			.myaction{width: 20%}
+		</style>
+	</head>
+	<body style="height:1000px">
+		<div style="width:600px;margin:auto;position:relative;margin-top:20px;">
+			<button class="btn btn-danger" id="add">添加</button>
+			<button class="btn btn-danger" id="choose">获取选中</button>
+		</div>
+		<div id="boostrap-container" style="width:800px;margin:auto;position:relative;margin-top:20px;"></div>
+		<script type="text/javascript">
+		var ServerPath = '/chealth-app-web/';
+			$(function(){
+				$('#add').on('click', function(){
+					window.table.appendRow({isNew: true, 'name': 'dd'}, true);
+				});
+				$('#choose').on('click', function(){
+					var table = window.table;
+					alert(JSON.stringify(table.getSelectStatus()));
+				});
+				var table = window.table = my.widget.bTable({
+					container: '#boostrap-container',
+					tableClass: 'table-condensed table-hover table-bordered',
+					bindDropdown: true,
+					multi: true,
+					collumns:[{
+							title: '',
+							field: 'type',
+							class: 'title',
+							editor: {
+								type: 'checkbox'
+							},
+							onClick: function(rowValue, rowIndex, target){
+								return false;
+							}
+						},{
+							title: '医疗机构名称',
+							field: 'name',
+							class: 'title',
+							onClick: function(rowValue, rowIndex, target){
+								return false;
+							}
+						},{
+							title: '地址',
+							field: 'address',
+							class: 'address',
+							editor: {
+								type: 'text',
+								pattern: {
+									'^[1-9][0-9]{0,2}$': '请输入数字',
+									//'isCardNo': '不是身份证号码',
+									'test': function(val){
+										if(val == 'test')
+										 return '测试不正确';
+										return '';
+									}
+								}
+							},
+							onClick: function(rowValue, rowIndex, target){
+								return false;
+							}
+						},{
+							title: '图片',
+							field: 'img',
+							class: 'img',
+							editor: {
+								type: 'fileupload',
+								options:{
+									path: ServerPath + 'upload/batchUploadImg',
+									onInit: function(){
+										$(this.container + ' .uploadfile-label ').html('点击添加图片').addClass('btn btn-link');
+									},
+					                onUploadError: function(){
+					                    A.alert(上传文件失败);
+					                },
+					                onShowFile: function(dataKey, src){
+					                    $(this.container + ' label').css('background-image', 'url(' + src + ')');
+					                    $(this.container).addClass('customer-fileupload');
+					                    return false;
+					                },
+					                onUploadSuccess: function(ret, file){
+					                    var _that = this,
+					                    	imgName = ret.imageList[0],
+					                        key = file.name + file.size;
+					                    if(file.type == 'image/tiff'){//用上传的图片替换目前的tiff图片
+					                        var img = new Image();
+					                        img.src = ServerPath + 'upload/download?fileName=' + imgName;
+					                        img.onload = function(){
+					                            $(_that.container + ' div[data-key="' + key + '"]').next().prop('src', this.src);
+					                        }
+					                        img.style.display = 'none';
+					                        document.body.appendChild(img);
+					                    }
+					                    $(_that.container).attr('data-url', imgName);
+					                }
+								}
+							},
+							formatter: function(value, rowValue, index){
+								if(value){
+									return '<button style="background-image:url(' + ServerPath + 'upload/download?fileName=' + value + ')" class="btn btn-link img-button">点击查看图片</button>';
+								}else{
+									return '<button class="btn btn-link img-button">暂无图片</button>'
+								}
+								return value || '';
+								if(value){
+									return '1';
+								}else{
+									return '0';
+								}
+							},
+							onClick: function(rowValue, rowIndex, target, isEditting){
+								if(!isEditting && rowValue.img){
+									my.widget.dialog.show({
+						                title: '查看图片',
+						                modalType: '',
+						                modalDialog: 'modal-lg',
+						                message: '<img style="width:100%" src="' + ServerPath + 'upload/download?fileName=' + rowValue.img+'" />',
+						                buttons:[{text: '确定', class: 'btn btn-default', value: 0, dismiss: 'modal'}]
+						            });
+								}
+								return false;
+							}
+						},{
+							title: '操作',
+							field: 'myaction',
+							class: 'myaction',
+							updateWhenEdit: true,
+							formatter: function(rowValue, value, index, isEditting){
+								return [{
+									text: isEditting ? '保存':'修改',
+									value: isEditting ? 2 : 3,
+									class: 'btn btn-link'
+								},{
+									text: isEditting ?'取消':'删除',
+									value: isEditting ? 0 : 1,
+									class: 'btn btn-danger'
+								}]
+							},
+							onClick: function(rowValue, rowIndex, target){
+								var value = target.data('value');
+								if(value == '2'){//
+									if(this.validateRow(rowIndex)){
+										this._endEditing(rowIndex);
+									}
+									return false;
+								}
+								else if(value == '1') {
+									// if(rowValue.isNew)
+									this.delRow(rowIndex);
+									return false;
+								}
+								else if(value == '0'){
+									if(rowValue.isNew) this.delRow(rowIndex);
+									else this._endEditing(rowIndex);
+									return false;
+								}
+								return true;
+							}
+						}],
+					// pageSize: 20,
+					// url: '',
+					onBeforeEdit: function(rowValue, index){
+
+					},
+					onClick: function(rowValue, index){
+						this.beginEditIng(index);
+					},
+					onDropdownClick: function(id, text, field){
+						if(field == 'status'){
+							this.data[this.editIndex].status = id;
+						}
+					}
+				});
+				var data = [
+					{type: true,'name': 'name1', 'address': 'addressdsafsafsafdsadfdsas1111111111111111111'},
+					{type: false,'name': 'name2', 'address': 'address2', 'img':'ee98b4e6-b11d-416e-8ae7-4abf4cfe530d.jpg'},
+					{type: false,'name': 'name22', 'address': 'address22', 'img':'f05cdb53-4631-4e20-aa16-9103e5484a2e.jpg'},
+					{type: true,'name': 'name11', 'address': 'address11'}]
+				table.loadData(data);
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+.left-menu > .nav > li > a.hospitalList-active {
+    text-decoration: none;
+    background-color: #555;
+    color: #f57c00;
+    border-right: 5px solid #f57c00;
+}
+#hostpitalList {position: relative;}
+.mapp-list-empty {text-align: center; padding: 10px;}
+.hos_mapp_list {position: absolute;left:0; top:0;z-index:333; width:100%; background: #fff; border:2px solid #999; display:none;}
+.hos_mapp_list ul,.hos_mapp_list ol {width:100%; padding:0; height:35px; margin-bottom:0px;}
+.hos_mapp_list ul li,.hos_mapp_list ol li{list-style: none; height:35px; line-height:35px; float: left; width:14.28%; 
+	border-top:1px solid #ccc; border-left:1px solid #ccc;}
+.hos_mapp_list ol{background: #eeece8;}
+.hos_mapp_list ol li{text-align: center;}
+.hos_mapp_list ul li {padding-left:5px; font-size: 14px; text-align: left; overflow: hidden;
+    text-overflow: ellipsis; word-break: keep-all; white-space: nowrap;}
+.hos_mapp_list ul li input {height:30px; width: 100%;
+    height: 100%; border: 0; padding-left: 2px;}
+li .btn.btn-primary {padding:3px 6px; margin: 0px 30px 4px 10px;}

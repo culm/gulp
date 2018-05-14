@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>个人信息-银行卡</title>
+    <!--include "./weixin/partial/angularcss.html"-->
+    <!--resinclude "weixin.bank-css"-->
+</head>
+<body ng-app="myApp" ng-controller="bankController" class="js_container">
+    <header class="tit">
+        <section class="bank_top">
+            <div class="backOff">
+                <a class="iconfont icon_back" href="javascript:;" ng-click="wxUrlBack()"></a>
+            </div>
+            <span>银行卡</span>
+            <div class="add">
+                <a ng-click="addBank()" class="iconfont icon_add" href="javascript:;"></a>
+            </div>
+        </section>
+    </header>
+    <section class="content">
+        <div ng-repeat="bank in banks" class="card_list" bankId="{{bank.id || newBank.id}}" ng-cloak>
+            <div class="card_title">
+                <img src="css/weixin/images/boc.png" />
+                <span ng-bind="bank.name"></span>
+                <a ng-click="delBank($index)" class="remove" href="javascript:;">删除</a>
+            </div>
+            <div class="card_body">
+                <p class="blak"><span>持卡人：</span><span ng-bind="bank.owner"></span></p>
+                <p class="card_number" ng-bind="bank.cardNo"></p>
+            </div>
+        </div>
+        <div ng-show="{{banks.length == 0}}" class="card_no ng-hide">
+            <p class="card_number">您还没有银行账户</p>
+            <p class="card_number">请点击“+”填写银行卡信息</p>
+        </div>
+        <!-- card_add --> 
+        <div class="card_add" id="actionSheet_wrap">
+            <div ng-click="cancelBank()" class="weui_mask_transition {{maskClass}}"></div>
+            <div ng-click="bankBlur()" class="weui_actionsheet {{addBankClass}}" id="weui_actionsheet">
+                <form name="form" ng-submit="saveBank()" novalidate="novalidate">
+                <div class="card_messageDetail">
+                    <div class="ca_title">请填写持卡人的银行卡</div>
+                    <div class="list_mess {{ngclass.ownerclass}}">
+                        <p>持卡人</p>
+                        <input type="text" name="owner" ng-model="newBank.owner" ng-minlength="2" ng-maxlength="10" required ng-focus="testOwner('focus')" ng-blur="testOwner()" />
+                        <span class="error" ng-show="valigate.owner">持卡人姓名不能为空</span>
+                        <span class="error" ng-show="(form.owner.$dirty && form.owner.$error.minlength) || (form.owner.$dirty && form.owner.$error.maxlength)">最少两个字,最多10个字</span>
+                    </div>
+                    <div class="list_mess {{ngclass.nameclass}}">
+                        <p>银行</p>
+                        <input type="text" autocomplete="off" name="name" ng-focus="bankFocus()" ng-blur="hideName()" ng-model="newBank.name" required />
+                        <span class="error" ng-show="valigate.name">请选择银行</span>
+                        <div ng-show="{{bankBlured}}" class="bank_list">
+                            <p ng-click="chooseBank(obtain)" ng-repeat="obtain in obtains" bankId="{{obtain.id}}">{{obtain.name}}</p>
+                        </div>
+                    </div>
+                    <div class="list_mess {{ngclass.cardNoclass}}">
+                        <p>卡号</p>  
+                        <input ng-focus="testCard('focus')" ng-blur="testCard()" type="text" name="cardNo" ng-model="newBank.cardNo" required />
+                        <span class="error" ng-show="valigate.required">此项为必填项</span>
+                        <span class="error" ng-show="valigate.valigate">您输入的卡号不符合规则</span>
+                    </div>
+                </div>
+                <div class="saveOrCancel">
+                    <a href="javascript:;" class="save" id="actionsheet_save"><input type="submit" value="保存"/></a>
+                    <a ng-click="cancelBank()" href="javascript:;" class="cancel" id="actionsheet_cancel">取消</a>
+                </div>
+                </form> 
+            </div>
+        </div>
+    </section>
+    <my-dialog></my-dialog>
+    <!-- <my-loading></my-loading> -->
+</body>
+<!--resinclude "weixin.bank-js"-->
+</html>

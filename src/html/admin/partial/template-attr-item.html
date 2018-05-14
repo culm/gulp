@@ -1,0 +1,19 @@
+<script type="text/html" id="template-attr-item">
+	<div class="row">
+		<div class="col-sm-5">
+			<div class="input-group">
+			  <span class="input-group-addon">key:</span>
+			  <input {{disabled}} data-old="{{key}}" data-pattern='{"^\\S+$":"请输入key", "data-checkAttrkey": "该属性已存在"}' type="text" value="{{key}}" class="form-control attr-label" placeholder="key">
+			</div>
+		</div>
+		<div class="col-sm-5">
+			<div class="input-group">
+			  <span class="input-group-addon">value:</span>
+			  <input {{disabled}} data-old="{{value}}" type="text" data-pattern='{"^\\S+$":"请输入value"}' value="{{value}}" class="form-control attr-value" placeholder="value">
+			</div>
+		</div>
+		<div class="col-sm-2">
+			<a class="btn btn-link {{disabled}}" id="remove-attr">删除</a>
+		</div>
+	</div>
+</script>

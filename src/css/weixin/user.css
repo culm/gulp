@@ -1,0 +1,51 @@
+body{
+	background: #fff;
+}
+.banner{
+	background-color:#fe9703;
+	height: 160px;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+}
+.avatar{
+	padding: 15px 0 5px;
+}
+.avatar img{
+	border: 2px solid #fff;
+	border-radius: 100px;
+	width: 100px;
+	height: 100px;
+}
+.user-list .iconfont{
+	color: #fff;
+	padding: 6px;
+	font-size: 18px;
+	border-radius: 30px;
+	margin-right:8px;
+	background: #f47b03;
+	position: absolute;
+	left: -42px;
+}
+
+/*table-view*/
+
+.table-view-cell {
+    padding:5px 30px 5px 10px;
+    margin-left: 40px;
+    overflow: inherit;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.table-view-cell:active {
+    background: #fdfdfd
+}
+
+.table-view-cell:after{
+	font-family: iconfont;
+	content: "\e60f";
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #dddddd;
+}

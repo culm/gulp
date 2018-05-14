@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>和金在线-理赔单录入</title>
+    <!--resinclude "admin.review-css"-->
+</head>
+
+<body>
+    <div id="main">
+        <div class="left-menu hidden-xs hidden-sm">
+            <div class="pic">
+                <div class="picBox" id="pic000">
+                    <div class="picTitle">当前图片 <span class="glyphicon glyphicon-triangle-top"></span></div>
+                </div>
+                <div class="picBox" id="pic100">
+                    <div class="picTitle">处方  <span class="glyphicon glyphicon-triangle-bottom"></span></div>
+                </div>
+                <div class="picBox" id="pic200">
+                    <div class="picTitle">门诊收据 <span class="glyphicon glyphicon-triangle-bottom"></span></div>
+                </div>
+                <div class="picBox" id="pic300">
+                    <div class="picTitle">住院收据 <span class="glyphicon glyphicon-triangle-bottom"></span></div>
+                </div>
+                <div class="picBox" id="pic400">
+                    <div class="picTitle">住院费用清单 <span class="glyphicon glyphicon-triangle-bottom"></span></div>
+                </div>
+                <div class="picBox" id="pic410">
+                    <div class="picTitle">门诊费用清单 <span class="glyphicon glyphicon-triangle-bottom"></span></div>
+                </div>
+                <div class="picBox" id="pic500">
+                    <div class="picTitle">门诊病历 <span class="glyphicon glyphicon-triangle-bottom"></span></div>
+                </div>
+                <div class="picBox" id="pic600">
+                    <div class="picTitle">出院小结 <span class="glyphicon glyphicon-triangle-bottom"></span></div>
+                </div>
+                <div class="picBox" id="pic700">
+                    <div class="picTitle">增值税发票 <span class="glyphicon glyphicon-triangle-bottom"></span></div>
+                </div>
+                <div class="picBox" id="pic800">
+                    <div class="picTitle">门特 <span class="glyphicon glyphicon-triangle-bottom"></span></div>
+                </div>
+                <div class="picBox" id="pic900">
+                    <div class="picTitle">门诊结算单 <span class="glyphicon glyphicon-triangle-bottom"></span></div>
+                </div> 
+                <div class="picBox" id="pic910">
+                    <div class="picTitle">住院结算单 <span class="glyphicon glyphicon-triangle-bottom"></span></div>
+                </div>
+                <div class="picBox" id="pic3000">
+                    <div class="picTitle">申请书 <span class="glyphicon glyphicon-triangle-bottom"></span></div>
+                </div> 
+                <div class="picBox" id="pic9000">
+                    <div class="picTitle">其他 <span class="glyphicon glyphicon-triangle-bottom"></span></div>
+                </div>                            
+            </div>
+            <span class="glyphicon glyphicon-triangle-right" title="点击选择单据"></span>
+        </div>
+        <div class="right-body active">
+            <div class="main">
+                <div class="isAutoTask cur"><input type="checkbox" value="" id="isAutoTask"> 是否自动获取任务</div>
+                <button type="button" class="btn btnx btn-green pull-right btn-save">保存</button>
+                <button type="button" class="btn btnx btn-green pull-right btn-cache">暂存</button>
+                <button type="button" class="btn btnx btn-green pull-right btn-submit">申请</button>
+                <div class="main-Tpl">
+                    <div class="detail detail-show">
+                        <div class="detail-box">
+                            <div class="detail-body">
+                                <div class="detail-title">
+                                    <div class="col-md-12">
+                                        <b class="receiptName">票据</b>
+                                        <span id="paymentNo"></span>
+                                    </div>
+                                    <div class="col-md-12" style="padding-top: 10px;">
+                                        <div class="col-md-7"></div>
+                                        <div class="col-md-3">
+                                            <div class="input-group hospitalname">
+                                                <label class="input-group-addon">选择医院：</label>
+                                                <input type="text" value="" class="form-control" id="hospitalName" placeholder="输入医院名字" autocomplete="off">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input type="text" name="receiptStatus" class="receiptStatus">
+                                        </div>
+                                    </div>
+                                    <div style="clear:both"></div>
+                                </div>
+                                <div class="row detail-edit">
+                                    <div class="col-md-8">
+                                        <div class="imgRepeatBox">
+                                            <img src="" class="img-responsive imgRepeat" id="imgRepeat" />
+                                            <button class="glyphicon glyphicon-repeat" title="点击旋转图片"></button>
+                                            <span class="n-resize"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4" id="detail-keyBox">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="detail-body">
+                                <div class="detail-title">
+                                    <b class="receiptName">票据</b>
+                                </div>
+                                <div class="row detail-table" id="detail-table">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input id="status" value="30100" type="hidden">
+    <input id="hospitallist" value="400" type="hidden">
+    <!--resinclude "admin.review-jshtml"-->
+    <!--resinclude "admin.review-js"-->
+</body>
+
+</html>

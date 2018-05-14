@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>上传理赔单-理赔通</title>
+    <!--include "./weixin/partial/angularcss.html"-->
+    <!--resinclude "weixin.family-css"-->
+</head>
+<body ng-app="myApp" ng-controller="familyController" >
+    <header class="tit">
+        <a class="pull-left iconfont icon-arrowleft" href="javascript:;" ng-click="wxUrlBack()"></a>
+        <br/>
+        家属列表
+    </header>
+    <section class="content">
+        <ul class="list-box" id="listUl">
+            <li ng-repeat="v in personFamily" ng-click="getDetail(v)" ng-cloak>
+                <div class="list-tit">
+                    <i></i>
+                    <b ng-bind="v.name"></b> 
+                </div>
+                <dl>
+                    <dd><span>家属性别：</span><span ng-bind="v.gender | gender"></span></dd>
+                    <dd><span>出生日期：</span><span ng-bind="v.bornDate"></span></dd>
+                    <dd><span>{{v.cardType | cardType}}：</span><span ng-bind="v.cardNo"></span></dd>
+                    <dd><span>家属关系：</span><span ng-bind="v.relation | relation"></span></dd>
+                </dl>
+            </li>
+            <li style="padding:50px;text-align:center;color:#aaa;font-size:20px;box-shadow:none;background:#ebebeb" ng-show="{{personFamily.length == 0}}">
+                <i class="iconfont icon-docclip"><span></span></i>
+                <br/>家属列表为空
+            </li>
+        </ul>
+    </section>
+    <my-dialog></my-dialog>
+</body>
+<!--resinclude "weixin.family-js"-->
+</html>

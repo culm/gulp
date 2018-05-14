@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="../../../css/widget/itable.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../../alijk.js"></script>
+    <script type="text/javascript" src="../alijk.widget.js"></script>
+    <script type="text/javascript" src="alijk.widget.itable.js"></script>
+</head>
+<body>
+    <h1>hello alijk.widget.table</h1>
+    <div style="width:600px;height:50px;overflow:auto;">
+        开始时间：<input type="text" id="starttime" value="2015-4-20" />
+        结束时间：<input type="text" id="endtime" value="2015-5-20" />
+        姓名：<input type="text" id="searchName" value="" />
+        <input type="button" value="查询" id="btnRequest" />
+    </div>
+    <table class="iTable"></table>
+    <table class="iTable1"></table>
+
+    <script type="text/javascript">
+        $(function () {
+            var startDate = $('#starttime').val();
+            var endDate = $('#endtime').val();
+            var searchName = $('#searchName').val();
+            var table = new alijk.widget.iTable(".iTable", {
+                pagination: true,
+                columns: [[
+                    { field: 'id', title: '编号', halign: 'left', align: 'center', width: 60 },
+                    {
+                        field: 'chargeState', title: '收费状态', width: 60, formatter: function (value, rowData, rowIndex) {
+                            return value == 2 ? "已收费" : "未收费";
+                        }
+                    },
+
+                    {
+                        field: 'patientName', title: '诊疗医生', width: 120, formatter: function (value, rowData, rowIndex) {
+                            return "<span title='" + value + "'>" + value + "</span>";
+                        }
+                    },
+                    { field: 'payAmount', title: '支付金额', width: 60 },
+                    {
+                        field: 'physicianName', title: '患者名称', width: 100, formatter: function (value, rowData, rowIndex) {
+                            var view = $('<a href="javascript:void(0);">' + value + '</a>');
+                            view.bind('click', function () {
+                                alert(alijk.getJson(rowData));
+                            });
+                            return view;
+                        }
+                    },
+                    { field: 'state', title: '支付状态', width: 100 },
+                    { field: 'subCountAmount', title: '支付状态', width: 100 },
+                    { field: 'visitTime', title: '处方时间', width: 100 },
+                    {
+                        field: 'receiptNumber', title: '收费日期', width: 100, formatter: function (value, rowData, rowIndex) {
+                            return new Date(value).toLocaleDateString();
+                        }
+                    }
+                ]],
+                pageNumber: 1,
+                pageSize: 10,
+                method: 'get',
+                url: 'http://localhost/physician/RestServiceCall/chargeFeeService/searchChargeFeeOrderLists',
+                queryParams: {
+                    params: alijk.toJSON({
+                        'startDate': $("#starttime").val(),
+                        'endDate': $("#endtime").val(),
+                        'searchName': $("#searchName").val(),
+                        'pageNumber': 1,
+                        'pageSize': 10
+                    })
+                },
+                onSelectPage: function (pageNumber, pageSize) {
+                    var that = this;
+                    that.options.queryParams = {
+                        params: alijk.toJSON({
+                            'startDate': $('#starttime').val(),
+                            'endDate': $('#endtime').val(),
+                            'searchName':  $('#searchName').val(),
+                            'pageNumber': pageNumber,
+                            'pageSize': pageSize
+                        })
+                    }
+                }
+            });
+
+            $('#btnRequest').bind('click', function () {
+                table.options.pageNumber = 1;
+                table.request({
+                    params: alijk.toJSON({
+                        'startDate': $("#starttime").val(),
+                        'endDate': $("#endtime").val(),
+                        'searchName': $("#searchName").val(),
+                        'pageNumber': 1,
+                        'pageSize': 10
+                    })
+                });
+            });
+
+             var table1 = new alijk.widget.iTable(".iTable1", {
+                pagination: false,
+                striped:false,//是否
+                columns: [[
+                    { field: 'id', title: '编号', halign: 'left', align: 'center', width: 60 },
+                    {
+                        field: 'chargeState', title: '收费状态', width: 60, formatter: function (value, rowData, rowIndex) {
+                            return value == 2 ? "已收费" : "未收费";
+                        }
+                    },
+
+                    {
+                        field: 'patientName', title: '诊疗医生', width: 120, formatter: function (value, rowData, rowIndex) {
+                            return "<span title='" + value + "'>" + value + "</span>";
+                        }
+                    },
+                    { field: 'payAmount', title: '支付金额', width: 60 },
+                    {
+                        field: 'physicianName', title: '患者名称', width: 100, formatter: function (value, rowData, rowIndex) {
+                            var view = $('<a href="javascript:void(0);">' + value + '</a>');
+                            view.bind('click', function () {
+                                alert(alijk.getJson(rowData));
+                            });
+                            return view;
+                        }
+                    },
+                    { field: 'state', title: '支付状态', width: 100 },
+                    { field: 'subCountAmount', title: '支付状态', width: 100 },
+                    { field: 'visitTime', title: '处方时间', width: 100 },
+                    {
+                        field: 'receiptNumber', title: '收费日期', width: 100, formatter: function (value, rowData, rowIndex) {
+                            return new Date(value).toLocaleDateString();
+                        }
+                    }
+                ]],
+                pageNumber: 1,
+                pageSize: 10,
+                onLoadSuccess:function(data){
+                    var that=this;
+                    if(data.total==0){
+                        that.showMessage(that.options.norecordMsg);
+                    }
+                }
+            });
+            $.ajax({
+                method:'get',
+                url:'http://localhost/physician/RestServiceCall/chargeFeeService/searchChargeFeeOrderLists?params=%7B%22startDate%22%3A%222015-4-20%22%2C%22endDate%22%3A%222015-5-20%22%2C%22searchName%22%3A%22%22%2C%22pageNumber%22%3A1%2C%22pageSize%22%3A10%7D&pageNumber=1&pageSize=10',
+                dataType:'json',
+                success:function(data){
+                    table1.loadData({total:data.total||0,rows:data.rows||[]});
+                }                
+
+            })
+
+        })
+    </script>
+</body>
+</html>

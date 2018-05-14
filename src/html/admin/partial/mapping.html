@@ -1,0 +1,62 @@
+<script type="text/html" id="tabDetail_template"></script>
+    <div class="detail{{id}} detail-show hide">
+        <div class="detail-box">
+            <div class="detail-body">
+                <div class="detail-title">
+                    <b>{{hospitalName}} 票据</b>
+                    <span>{{paymentId}}</span>
+                    <div style="float:right;margin-right:150px;width:50%">
+                        <div class="pull-right">
+                            <input type="text" id="receiptStatus" name="receiptStatus">
+                        </div>
+                        <div class="col-md-6 pull-right">
+                            <div class="input-group hospitalname">
+                                <label class="input-group-addon">选择医院：</label><input type="text" value="{{hospitalName}}" class="form-control" id="hospitalName" placeholder="输入医院名字" autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row detail-edit">
+                    <div class="col-md-8">
+                        <div class="imgRepeatBox">
+                            <img src="{{imgPath}}{{imageName}}&paymentNo={{paymentNo}}" class="img-responsive imgRepeat" />
+                            <button class="glyphicon glyphicon-repeat" title="点击旋转图片"></button>
+                            <span class="n-resize"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4 detail-keyBox">
+                        <input type="hidden" data-type="text" name="id" value="{{id}}" />
+                        <input type="hidden" data-type="text" name="imageName" value="{{imageName}}" />
+                        <div class="inputEdit isContinue hide">
+                            <span>是否续打：</span>
+                            <div class="btn-group groupButton" role="group">
+                                <button type="button" class="btn btn-default cur">否</button>
+                                <button type="button" class="btn btn-default reject">是</button>
+                            </div>
+                        </div>
+                        <div class="inputEdit isMedicare hide">
+                            <span>是否有医保：</span>
+                            <div class="btn-group groupButton" role="group">
+                                <button type="button" class="btn btn-default cur">否</button>
+                                <button type="button" class="btn btn-default reject">是</button>
+                            </div>
+                        </div>
+                        <div class="inputEdit isSelf hide">
+                            <span>是否是本人申请：</span>
+                            <div class="btn-group groupButton" role="group">
+                                <button type="button" class="btn btn-default ">否</button>
+                                <button type="button" class="btn btn-default reject cur">是</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="detail-body">
+                <div class="detail-title">
+                    <b>{{hospitalName}} 票据</b>
+                </div>
+                <div class="row detail-table">
+                </div>
+            </div>
+        </div>
+    </div>
